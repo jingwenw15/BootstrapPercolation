@@ -23,7 +23,7 @@ function simulate(grid)
                     infectedNeighbors += 1
                 end
             end 
-            
+
             freq[cur] = infectedNeighbors
             if infectedNeighbors >= 2
                 enqueue!(queue, cur)
@@ -55,4 +55,6 @@ function simulate(grid)
 
         time += 1
     end
+
+    return grid, all(grid .== "X"), time
 end
