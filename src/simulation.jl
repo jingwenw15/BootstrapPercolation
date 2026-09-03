@@ -1,3 +1,5 @@
+using DataStructures
+
 function simulate(grid)
     queue = Queue{CartesianIndex{2}}()
     freq = DefaultDict{CartesianIndex{2}, Int}(0)
