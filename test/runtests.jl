@@ -66,3 +66,42 @@ include("../src/simulation.jl")
     end
     
 end
+
+
+@testset "Minimal Percolation Simulator" begin
+    @testset "Is Minimal Percolating" begin 
+        grid = [
+            "." "X" ".";
+            "X" "." "X";
+            "." "X" "."
+        ]
+
+        is_min_percolating = is_minimal_percolating(grid)
+
+        @test is_min_percolating == true
+    end
+
+    @testset "Not Minimal Percolating" begin
+        grid = [
+            "X" "X" ".";
+            "X" "." "X";
+            "." "X" "."
+        ]
+
+        is_min_percolating = is_minimal_percolating(grid)
+
+        @test is_min_percolating == false
+    end
+
+    @testset "Not Percolating" begin
+        grid = [
+            "." "X" ".";
+            "X" "." ".";
+            "." "X" "."
+        ]
+
+        is_min_percolating = is_minimal_percolating(grid)
+
+        @test is_min_percolating == false
+    end
+end
