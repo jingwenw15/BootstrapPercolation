@@ -10,7 +10,7 @@ include("../src/simulation.jl")
             "X" "X"
         ]
 
-        finalGrid, percolated, time = simulate(grid)
+        finalGrid, percolated, time, _ = simulate(grid)
 
         @test percolated == true
         @test time == 0 
@@ -24,7 +24,7 @@ include("../src/simulation.jl")
             "." "." "X" 
         ]
 
-        finalGrid, percolated, time = simulate(grid) 
+        finalGrid, percolated, time, _ = simulate(grid) 
 
         @test percolated == false
         @test time == 0 
@@ -38,7 +38,7 @@ include("../src/simulation.jl")
             "." "." "."
         ]
 
-        finalGrid, percolated, time = simulate(grid)
+        finalGrid, percolated, time, _ = simulate(grid)
 
         expected = [
             "X" "X" ".";
@@ -58,7 +58,7 @@ include("../src/simulation.jl")
             "." "X" "."
         ]
 
-        finalGrid, percolated, time = simulate(grid)
+        finalGrid, percolated, time, _ = simulate(grid)
 
         @test percolated == true
         @test all(finalGrid .== "X")

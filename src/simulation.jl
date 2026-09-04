@@ -14,6 +14,7 @@ function simulate(grid)
     )
 
     state = copy(grid)
+    history = [copy(state)] # t = 0
 
     # Find cells that should become infected at time 1
     for j in 1:C, i in 1:R
@@ -68,9 +69,10 @@ function simulate(grid)
         end
 
         time += 1
+        push!(history, copy(state))
     end
 
     percolated = all(state .== "X")
 
-    return state, percolated, time
+    return state, percolated, time, history
 end
