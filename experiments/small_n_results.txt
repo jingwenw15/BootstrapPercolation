@@ -1,0 +1,1860 @@
+n = 2
+total configurations searched: 16
+minimal-percolating configurations found: 2
+E(n): 2
+configurations attaining E(n): 2
+maximizer 1:
+. X
+X .
+maximizer 2:
+X .
+. X
+
+n = 3
+total configurations searched: 512
+minimal-percolating configurations found: 23
+E(n): 4
+configurations attaining E(n): 9
+maximizer 1:
+. X X
+X . .
+X . .
+maximizer 2:
+. . X
+X . X
+X . .
+maximizer 3:
+. X .
+X . X
+. X .
+maximizer 4:
+. X X
+. . .
+X X .
+maximizer 5:
+. . X
+. . X
+X X .
+maximizer 6:
+X X .
+. . X
+. . X
+maximizer 7:
+X . .
+X . X
+. . X
+maximizer 8:
+X X .
+. . .
+. X X
+maximizer 9:
+X . .
+X . .
+. X X
+
+n = 4
+total configurations searched: 65536
+minimal-percolating configurations found: 490
+E(n): 5
+configurations attaining E(n): 360
+maximizer 1:
+X . X X
+X . . .
+. . . .
+X . . .
+maximizer 2:
+. . X X
+X X . .
+. . . .
+X . . .
+maximizer 3:
+X X . X
+. . . X
+. . . .
+X . . .
+maximizer 4:
+. . . X
+X X . X
+. . . .
+X . . .
+maximizer 5:
+X X . .
+. . X X
+. . . .
+X . . .
+maximizer 6:
+X . . .
+X . X X
+. . . .
+X . . .
+maximizer 7:
+X X . X
+. . . .
+X . . .
+X . . .
+maximizer 8:
+X . X X
+. . . .
+X . . .
+X . . .
+maximizer 9:
+. X . X
+. X . .
+X . . .
+X . . .
+maximizer 10:
+. . X X
+. X . .
+X . . .
+X . . .
+maximizer 11:
+. X . X
+. . X .
+X . . .
+X . . .
+maximizer 12:
+. . . X
+. X X .
+X . . .
+X . . .
+maximizer 13:
+X X . .
+. . . X
+X . . .
+X . . .
+maximizer 14:
+. X X .
+. . . X
+X . . .
+X . . .
+maximizer 15:
+. X . X
+. . . X
+X . . .
+X . . .
+maximizer 16:
+. X . .
+. X . X
+X . . .
+X . . .
+maximizer 17:
+. . X .
+. X . X
+X . . .
+X . . .
+maximizer 18:
+. . . X
+. X . X
+X . . .
+X . . .
+maximizer 19:
+X . . .
+. . X X
+X . . .
+X . . .
+maximizer 20:
+. X . .
+. . X X
+X . . .
+X . . .
+maximizer 21:
+. . X X
+X . . .
+. X . .
+X . . .
+maximizer 22:
+. . X X
+. X . .
+. X . .
+X . . .
+maximizer 23:
+. . . X
+X . . X
+. X . .
+X . . .
+maximizer 24:
+. . . X
+. X . X
+. X . .
+X . . .
+maximizer 25:
+X . X X
+. . . .
+. . X .
+X . . .
+maximizer 26:
+X . . X
+. . . X
+. . X .
+X . . .
+maximizer 27:
+X . . .
+X . . X
+. . X .
+X . . .
+maximizer 28:
+. . X .
+. X . X
+. . X .
+X . . .
+maximizer 29:
+X . . X
+. . . .
+X . X .
+X . . .
+maximizer 30:
+. . X X
+. . . .
+X . X .
+X . . .
+maximizer 31:
+. . . X
+. . X .
+X . X .
+X . . .
+maximizer 32:
+X . . .
+. . . X
+X . X .
+X . . .
+maximizer 33:
+. . X .
+. . . X
+X . X .
+X . . .
+maximizer 34:
+. . . X
+. . . X
+X . X .
+X . . .
+maximizer 35:
+. . X X
+. . . .
+. X X .
+X . . .
+maximizer 36:
+. . . X
+. . . X
+. X X .
+X . . .
+maximizer 37:
+X . X X
+. . . .
+. . . X
+X . . .
+maximizer 38:
+X . X .
+X . . .
+. . . X
+X . . .
+maximizer 39:
+. . X X
+X . . .
+. . . X
+X . . .
+maximizer 40:
+X . X .
+. . X .
+. . . X
+X . . .
+maximizer 41:
+X . . .
+X . X .
+. . . X
+X . . .
+maximizer 42:
+. . X .
+X . X .
+. . . X
+X . . .
+maximizer 43:
+. X X .
+. . . X
+. . . X
+X . . .
+maximizer 44:
+. X . .
+. X . X
+. . . X
+X . . .
+maximizer 45:
+X X . .
+. . . .
+X . . X
+X . . .
+maximizer 46:
+X . X .
+. . . .
+X . . X
+X . . .
+maximizer 47:
+. . X X
+. . . .
+X . . X
+X . . .
+maximizer 48:
+. X . .
+. X . .
+X . . X
+X . . .
+maximizer 49:
+X . . .
+. . X .
+X . . X
+X . . .
+maximizer 50:
+. . X .
+. . X .
+X . . X
+X . . .
+maximizer 51:
+. . . X
+. . X .
+X . . X
+X . . .
+maximizer 52:
+. . X .
+. . . X
+X . . X
+X . . .
+maximizer 53:
+X . X .
+. . . .
+. . X X
+X . . .
+maximizer 54:
+. X X .
+. . . .
+. . X X
+X . . .
+maximizer 55:
+X . . X
+. . . .
+. . X X
+X . . .
+maximizer 56:
+X . . .
+X . . .
+. . X X
+X . . .
+maximizer 57:
+. . X .
+X . . .
+. . X X
+X . . .
+maximizer 58:
+. X . .
+. X . .
+. . X X
+X . . .
+maximizer 59:
+X . . .
+. . . .
+X . X X
+X . . .
+maximizer 60:
+. X . .
+. . . .
+X . X X
+X . . .
+maximizer 61:
+. . X .
+. . . .
+X . X X
+X . . .
+maximizer 62:
+. . . X
+. . . .
+X . X X
+X . . .
+maximizer 63:
+X . X X
+X . . .
+. . . .
+. X . .
+maximizer 64:
+. . X X
+X X . .
+. . . .
+. X . .
+maximizer 65:
+X X . X
+. . . X
+. . . .
+. X . .
+maximizer 66:
+. . . X
+X X . X
+. . . .
+. X . .
+maximizer 67:
+X X . .
+. . X X
+. . . .
+. X . .
+maximizer 68:
+X . . .
+X . X X
+. . . .
+. X . .
+maximizer 69:
+. . X X
+X . . .
+X . . .
+. X . .
+maximizer 70:
+. . X X
+. X . .
+X . . .
+. X . .
+maximizer 71:
+. . . X
+X . . X
+X . . .
+. X . .
+maximizer 72:
+. . . X
+. X . X
+X . . .
+. X . .
+maximizer 73:
+X X . X
+. . . .
+. X . .
+. X . .
+maximizer 74:
+X . X X
+. . . .
+. X . .
+. X . .
+maximizer 75:
+X . . X
+X . . .
+. X . .
+. X . .
+maximizer 76:
+. . X X
+X . . .
+. X . .
+. X . .
+maximizer 77:
+X X . .
+. . . X
+. X . .
+. X . .
+maximizer 78:
+X . . .
+X . . X
+. X . .
+. X . .
+maximizer 79:
+. . . X
+X . . X
+. X . .
+. X . .
+maximizer 80:
+X . . .
+. . X X
+. X . .
+. X . .
+maximizer 81:
+X X . X
+. . . .
+. . X .
+. X . .
+maximizer 82:
+X . X X
+. . . .
+. . X .
+. X . .
+maximizer 83:
+. . X X
+. . . .
+X . X .
+. X . .
+maximizer 84:
+. . . X
+. X . .
+X . X .
+. X . .
+maximizer 85:
+. . . X
+. . . X
+X . X .
+. X . .
+maximizer 86:
+X X . X
+. . . .
+. . . X
+. X . .
+maximizer 87:
+X . X X
+. . . .
+. . . X
+. X . .
+maximizer 88:
+X . X .
+X . . .
+. . . X
+. X . .
+maximizer 89:
+. . X X
+X . . .
+. . . X
+. X . .
+maximizer 90:
+. . X .
+X X . .
+. . . X
+. X . .
+maximizer 91:
+. . . X
+X X . .
+. . . X
+. X . .
+maximizer 92:
+. . X .
+X . X .
+. . . X
+. X . .
+maximizer 93:
+X X . .
+. . . .
+. X . X
+. X . .
+maximizer 94:
+X . X .
+. . . .
+. X . X
+. X . .
+maximizer 95:
+X . . X
+. . . .
+. X . X
+. X . .
+maximizer 96:
+X . . .
+X . . .
+. X . X
+. X . .
+maximizer 97:
+. . X .
+X . . .
+. X . X
+. X . .
+maximizer 98:
+. . . X
+X . . .
+. X . X
+. X . .
+maximizer 99:
+X . . .
+. . . X
+. X . X
+. X . .
+maximizer 100:
+X X . .
+. . . .
+. . X X
+. X . .
+maximizer 101:
+X . X .
+. . . .
+. . X X
+. X . .
+maximizer 102:
+X . . X
+. . . .
+. . X X
+. X . .
+maximizer 103:
+X . . .
+X . . .
+. . X X
+. X . .
+maximizer 104:
+. . X .
+X . . .
+. . X X
+. X . .
+maximizer 105:
+X . . X
+X . . .
+. . . .
+X X . .
+maximizer 106:
+. . X X
+X . . .
+. . . .
+X X . .
+maximizer 107:
+. X . X
+. X . .
+. . . .
+X X . .
+maximizer 108:
+. . X X
+. X . .
+. . . .
+X X . .
+maximizer 109:
+. X . X
+. . X .
+. . . .
+X X . .
+maximizer 110:
+. . . X
+. X X .
+. . . .
+X X . .
+maximizer 111:
+. X X .
+. . . X
+. . . .
+X X . .
+maximizer 112:
+. X . X
+. . . X
+. . . .
+X X . .
+maximizer 113:
+X . . .
+X . . X
+. . . .
+X X . .
+maximizer 114:
+. . . X
+X . . X
+. . . .
+X X . .
+maximizer 115:
+. X . .
+. X . X
+. . . .
+X X . .
+maximizer 116:
+. . X .
+. X . X
+. . . .
+X X . .
+maximizer 117:
+. . . X
+. X . X
+. . . .
+X X . .
+maximizer 118:
+. X . .
+. . X X
+. . . .
+X X . .
+maximizer 119:
+X . . X
+. . . .
+. . X .
+X X . .
+maximizer 120:
+. . X X
+. . . .
+. . X .
+X X . .
+maximizer 121:
+. . . X
+. . X .
+. . X .
+X X . .
+maximizer 122:
+. . X .
+. . . X
+. . X .
+X X . .
+maximizer 123:
+. . . X
+. . . X
+. . X .
+X X . .
+maximizer 124:
+. . X X
+. . . .
+. . . X
+X X . .
+maximizer 125:
+X . . .
+X . . .
+. . . X
+X X . .
+maximizer 126:
+. . X .
+X . . .
+. . . X
+X X . .
+maximizer 127:
+. . . X
+X . . .
+. . . X
+X X . .
+maximizer 128:
+. X . .
+. X . .
+. . . X
+X X . .
+maximizer 129:
+. . X .
+. . X .
+. . . X
+X X . .
+maximizer 130:
+. . . X
+. . X .
+. . . X
+X X . .
+maximizer 131:
+. . X .
+. . . X
+. . . X
+X X . .
+maximizer 132:
+X . . .
+. . . .
+. . X X
+X X . .
+maximizer 133:
+. X . .
+. . . .
+. . X X
+X X . .
+maximizer 134:
+. . X .
+. . . .
+. . X X
+X X . .
+maximizer 135:
+. . . X
+. . . .
+. . X X
+X X . .
+maximizer 136:
+X . X X
+X . . .
+. . . .
+. . X .
+maximizer 137:
+. . X X
+X X . .
+. . . .
+. . X .
+maximizer 138:
+X X . X
+. . . X
+. . . .
+. . X .
+maximizer 139:
+. . . X
+X X . X
+. . . .
+. . X .
+maximizer 140:
+X X . .
+. . X X
+. . . .
+. . X .
+maximizer 141:
+X . . .
+X . X X
+. . . .
+. . X .
+maximizer 142:
+X X . X
+. . . .
+X . . .
+. . X .
+maximizer 143:
+X . X X
+. . . .
+X . . .
+. . X .
+maximizer 144:
+X X . .
+. . . X
+X . . .
+. . X .
+maximizer 145:
+. X . X
+. . . X
+X . . .
+. . X .
+maximizer 146:
+. X . .
+. X . X
+X . . .
+. . X .
+maximizer 147:
+X . . .
+. . X X
+X . . .
+. . X .
+maximizer 148:
+. X . .
+. . X X
+X . . .
+. . X .
+maximizer 149:
+X X . X
+. . . .
+. X . .
+. . X .
+maximizer 150:
+X . X X
+. . . .
+. X . .
+. . X .
+maximizer 151:
+X . . X
+. . . .
+X X . .
+. . X .
+maximizer 152:
+. X . X
+. . . .
+X X . .
+. . X .
+maximizer 153:
+. . X X
+. . . .
+X X . .
+. . X .
+maximizer 154:
+. X . .
+. . . X
+X X . .
+. . X .
+maximizer 155:
+. . . X
+. . . X
+X X . .
+. . X .
+maximizer 156:
+X X . X
+. . . .
+. . X .
+. . X .
+maximizer 157:
+X . X X
+. . . .
+. . X .
+. . X .
+maximizer 158:
+. . X X
+X . . .
+. . X .
+. . X .
+maximizer 159:
+. . . X
+X X . .
+. . X .
+. . X .
+maximizer 160:
+X X . .
+. . . X
+. . X .
+. . X .
+maximizer 161:
+X . . X
+. . . X
+. . X .
+. . X .
+maximizer 162:
+X . . .
+X . . X
+. . X .
+. . X .
+maximizer 163:
+. . . X
+X . . X
+. . X .
+. . X .
+maximizer 164:
+X . . X
+. . . .
+X . X .
+. . X .
+maximizer 165:
+. X . X
+. . . .
+X . X .
+. . X .
+maximizer 166:
+. . X X
+. . . .
+X . X .
+. . X .
+maximizer 167:
+. . . X
+X . . .
+X . X .
+. . X .
+maximizer 168:
+X . . .
+. . . X
+X . X .
+. . X .
+maximizer 169:
+. X . .
+. . . X
+X . X .
+. . X .
+maximizer 170:
+. . . X
+. . . X
+X . X .
+. . X .
+maximizer 171:
+X X . .
+. . X .
+. . . X
+. . X .
+maximizer 172:
+X . . .
+X . X .
+. . . X
+. . X .
+maximizer 173:
+X X . .
+. . . X
+. . . X
+. . X .
+maximizer 174:
+X . . .
+X . . X
+. . . X
+. . X .
+maximizer 175:
+X X . .
+. . . .
+. X . X
+. . X .
+maximizer 176:
+X . . .
+X . . .
+. X . X
+. . X .
+maximizer 177:
+X . . .
+. . X .
+. X . X
+. . X .
+maximizer 178:
+. X . X
+. . . X
+. . . .
+X . X .
+maximizer 179:
+X . . .
+X . . X
+. . . .
+X . X .
+maximizer 180:
+. X . .
+. X . X
+. . . .
+X . X .
+maximizer 181:
+X . . .
+. . X X
+. . . .
+X . X .
+maximizer 182:
+. X . .
+. . X X
+. . . .
+X . X .
+maximizer 183:
+X . . X
+. . . .
+X . . .
+X . X .
+maximizer 184:
+. X . X
+. . . .
+X . . .
+X . X .
+maximizer 185:
+. . X X
+. . . .
+X . . .
+X . X .
+maximizer 186:
+X . . .
+. . . X
+X . . .
+X . X .
+maximizer 187:
+. X . .
+. . . X
+X . . .
+X . X .
+maximizer 188:
+. . . X
+. . . X
+X . . .
+X . X .
+maximizer 189:
+. . X X
+. . . .
+. X . .
+X . X .
+maximizer 190:
+. . . X
+. . . X
+. X . .
+X . X .
+maximizer 191:
+X . . X
+. . . .
+. . X .
+X . X .
+maximizer 192:
+. . X X
+. . . .
+. . X .
+X . X .
+maximizer 193:
+X . . .
+. . . X
+. . X .
+X . X .
+maximizer 194:
+. . . X
+. . . X
+. . X .
+X . X .
+maximizer 195:
+. . . X
+X X . .
+. . . .
+. X X .
+maximizer 196:
+X . . .
+. . X X
+. . . .
+. X X .
+maximizer 197:
+. . X X
+. . . .
+X . . .
+. X X .
+maximizer 198:
+. . . X
+X . . .
+X . . .
+. X X .
+maximizer 199:
+. . . X
+. . . X
+X . . .
+. X X .
+maximizer 200:
+X X . .
+. . . .
+. . . X
+. X X .
+maximizer 201:
+X . . .
+X . . .
+. . . X
+. X X .
+maximizer 202:
+X . . .
+. . . X
+. . . X
+. X X .
+maximizer 203:
+X . X X
+X . . .
+. . . .
+. . . X
+maximizer 204:
+. . X X
+X X . .
+. . . .
+. . . X
+maximizer 205:
+X X . X
+. . . X
+. . . .
+. . . X
+maximizer 206:
+. . . X
+X X . X
+. . . .
+. . . X
+maximizer 207:
+X X . .
+. . X X
+. . . .
+. . . X
+maximizer 208:
+X . . .
+X . X X
+. . . .
+. . . X
+maximizer 209:
+X X . X
+. . . .
+X . . .
+. . . X
+maximizer 210:
+. X X .
+X . . .
+X . . .
+. . . X
+maximizer 211:
+. X . X
+. X . .
+X . . .
+. . . X
+maximizer 212:
+. . X .
+X . X .
+X . . .
+. . . X
+maximizer 213:
+X X . .
+. . . X
+X . . .
+. . . X
+maximizer 214:
+. X . X
+. . . X
+X . . .
+. . . X
+maximizer 215:
+. X . .
+. X . X
+X . . .
+. . . X
+maximizer 216:
+. . . X
+. X . X
+X . . .
+. . . X
+maximizer 217:
+X X . X
+. . . .
+. X . .
+. . . X
+maximizer 218:
+X . . X
+X . . .
+. X . .
+. . . X
+maximizer 219:
+. X . .
+X . X .
+. X . .
+. . . X
+maximizer 220:
+. . . X
+X . . X
+. X . .
+. . . X
+maximizer 221:
+. X X .
+. . . .
+X X . .
+. . . X
+maximizer 222:
+X . . X
+. . . .
+X X . .
+. . . X
+maximizer 223:
+. X . X
+. . . .
+X X . .
+. . . X
+maximizer 224:
+. . X .
+. . X .
+X X . .
+. . . X
+maximizer 225:
+. X . .
+. . . X
+X X . .
+. . . X
+maximizer 226:
+. . . X
+. . . X
+X X . .
+. . . X
+maximizer 227:
+X X . .
+. . X .
+. . X .
+. . . X
+maximizer 228:
+X . . .
+X . X .
+. . X .
+. . . X
+maximizer 229:
+X X . .
+. . . X
+. . X .
+. . . X
+maximizer 230:
+X . . .
+X . . X
+. . X .
+. . . X
+maximizer 231:
+X X . .
+. . . .
+. X X .
+. . . X
+maximizer 232:
+X . . .
+X . . .
+. X X .
+. . . X
+maximizer 233:
+X X . X
+. . . .
+. . . X
+. . . X
+maximizer 234:
+X . X X
+. . . .
+. . . X
+. . . X
+maximizer 235:
+X . X .
+X . . .
+. . . X
+. . . X
+maximizer 236:
+. X X .
+X . . .
+. . . X
+. . . X
+maximizer 237:
+. . X X
+X . . .
+. . . X
+. . . X
+maximizer 238:
+X . X .
+. X . .
+. . . X
+. . . X
+maximizer 239:
+. . X .
+X X . .
+. . . X
+. . . X
+maximizer 240:
+. . . X
+X X . .
+. . . X
+. . . X
+maximizer 241:
+X X . .
+. . X .
+. . . X
+. . . X
+maximizer 242:
+X . X .
+. . X .
+. . . X
+. . . X
+maximizer 243:
+X . . .
+X . X .
+. . . X
+. . . X
+maximizer 244:
+. X . .
+X . X .
+. . . X
+. . . X
+maximizer 245:
+. . X .
+X . X .
+. . . X
+. . . X
+maximizer 246:
+X . . .
+. X X .
+. . . X
+. . . X
+maximizer 247:
+X X . .
+. . . .
+X . . X
+. . . X
+maximizer 248:
+. X . X
+. . . .
+X . . X
+. . . X
+maximizer 249:
+. . X X
+. . . .
+X . . X
+. . . X
+maximizer 250:
+. X . .
+X . . .
+X . . X
+. . . X
+maximizer 251:
+X . . .
+. X . .
+X . . X
+. . . X
+maximizer 252:
+. X . .
+. X . .
+X . . X
+. . . X
+maximizer 253:
+. . . X
+. X . .
+X . . X
+. . . X
+maximizer 254:
+. . X .
+. . X .
+X . . X
+. . . X
+maximizer 255:
+X X . .
+. . . .
+. X . X
+. . . X
+maximizer 256:
+X . . X
+. . . .
+. X . X
+. . . X
+maximizer 257:
+X . . .
+X . . .
+. X . X
+. . . X
+maximizer 258:
+. X . .
+X . . .
+. X . X
+. . . X
+maximizer 259:
+. . . X
+X . . .
+. X . X
+. . . X
+maximizer 260:
+X . . .
+. X . .
+. X . X
+. . . X
+maximizer 261:
+X . . .
+. . . .
+X X . X
+. . . X
+maximizer 262:
+. X . .
+. . . .
+X X . X
+. . . X
+maximizer 263:
+. . X .
+. . . .
+X X . X
+. . . X
+maximizer 264:
+. . . X
+. . . .
+X X . X
+. . . X
+maximizer 265:
+X . X .
+X . . .
+. . . .
+X . . X
+maximizer 266:
+. X . X
+. X . .
+. . . .
+X . . X
+maximizer 267:
+. . X X
+. X . .
+. . . .
+X . . X
+maximizer 268:
+. . X .
+X X . .
+. . . .
+X . . X
+maximizer 269:
+. . . X
+X X . .
+. . . .
+X . . X
+maximizer 270:
+X X . .
+. . X .
+. . . .
+X . . X
+maximizer 271:
+X . X .
+. . X .
+. . . .
+X . . X
+maximizer 272:
+X . . .
+X . X .
+. . . .
+X . . X
+maximizer 273:
+. . X .
+X . X .
+. . . .
+X . . X
+maximizer 274:
+. X . X
+. . . X
+. . . .
+X . . X
+maximizer 275:
+. X . .
+. X . X
+. . . .
+X . . X
+maximizer 276:
+. . . X
+. X . X
+. . . .
+X . . X
+maximizer 277:
+X . . .
+. . X X
+. . . .
+X . . X
+maximizer 278:
+. X . .
+. . X X
+. . . .
+X . . X
+maximizer 279:
+X X . .
+. . . .
+X . . .
+X . . X
+maximizer 280:
+. X . .
+. X . .
+X . . .
+X . . X
+maximizer 281:
+. . . X
+. X . .
+X . . .
+X . . X
+maximizer 282:
+. . X X
+. . . .
+. . . X
+X . . X
+maximizer 283:
+X . . .
+. . X .
+. . . X
+X . . X
+maximizer 284:
+. . X .
+. . X .
+. . . X
+X . . X
+maximizer 285:
+X . X .
+X . . .
+. . . .
+. X . X
+maximizer 286:
+. . X .
+X X . .
+. . . .
+. X . X
+maximizer 287:
+. . . X
+X X . .
+. . . .
+. X . X
+maximizer 288:
+. . X .
+X . X .
+. . . .
+. X . X
+maximizer 289:
+. . . X
+X . . X
+. . . .
+. X . X
+maximizer 290:
+X X . .
+. . . .
+. X . .
+. X . X
+maximizer 291:
+X . . X
+. . . .
+. X . .
+. X . X
+maximizer 292:
+X . . .
+X . . .
+. X . .
+. X . X
+maximizer 293:
+. . . X
+X . . .
+. X . .
+. X . X
+maximizer 294:
+X X . .
+. . . .
+. . X .
+. X . X
+maximizer 295:
+X . . .
+X . . .
+. . X .
+. X . X
+maximizer 296:
+X X . .
+. . . .
+. . . X
+. X . X
+maximizer 297:
+X . X .
+. . . .
+. . . X
+. X . X
+maximizer 298:
+X . . X
+. . . .
+. . . X
+. X . X
+maximizer 299:
+X . . .
+X . . .
+. . . X
+. X . X
+maximizer 300:
+. . X .
+X . . .
+. . . X
+. X . X
+maximizer 301:
+. . . X
+X . . .
+. . . X
+. X . X
+maximizer 302:
+X . . .
+X . . .
+. . . .
+X X . X
+maximizer 303:
+. . X .
+X . . .
+. . . .
+X X . X
+maximizer 304:
+. . . X
+X . . .
+. . . .
+X X . X
+maximizer 305:
+. X . .
+. X . .
+. . . .
+X X . X
+maximizer 306:
+. . X .
+. X . .
+. . . .
+X X . X
+maximizer 307:
+. . . X
+. X . .
+. . . .
+X X . X
+maximizer 308:
+. X . .
+. . X .
+. . . .
+X X . X
+maximizer 309:
+. . X .
+. . X .
+. . . .
+X X . X
+maximizer 310:
+. X . .
+. . . X
+. . . .
+X X . X
+maximizer 311:
+. . . X
+. . . X
+. . . .
+X X . X
+maximizer 312:
+X . . .
+. . . .
+. . . X
+X X . X
+maximizer 313:
+. X . .
+. . . .
+. . . X
+X X . X
+maximizer 314:
+. . X .
+. . . .
+. . . X
+X X . X
+maximizer 315:
+. . . X
+. . . .
+. . . X
+X X . X
+maximizer 316:
+X . X .
+X . . .
+. . . .
+. . X X
+maximizer 317:
+. X X .
+X . . .
+. . . .
+. . X X
+maximizer 318:
+X . X .
+. X . .
+. . . .
+. . X X
+maximizer 319:
+. . X .
+X X . .
+. . . .
+. . X X
+maximizer 320:
+X X . .
+. . X .
+. . . .
+. . X X
+maximizer 321:
+X . X .
+. . X .
+. . . .
+. . X X
+maximizer 322:
+X . . .
+X . X .
+. . . .
+. . X X
+maximizer 323:
+. X . .
+X . X .
+. . . .
+. . X X
+maximizer 324:
+. . X .
+X . X .
+. . . .
+. . X X
+maximizer 325:
+X . . .
+. X X .
+. . . .
+. . X X
+maximizer 326:
+X X . .
+. . . X
+. . . .
+. . X X
+maximizer 327:
+X . . X
+. . . X
+. . . .
+. . X X
+maximizer 328:
+X . . .
+X . . X
+. . . .
+. . X X
+maximizer 329:
+. . . X
+X . . X
+. . . .
+. . X X
+maximizer 330:
+X X . .
+. . . .
+X . . .
+. . X X
+maximizer 331:
+. X . .
+X . . .
+X . . .
+. . X X
+maximizer 332:
+X . . .
+. X . .
+X . . .
+. . X X
+maximizer 333:
+. X . .
+. X . .
+X . . .
+. . X X
+maximizer 334:
+. . X .
+. . X .
+X . . .
+. . X X
+maximizer 335:
+X . . .
+. . . X
+X . . .
+. . X X
+maximizer 336:
+. X . .
+. . . X
+X . . .
+. . X X
+maximizer 337:
+. . . X
+. . . X
+X . . .
+. . X X
+maximizer 338:
+X X . .
+. . . .
+. X . .
+. . X X
+maximizer 339:
+X . . X
+. . . .
+. X . .
+. . X X
+maximizer 340:
+X . . .
+X . . .
+. X . .
+. . X X
+maximizer 341:
+. X . .
+X . . .
+. X . .
+. . X X
+maximizer 342:
+X . . .
+. X . .
+. X . .
+. . X X
+maximizer 343:
+X . . .
+. . . .
+X X . .
+. . X X
+maximizer 344:
+. X . .
+. . . .
+X X . .
+. . X X
+maximizer 345:
+. . X .
+. . . .
+X X . .
+. . X X
+maximizer 346:
+. . . X
+. . . .
+X X . .
+. . X X
+maximizer 347:
+X . . .
+X . . .
+. . . .
+X . X X
+maximizer 348:
+. . X .
+X . . .
+. . . .
+X . X X
+maximizer 349:
+. X . .
+. X . .
+. . . .
+X . X X
+maximizer 350:
+. . X .
+. X . .
+. . . .
+X . X X
+maximizer 351:
+X . . .
+. . X .
+. . . .
+X . X X
+maximizer 352:
+. X . .
+. . X .
+. . . .
+X . X X
+maximizer 353:
+. . X .
+. . X .
+. . . .
+X . X X
+maximizer 354:
+X . . .
+. . . X
+. . . .
+X . X X
+maximizer 355:
+. X . .
+. . . X
+. . . .
+X . X X
+maximizer 356:
+. . . X
+. . . X
+. . . .
+X . X X
+maximizer 357:
+X . . .
+. . . .
+X . . .
+X . X X
+maximizer 358:
+. X . .
+. . . .
+X . . .
+X . X X
+maximizer 359:
+. . X .
+. . . .
+X . . .
+X . X X
+maximizer 360:
+. . . X
+. . . .
+X . . .
+X . X X
+
