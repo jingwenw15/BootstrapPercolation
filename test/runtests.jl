@@ -115,6 +115,7 @@ end
         is_min_percolating = is_minimal_percolating(grid)
 
         @test is_min_percolating == true
+        @test verifies_minimal_by_single_removal(grid)
     end
 
     @testset "Not Minimal Percolating" begin
@@ -127,6 +128,7 @@ end
         is_min_percolating = is_minimal_percolating(grid)
 
         @test is_min_percolating == false
+        @test !verifies_minimal_by_single_removal(grid)
     end
 
     @testset "Not Percolating" begin
@@ -188,6 +190,7 @@ end
         @test result.maximizers == [[
             "X"
         ;;]]
+        @test isempty(verify_reported_maximizers(result))
     end
 
     @testset "2x2 grid" begin
@@ -199,5 +202,14 @@ end
         @test length(result.maximizers) == 2
         @test all(is_minimal_percolating(grid) for grid in result.maximizers)
         @test all(count_infected(grid) == result.maximum_size for grid in result.maximizers)
+        @test isempty(verify_reported_maximizers(result))
+    end
+
+    @testset "Reported maximizers pass single-removal verification through n=4" begin
+        for n in 2:4
+            result = enumerate_minimal_percolating(n)
+
+            @test isempty(verify_reported_maximizers(result))
+        end
     end
 end

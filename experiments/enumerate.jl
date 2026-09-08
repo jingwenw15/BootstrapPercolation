@@ -39,6 +39,42 @@ function count_infected(grid)
     return count(cell -> cell == "X", grid)
 end
 
+function removal_percolation_failures(grid)
+    failures = CartesianIndex{2}[]
+    R, C = size(grid)
+
+    for j in 1:C, i in 1:R
+        cur = CartesianIndex(i, j)
+        if grid[cur] == "X"
+            reduced = copy(grid)
+            reduced[cur] = "."
+
+            if percolates(reduced)
+                push!(failures, cur)
+            end
+        end
+    end
+
+    return failures
+end
+
+function verifies_minimal_by_single_removal(grid)
+    return percolates(grid) && isempty(removal_percolation_failures(grid))
+end
+
+function verify_reported_maximizers(result)
+    failures = Tuple{Int, Vector{CartesianIndex{2}}}[]
+
+    for (i, grid) in enumerate(result.maximizers)
+        removed_cell_failures = removal_percolation_failures(grid)
+        if !percolates(grid) || !isempty(removed_cell_failures)
+            push!(failures, (i, removed_cell_failures))
+        end
+    end
+
+    return failures
+end
+
 function enumerate_minimal_percolating(n)
     n <= 0 && throw(ArgumentError("n must be positive"))
 
@@ -80,11 +116,14 @@ function print_grid(grid)
 end
 
 function print_enumeration_result(result)
+    verification_failures = verify_reported_maximizers(result)
+
     println("n = ", result.n)
     println("total configurations searched: ", result.total_configurations)
     println("minimal-percolating configurations found: ", result.minimal_percolating_count)
     println("E(n): ", result.maximum_size)
     println("configurations attaining E(n): ", length(result.maximizers))
+    println("single-removal verification passed: ", isempty(verification_failures))
 
     for (i, grid) in enumerate(result.maximizers)
         println("maximizer ", i, ":")

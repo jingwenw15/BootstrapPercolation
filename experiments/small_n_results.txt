@@ -3,6 +3,7 @@ total configurations searched: 16
 minimal-percolating configurations found: 2
 E(n): 2
 configurations attaining E(n): 2
+single-removal verification passed: true
 maximizer 1:
 . X
 X .
@@ -15,6 +16,7 @@ total configurations searched: 512
 minimal-percolating configurations found: 23
 E(n): 4
 configurations attaining E(n): 9
+single-removal verification passed: true
 maximizer 1:
 . X X
 X . .
@@ -57,6 +59,7 @@ total configurations searched: 65536
 minimal-percolating configurations found: 490
 E(n): 5
 configurations attaining E(n): 360
+single-removal verification passed: true
 maximizer 1:
 X . X X
 X . . .

@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap Percolation Explorer</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8f5;
+      --panel: #ffffff;
+      --ink: #1d2522;
+      --muted: #65716d;
+      --line: #d9dfdb;
+      --cell: #eef2ef;
+      --infected: #176b87;
+      --new: #d1495b;
+      --accent: #2f7d59;
+      --shadow: 0 18px 45px rgba(36, 52, 45, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        linear-gradient(90deg, rgba(29, 37, 34, 0.035) 1px, transparent 1px),
+        linear-gradient(rgba(29, 37, 34, 0.035) 1px, transparent 1px),
+        var(--bg);
+      background-size: 28px 28px;
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    main {
+      width: min(1180px, calc(100vw - 32px));
+      margin: 0 auto;
+      padding: 24px 0;
+    }
+
+    .app {
+      display: grid;
+      grid-template-columns: minmax(320px, 1fr) 320px;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .workspace,
+    .controls {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .workspace {
+      padding: 18px;
+      min-width: 0;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .stats {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .stat {
+      min-width: 88px;
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fbfcfb;
+    }
+
+    .stat span {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.2;
+    }
+
+    .stat strong {
+      display: block;
+      margin-top: 2px;
+      font-size: 15px;
+      line-height: 1.2;
+    }
+
+    .grid-shell {
+      display: grid;
+      place-items: center;
+      min-height: min(66vh, 680px);
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfb;
+      overflow: auto;
+    }
+
+    .grid {
+      --n: 8;
+      display: grid;
+      grid-template-columns: repeat(var(--n), minmax(22px, 1fr));
+      gap: clamp(3px, 0.7vw, 7px);
+      width: min(100%, 640px);
+      aspect-ratio: 1;
+      user-select: none;
+      touch-action: manipulation;
+    }
+
+    .cell {
+      display: grid;
+      place-items: center;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1;
+      border: 1px solid #cfd8d3;
+      border-radius: 5px;
+      background: var(--cell);
+      color: transparent;
+      cursor: pointer;
+      transition: transform 120ms ease, background-color 120ms ease, border-color 120ms ease;
+    }
+
+    .cell:hover {
+      transform: translateY(-1px);
+      border-color: #8da69a;
+    }
+
+    .cell.infected {
+      background: var(--infected);
+      border-color: #0f536a;
+    }
+
+    .cell.new {
+      background: var(--new);
+      border-color: #a83242;
+    }
+
+    .cell.seed::after,
+    .cell.new::after {
+      content: "";
+      width: 32%;
+      height: 32%;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.78);
+    }
+
+    .controls {
+      padding: 16px;
+    }
+
+    .control-group {
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .control-group:first-child {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    label {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    input[type="number"],
+    input[type="range"] {
+      width: 100%;
+    }
+
+    input[type="number"] {
+      height: 36px;
+      padding: 0 10px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      color: var(--ink);
+      font: inherit;
+    }
+
+    input[type="range"] {
+      accent-color: var(--accent);
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .controls button {
+      height: 38px;
+      border: 1px solid #b7c4bd;
+      border-radius: 6px;
+      background: #ffffff;
+      color: var(--ink);
+      font: inherit;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    button.primary {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: white;
+    }
+
+    button:disabled {
+      cursor: not-allowed;
+      opacity: 0.45;
+    }
+
+    .legend {
+      display: grid;
+      gap: 9px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .legend-row {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .swatch {
+      width: 18px;
+      height: 18px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: var(--cell);
+      flex: 0 0 auto;
+    }
+
+    .swatch.infected {
+      background: var(--infected);
+      border-color: #0f536a;
+    }
+
+    .swatch.new {
+      background: var(--new);
+      border-color: #a83242;
+    }
+
+    .status {
+      min-height: 40px;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    @media (max-width: 860px) {
+      main {
+        width: min(100vw - 20px, 680px);
+        padding: 10px 0;
+      }
+
+      .app {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .stats {
+        justify-content: flex-start;
+      }
+
+      .grid-shell {
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="app">
+      <section class="workspace" aria-label="Bootstrap percolation workspace">
+        <div class="topbar">
+          <h1>Bootstrap Percolation Explorer</h1>
+          <div class="stats" aria-live="polite">
+            <div class="stat"><span>Grid</span><strong id="gridSizeLabel">8 x 8</strong></div>
+            <div class="stat"><span>Seeds</span><strong id="seedCount">0</strong></div>
+            <div class="stat"><span>Time</span><strong id="timeLabel">0 / 0</strong></div>
+            <div class="stat"><span>Percolates</span><strong id="percolatesLabel">No</strong></div>
+          </div>
+        </div>
+
+        <div class="grid-shell">
+          <div id="grid" class="grid" aria-label="Selectable grid"></div>
+        </div>
+      </section>
+
+      <aside class="controls" aria-label="Controls">
+        <div class="control-group">
+          <label for="sizeInput">Grid size <strong id="sizeValue">8</strong></label>
+          <input id="sizeInput" type="number" min="2" max="30" value="8">
+        </div>
+
+        <div class="control-group">
+          <label for="timeSlider">Time step <strong id="sliderValue">0</strong></label>
+          <input id="timeSlider" type="range" min="0" max="0" value="0">
+        </div>
+
+        <div class="control-group">
+          <div class="buttons">
+            <button id="backButton" type="button" title="Previous time step">Back</button>
+            <button id="playButton" class="primary" type="button" title="Play or pause the time lapse">Play</button>
+            <button id="nextButton" type="button" title="Next time step">Next</button>
+            <button id="runButton" type="button" title="Run from selected seeds">Run</button>
+            <button id="clearButton" type="button" title="Clear selected seeds">Clear</button>
+            <button id="fullButton" type="button" title="Select every grid cell">Full</button>
+          </div>
+          <div id="status" class="status" aria-live="polite"></div>
+        </div>
+
+        <div class="control-group">
+          <div class="legend">
+            <div class="legend-row"><span class="swatch"></span><span>Uninfected</span></div>
+            <div class="legend-row"><span class="swatch infected"></span><span>Infected before this step</span></div>
+            <div class="legend-row"><span class="swatch new"></span><span>Newly infected at this step</span></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script>
+    const gridEl = document.getElementById("grid");
+    const sizeInput = document.getElementById("sizeInput");
+    const sizeValue = document.getElementById("sizeValue");
+    const gridSizeLabel = document.getElementById("gridSizeLabel");
+    const seedCount = document.getElementById("seedCount");
+    const timeLabel = document.getElementById("timeLabel");
+    const sliderValue = document.getElementById("sliderValue");
+    const percolatesLabel = document.getElementById("percolatesLabel");
+    const timeSlider = document.getElementById("timeSlider");
+    const statusEl = document.getElementById("status");
+    const playButton = document.getElementById("playButton");
+    const runButton = document.getElementById("runButton");
+    const clearButton = document.getElementById("clearButton");
+    const fullButton = document.getElementById("fullButton");
+    const backButton = document.getElementById("backButton");
+    const nextButton = document.getElementById("nextButton");
+
+    let n = Number(sizeInput.value);
+    let seeds = makeGrid(n, false);
+    let history = [cloneGrid(seeds)];
+    let currentStep = 0;
+    let timer = null;
+
+    function makeGrid(size, value) {
+      return Array.from({ length: size }, () => Array(size).fill(value));
+    }
+
+    function cloneGrid(grid) {
+      return grid.map(row => row.slice());
+    }
+
+    function countCells(grid) {
+      return grid.reduce((sum, row) => sum + row.filter(Boolean).length, 0);
+    }
+
+    function neighbors(row, col, size) {
+      return [
+        [row - 1, col],
+        [row + 1, col],
+        [row, col - 1],
+        [row, col + 1],
+      ].filter(([r, c]) => r >= 0 && c >= 0 && r < size && c < size);
+    }
+
+    function simulate(initial) {
+      const states = [cloneGrid(initial)];
+      let state = cloneGrid(initial);
+      let changed = true;
+
+      while (changed) {
+        changed = false;
+        const next = cloneGrid(state);
+
+        for (let row = 0; row < n; row += 1) {
+          for (let col = 0; col < n; col += 1) {
+            if (state[row][col]) {
+              continue;
+            }
+
+            const infectedNeighbors = neighbors(row, col, n)
+              .filter(([r, c]) => state[r][c])
+              .length;
+
+            if (infectedNeighbors >= 2) {
+              next[row][col] = true;
+              changed = true;
+            }
+          }
+        }
+
+        if (changed) {
+          states.push(next);
+          state = next;
+        }
+      }
+
+      return states;
+    }
+
+    function renderGrid() {
+      gridEl.style.setProperty("--n", n);
+      gridEl.innerHTML = "";
+
+      const visible = history[currentStep];
+      const previous = currentStep > 0 ? history[currentStep - 1] : makeGrid(n, false);
+
+      for (let row = 0; row < n; row += 1) {
+        for (let col = 0; col < n; col += 1) {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "cell";
+          button.setAttribute("aria-label", `row ${row + 1}, column ${col + 1}`);
+          button.dataset.row = row;
+          button.dataset.col = col;
+
+          if (visible[row][col]) {
+            button.classList.add("infected");
+          }
+
+          if (seeds[row][col]) {
+            button.classList.add("seed");
+          }
+
+          if (visible[row][col] && !previous[row][col] && !seeds[row][col]) {
+            button.classList.add("new");
+          }
+
+          button.addEventListener("click", () => toggleSeed(row, col));
+          gridEl.appendChild(button);
+        }
+      }
+    }
+
+    function runSimulation(step = 0) {
+      history = simulate(seeds);
+      currentStep = Math.min(step, history.length - 1);
+      timeSlider.max = String(history.length - 1);
+      timeSlider.value = String(currentStep);
+      update();
+    }
+
+    function toggleSeed(row, col) {
+      seeds[row][col] = !seeds[row][col];
+      stopPlayback();
+      runSimulation(0);
+    }
+
+    function updateLabels() {
+      const finalState = history[history.length - 1];
+      const percolates = countCells(finalState) === n * n;
+
+      sizeValue.textContent = String(n);
+      gridSizeLabel.textContent = `${n} x ${n}`;
+      seedCount.textContent = String(countCells(seeds));
+      timeLabel.textContent = `${currentStep} / ${history.length - 1}`;
+      sliderValue.textContent = String(currentStep);
+      percolatesLabel.textContent = percolates ? "Yes" : "No";
+      statusEl.textContent = percolates
+        ? `Stabilizes after ${history.length - 1} synchronous rounds with every cell infected.`
+        : `Stabilizes after ${history.length - 1} synchronous rounds without full infection.`;
+
+      backButton.disabled = currentStep === 0;
+      nextButton.disabled = currentStep === history.length - 1;
+      timeSlider.disabled = history.length === 1;
+    }
+
+    function update() {
+      renderGrid();
+      updateLabels();
+    }
+
+    function stopPlayback() {
+      if (timer !== null) {
+        clearInterval(timer);
+        timer = null;
+      }
+      playButton.textContent = "Play";
+    }
+
+    function play() {
+      if (timer !== null) {
+        stopPlayback();
+        return;
+      }
+
+      if (history.length === 1) {
+        return;
+      }
+
+      if (currentStep === history.length - 1) {
+        currentStep = 0;
+      }
+
+      playButton.textContent = "Pause";
+      timer = setInterval(() => {
+        currentStep += 1;
+        if (currentStep >= history.length - 1) {
+          currentStep = history.length - 1;
+          stopPlayback();
+        }
+        timeSlider.value = String(currentStep);
+        update();
+      }, 650);
+    }
+
+    sizeInput.addEventListener("change", () => {
+      const nextSize = Math.max(2, Math.min(30, Number(sizeInput.value) || 8));
+      sizeInput.value = String(nextSize);
+      n = nextSize;
+      seeds = makeGrid(n, false);
+      stopPlayback();
+      runSimulation(0);
+    });
+
+    timeSlider.addEventListener("input", () => {
+      currentStep = Number(timeSlider.value);
+      stopPlayback();
+      update();
+    });
+
+    backButton.addEventListener("click", () => {
+      currentStep = Math.max(0, currentStep - 1);
+      timeSlider.value = String(currentStep);
+      stopPlayback();
+      update();
+    });
+
+    nextButton.addEventListener("click", () => {
+      currentStep = Math.min(history.length - 1, currentStep + 1);
+      timeSlider.value = String(currentStep);
+      stopPlayback();
+      update();
+    });
+
+    playButton.addEventListener("click", play);
+    runButton.addEventListener("click", () => runSimulation(0));
+    clearButton.addEventListener("click", () => {
+      seeds = makeGrid(n, false);
+      stopPlayback();
+      runSimulation(0);
+    });
+    fullButton.addEventListener("click", () => {
+      seeds = makeGrid(n, true);
+      stopPlayback();
+      runSimulation(0);
+    });
+
+    runSimulation(0);
+  </script>
+</body>
+</html>
