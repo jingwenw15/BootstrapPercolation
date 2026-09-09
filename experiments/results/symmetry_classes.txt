@@ -1,0 +1,273 @@
+n = 2
+E(n): 2
+raw maximizers: 2
+symmetry classes: 1
+class sizes: 2
+class representative 1:
+. X
+X .
+
+n = 3
+E(n): 4
+raw maximizers: 9
+symmetry classes: 3
+class sizes: 4, 4, 1
+class representative 1:
+. . X
+. . X
+X X .
+class representative 2:
+. . X
+X . X
+X . .
+class representative 3:
+. X .
+X . X
+. X .
+
+n = 4
+E(n): 5
+raw maximizers: 360
+symmetry classes: 48
+class sizes: 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 4, 4, 4, 4, 4, 4
+class representative 1:
+. . . X
+. . . .
+. . . X
+X X . X
+class representative 2:
+. . . X
+. . . .
+. . X X
+X X . .
+class representative 3:
+. . . X
+. . . .
+X . . .
+X . X X
+class representative 4:
+. . . X
+. . . .
+X . X X
+X . . .
+class representative 5:
+. . . X
+. . . .
+X X . .
+. . X X
+class representative 6:
+. . . X
+. . . .
+X X . X
+. . . X
+class representative 7:
+. . . X
+. . . X
+. . . .
+X X . X
+class representative 8:
+. . . X
+. . . X
+. . X .
+X X . .
+class representative 9:
+. . . X
+. . . X
+. X . .
+X . X .
+class representative 10:
+. . . X
+. . . X
+. X X .
+X . . .
+class representative 11:
+. . . X
+. . . X
+X . . .
+. . X X
+class representative 12:
+. . . X
+. . . X
+X . . .
+. X X .
+class representative 13:
+. . . X
+. . . X
+X . . .
+X . X .
+class representative 14:
+. . . X
+. . . X
+X . X .
+. . X .
+class representative 15:
+. . . X
+. . . X
+X . X .
+. X . .
+class representative 16:
+. . . X
+. . . X
+X . X .
+X . . .
+class representative 17:
+. . . X
+. . . X
+X X . .
+. . . X
+class representative 18:
+. . . X
+. . . X
+X X . .
+. . X .
+class representative 19:
+. . . X
+. . X .
+X . . X
+X . . .
+class representative 20:
+. . . X
+. . X .
+X . X .
+X . . .
+class representative 21:
+. . . X
+. X . .
+. . . .
+X X . X
+class representative 22:
+. . . X
+. X . .
+X . . .
+X . . X
+class representative 23:
+. . . X
+. X . .
+X . . X
+. . . X
+class representative 24:
+. . . X
+. X . .
+X . X .
+. X . .
+class representative 25:
+. . . X
+. X . X
+. . . .
+X X . .
+class representative 26:
+. . . X
+. X . X
+X . . .
+. . . X
+class representative 27:
+. . . X
+. X . X
+X . . .
+. X . .
+class representative 28:
+. . . X
+X . . .
+. . . .
+X X . X
+class representative 29:
+. . . X
+X . . .
+. . . X
+. X . X
+class representative 30:
+. . . X
+X . . .
+. . . X
+X X . .
+class representative 31:
+. . . X
+X . . .
+. X . .
+. X . X
+class representative 32:
+. . . X
+X . . .
+. X . X
+. X . .
+class representative 33:
+. . . X
+X . . .
+X . . .
+. X X .
+class representative 34:
+. . . X
+X . . .
+X . X .
+. . X .
+class representative 35:
+. . . X
+X . . X
+. . . .
+. . X X
+class representative 36:
+. . . X
+X . . X
+. . . .
+. X . X
+class representative 37:
+. . . X
+X . . X
+. . . .
+X X . .
+class representative 38:
+. . . X
+X . . X
+. . X .
+. . X .
+class representative 39:
+. . . X
+X . . X
+. X . .
+. X . .
+class representative 40:
+. . . X
+X . . X
+X . . .
+. X . .
+class representative 41:
+. . . X
+X X . .
+. . . .
+. X . X
+class representative 42:
+. . . X
+X X . .
+. . . .
+X . . X
+class representative 43:
+. . . X
+X X . .
+. . . X
+. X . .
+class representative 44:
+. . . X
+X X . .
+. . X .
+. . X .
+class representative 45:
+. . . X
+X X . X
+. . . .
+. . X .
+class representative 46:
+. . . X
+X X . X
+. . . .
+. X . .
+class representative 47:
+. . X .
+X . . .
+. . . X
+. X . X
+class representative 48:
+. . X .
+X . . .
+. . X X
+. X . .
+

@@ -3,6 +3,7 @@ using Test
 include("../src/simulation.jl")
 include("../src/minimal.jl")
 include("../experiments/enumerate.jl")
+include("../experiments/symmetry.jl")
 
 @testset "Bootstrap Percolation Simulator" begin 
 
@@ -101,6 +102,57 @@ include("../experiments/enumerate.jl")
         @test all(finalGrid .== "X")
     end
     
+end
+
+@testset "Symmetry Reduction" begin
+    @testset "Eight symmetries preserve square shape and entries" begin
+        grid = [
+            "a" "b" "c";
+            "d" "e" "f";
+            "g" "h" "i"
+        ]
+
+        symmetries = square_symmetries(grid)
+
+        @test length(symmetries) == 8
+        @test all(size(symmetry) == (3, 3) for symmetry in symmetries)
+        @test length(Set(grid_key(symmetry) for symmetry in symmetries)) == 8
+        @test all(sort(vec(symmetry)) == sort(vec(grid)) for symmetry in symmetries)
+    end
+
+    @testset "Canonical key is invariant under square symmetries" begin
+        grid = [
+            "." "X" "X";
+            "X" "." ".";
+            "X" "." "."
+        ]
+
+        key = canonical_key(grid)
+
+        @test all(canonical_key(symmetry) == key for symmetry in square_symmetries(grid))
+    end
+
+    @testset "Symmetry classes cover all reported maximizers" begin
+        for n in 2:4
+            result = enumerate_minimal_percolating(n)
+            classes = symmetry_classes(result.maximizers)
+
+            @test sum(length(grids) for grids in values(classes)) == length(result.maximizers)
+            @test all(!isempty(grids) for grids in values(classes))
+            @test all(is_minimal_percolating(grid) for grids in values(classes) for grid in grids)
+        end
+    end
+
+    @testset "Exact symmetry-class counts for current baseline" begin
+        expected_classes = Dict(2 => 1, 3 => 3, 4 => 48)
+
+        for n in 2:4
+            report = symmetry_class_report(n)
+
+            @test report.symmetry_classes == expected_classes[n]
+            @test sum(report.class_sizes) == report.raw_maximizers
+        end
+    end
 end
 
 
