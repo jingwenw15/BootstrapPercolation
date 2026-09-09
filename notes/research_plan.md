@@ -214,6 +214,10 @@ Expected artifact:
 - `experiments/features.jl`
 - machine-readable summaries under `experiments/results/`
 
+Preliminary Stage 4A status: rectangular exact table complete for
+`2 <= m <= n <= 5`, with selected additional cases `2 x 6`, `3 x 6`, and
+`4 x 6`. See `notes/rectangle_findings.md`.
+
 ### Stage 5: Conjecture Note
 
 Summarize observed sequences, densities, representative configurations, and

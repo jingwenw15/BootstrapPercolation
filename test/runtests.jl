@@ -116,6 +116,11 @@ end
             "." "X";
             "X" "."
         ]
+
+        @test grid_from_positions(2, 3, [1, 3, 5]) == [
+            "X" "." "X";
+            "." "X" "."
+        ]
     end
 
     @testset "Descending search matches exhaustive baseline" begin
@@ -127,6 +132,18 @@ end
             @test result.maximum_size == baseline.maximum_size
             @test length(result.maximizers) == length(baseline.maximizers)
             @test Set(grid_key.(result.maximizers)) == Set(grid_key.(baseline.maximizers))
+        end
+    end
+
+    @testset "Rectangle search is transpose invariant for small grids" begin
+        for (rows, cols) in [(2, 3), (2, 4), (3, 4)]
+            result = exact_search_descending(rows, cols; upper_size = morris_upper_bound_size(rows, cols))
+            transposed = exact_search_descending(cols, rows; upper_size = morris_upper_bound_size(cols, rows))
+
+            @test result.certified
+            @test transposed.certified
+            @test result.maximum_size == transposed.maximum_size
+            @test length(result.maximizers) == length(transposed.maximizers)
         end
     end
 end

@@ -1,0 +1,210 @@
+Using Morris upper bound start size floor((rows + 2)(cols + 2) / 6) = 8
+grid = 4 x 6
+search size range: 8 down to 1
+total configurations checked in size-ordered search: 1081575
+checked by size:
+  size 8: 735471
+  size 7: 346104
+E(n): 7
+configurations attaining E(n): 40
+single-removal verification passed: true
+maximizer 1:
+X X . X X .
+. . . . . .
+. . . . X X
+. X . . . .
+maximizer 2:
+X X . . X X
+. . . . . .
+. X X . . .
+. . . . X .
+maximizer 3:
+X X . . X X
+. . . . . .
+. . . X X .
+. X . . . .
+maximizer 4:
+X X . . . X
+. . . . . X
+. . . X X .
+. X . . . .
+maximizer 5:
+X X . . . X
+. . . . . .
+. X X . X .
+. . . . X .
+maximizer 6:
+X X . . . X
+. . . . . .
+. . . . X .
+. X X . X .
+maximizer 7:
+X X . . . .
+. . . . X X
+X . . . . .
+. . . X X .
+maximizer 8:
+X . . X X .
+. . . . . X
+. X . . . X
+. X . . . .
+maximizer 9:
+X . . X X .
+. . . . . .
+. X . . X X
+. X . . . .
+maximizer 10:
+X . . . X X
+X . . . . .
+. X X . . .
+. . . . X .
+maximizer 11:
+X . . . X X
+. . . . . .
+. X . X X .
+. X . . . .
+maximizer 12:
+X . . . X X
+. . . . . .
+. X . . . .
+. X . X X .
+maximizer 13:
+. X X . X X
+. . . . . .
+X X . . . .
+. . . . X .
+maximizer 14:
+. X X . X .
+. . . . X .
+. . . . . .
+X X . . . X
+maximizer 15:
+. X X . . X
+X . . . . .
+X . . . X .
+. . . . X .
+maximizer 16:
+. X X . . X
+. . . . . .
+X X . . X .
+. . . . X .
+maximizer 17:
+. X X . . .
+. . . . X X
+X X . . . .
+. . . . X .
+maximizer 18:
+. X X . . .
+. . . . . X
+X X . . X .
+. . . . X .
+maximizer 19:
+. X X . . .
+. . . . . X
+X X . . . .
+. . . . X X
+maximizer 20:
+. X . X X .
+. X . . . .
+. . . . . .
+X . . . X X
+maximizer 21:
+. X . . . .
+. X . X X .
+. . . . . .
+X . . . X X
+maximizer 22:
+. X . . . .
+. X . . X X
+X . . . . .
+. . . X X .
+maximizer 23:
+. X . . . .
+. X . . X X
+. . . . . .
+X . . X X .
+maximizer 24:
+. X . . . .
+. X . . . X
+. . . . . X
+X . . X X .
+maximizer 25:
+. X . . . .
+. . . X X .
+. . . . . X
+X X . . . X
+maximizer 26:
+. X . . . .
+. . . X X .
+. . . . . .
+X X . . X X
+maximizer 27:
+. X . . . .
+. . . . X X
+X X . . . .
+. . . X X .
+maximizer 28:
+. X . . . .
+. . . . X X
+. . . . . .
+X X . X X .
+maximizer 29:
+. . . X X .
+X X . . . .
+. . . . X X
+. X . . . .
+maximizer 30:
+. . . X X .
+X . . . . .
+. X . . X X
+. X . . . .
+maximizer 31:
+. . . X X .
+X . . . . .
+. . . . X X
+X X . . . .
+maximizer 32:
+. . . . X X
+X X . . . .
+. . . . . X
+. X X . . .
+maximizer 33:
+. . . . X .
+X X . . X .
+. . . . . X
+. X X . . .
+maximizer 34:
+. . . . X .
+X X . . X .
+. . . . . .
+. X X . . X
+maximizer 35:
+. . . . X .
+X X . . . .
+. . . . X X
+. X X . . .
+maximizer 36:
+. . . . X .
+X X . . . .
+. . . . . .
+. X X . X X
+maximizer 37:
+. . . . X .
+X . . . X .
+X . . . . .
+. X X . . X
+maximizer 38:
+. . . . X .
+. X X . X .
+. . . . . .
+X X . . . X
+maximizer 39:
+. . . . X .
+. X X . . .
+X . . . . .
+X . . . X X
+maximizer 40:
+. . . . X .
+. X X . . .
+. . . . . .
+X X . . X X
