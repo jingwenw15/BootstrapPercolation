@@ -1,0 +1,71 @@
+n = 5
+E(n): 7
+raw maximizers: 88
+symmetry classes: 11
+class sizes: 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8
+class representative 1:
+. . . . X
+. X X . .
+. . . . .
+X X . . X
+. . . . X
+class representative 2:
+. . . . X
+. X X . .
+X . . . .
+X . . . X
+. . . . X
+class representative 3:
+. . . . X
+. X X . X
+. . . . .
+X X . . .
+. . . . X
+class representative 4:
+. . . . X
+X . . . X
+. . . . .
+. X . . .
+. X . X X
+class representative 5:
+. . . . X
+X . . . X
+. . . . .
+. X . X X
+. X . . .
+class representative 6:
+. . . . X
+X X . . .
+. . . . .
+. . . . X
+. X X . X
+class representative 7:
+. . . . X
+X X . . X
+. . . . .
+. . . X X
+. X . . .
+class representative 8:
+. . . X .
+X . . X .
+. . . . .
+. X . X X
+. X . . .
+class representative 9:
+. . . X .
+X . . X .
+. . . . X
+. X . . X
+. X . . .
+class representative 10:
+. . . X .
+X . . X .
+X . . . .
+. . . . X
+X X . . .
+class representative 11:
+. . . X .
+X X . . .
+. . . . X
+X . . . .
+X . . X .

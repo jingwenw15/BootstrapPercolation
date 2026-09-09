@@ -182,6 +182,29 @@ Expected artifact:
 - `experiments/search_exact.jl`
 - exact `E(5)` if feasible, otherwise a bottleneck report
 
+Status: complete.
+
+The search uses Morris's upper bound
+
+```text
+E(n) <= floor((n + 2)^2 / 6)
+```
+
+as the starting size, then checks candidate sizes in descending order. For
+`n = 5`, this starts at size `8`. The computation checked all `C(25, 8)`
+size-8 configurations and all `C(25, 7)` size-7 configurations.
+
+Results:
+
+| n | upper size checked first | configurations checked | E(n) | raw maximizers | symmetry classes |
+|---|-------------------------:|-----------------------:|-----:|---------------:|-----------------:|
+| 5 | 8                        | 1,562,275              | 7    | 88             | 11               |
+
+All 88 maximizers pass the single-removal verification. The full exact-search
+report is saved in `experiments/results/exact_search_n5.txt`; the
+symmetry-reduced representatives are saved in
+`experiments/results/symmetry_classes_n5.txt`.
+
 ### Stage 4: Feature Extraction
 
 Compute structural statistics for maximizers and symmetry-class representatives.

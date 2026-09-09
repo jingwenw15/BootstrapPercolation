@@ -1,0 +1,538 @@
+Using Morris upper bound start size floor((n + 2)^2 / 6) = 8
+n = 5
+search size range: 8 down to 1
+total configurations checked in size-ordered search: 1562275
+checked by size:
+  size 8: 1081575
+  size 7: 480700
+E(n): 7
+configurations attaining E(n): 88
+single-removal verification passed: true
+maximizer 1:
+X X . X .
+. . . X .
+. . . . .
+X . . . X
+X . . . .
+maximizer 2:
+X X . X .
+. . . X .
+. . . . .
+X . . . X
+. . X . .
+maximizer 3:
+X X . X .
+. . . X .
+. . . . .
+. X . . X
+. X . . .
+maximizer 4:
+X X . X .
+. . . X .
+. . . . .
+. . . X X
+. X . . .
+maximizer 5:
+X X . . X
+. . . . X
+. . . . .
+. . . X X
+. X . . .
+maximizer 6:
+X X . . X
+. . . . .
+X . . . .
+X . . X .
+. . . X .
+maximizer 7:
+X X . . X
+. . . . .
+. X . . .
+. X . X .
+. . . X .
+maximizer 8:
+X X . . X
+. . . . .
+. . . X .
+. X . X .
+. X . . .
+maximizer 9:
+X X . . X
+. . . . .
+. . . X .
+. . . X .
+. X X . .
+maximizer 10:
+X X . . .
+. . . . X
+X . . . .
+X . . X .
+. . . X .
+maximizer 11:
+X . X X .
+X . . . .
+. . . . .
+. . . X X
+X . . . .
+maximizer 12:
+X . X X .
+X . . . .
+. . . . .
+. . . X X
+. X . . .
+maximizer 13:
+X . . X X
+X . . . .
+. . . . .
+X X . . .
+. . . X .
+maximizer 14:
+X . . X X
+. . . . .
+. X . . .
+. X . X .
+. . . X .
+maximizer 15:
+X . . X X
+. . . . .
+. X . . .
+. X . . .
+. . X X .
+maximizer 16:
+X . . X X
+. . . . .
+. . . X .
+. X . X .
+. X . . .
+maximizer 17:
+X . . X X
+. . . . .
+. . . . X
+. X . . X
+. X . . .
+maximizer 18:
+X . . X .
+X . . . .
+. . . . X
+X X . . .
+. . . X .
+maximizer 19:
+X . . . .
+X . X X .
+. . . . .
+. . . X X
+X . . . .
+maximizer 20:
+X . . . .
+X . . X X
+. . . . .
+X X . . .
+. . . X .
+maximizer 21:
+X . . . .
+X . . X X
+. . . . .
+. . X X .
+X . . . .
+maximizer 22:
+X . . . .
+X . . . X
+. . . . X
+. . X X .
+X . . . .
+maximizer 23:
+X . . . .
+X . . . X
+. . . . .
+X X . X .
+. . . X .
+maximizer 24:
+X . . . .
+X . . . X
+. . . . .
+. . . X .
+X X . X .
+maximizer 25:
+X . . . .
+. . X X .
+. . . . X
+X . . . X
+X . . . .
+maximizer 26:
+X . . . .
+. . X X .
+. . . . .
+X . . X X
+X . . . .
+maximizer 27:
+X . . . .
+. . . X X
+. . . . .
+X . X X .
+X . . . .
+maximizer 28:
+X . . . .
+. . . X X
+. . . . .
+X . . . .
+X . X X .
+maximizer 29:
+. X X . X
+. . . . X
+. . . . .
+X X . . .
+. . . X .
+maximizer 30:
+. X X . X
+. . . . X
+. . . . .
+X X . . .
+. . . . X
+maximizer 31:
+. X X . .
+. . . X X
+. . . . .
+X X . . .
+. . . X .
+maximizer 32:
+. X X . .
+. . . X .
+. . . X .
+. . . . .
+X X . . X
+maximizer 33:
+. X . X X
+. X . . .
+. . . . .
+X X . . .
+. . . X .
+maximizer 34:
+. X . X X
+. X . . .
+. . . . .
+X . . X .
+. . . X .
+maximizer 35:
+. X . X X
+. X . . .
+. . . . .
+X . . . X
+. . X . .
+maximizer 36:
+. X . X X
+. X . . .
+. . . . .
+X . . . X
+. . . . X
+maximizer 37:
+. X . . X
+. . . . X
+X . . . .
+. . . X X
+. X . . .
+maximizer 38:
+. X . . .
+. X . X X
+. . . . .
+X X . . .
+. . . X .
+maximizer 39:
+. X . . .
+. X . X X
+. . . . .
+X . . X .
+. . . X .
+maximizer 40:
+. X . . .
+. X . X X
+. . . . .
+X . . . X
+. . . . X
+maximizer 41:
+. X . . .
+. X . X .
+. . . X .
+. . . . .
+X X . . X
+maximizer 42:
+. X . . .
+. X . X .
+. . . X .
+. . . . .
+X . . X X
+maximizer 43:
+. X . . .
+. X . . X
+X . . . .
+X . . X .
+. . . X .
+maximizer 44:
+. X . . .
+. X . . X
+. . . . X
+X . . X .
+. . . X .
+maximizer 45:
+. X . . .
+. X . . X
+. . . . X
+X . . . .
+. . . X X
+maximizer 46:
+. X . . .
+. X . . X
+. . . . X
+. . . . .
+X . . X X
+maximizer 47:
+. X . . .
+. X . . X
+. . . . .
+X X . X .
+. . . X .
+maximizer 48:
+. X . . .
+. X . . X
+. . . . .
+. . . X .
+X X . X .
+maximizer 49:
+. X . . .
+. . . X X
+X . . . .
+. . . . X
+. X . . X
+maximizer 50:
+. X . . .
+. . . X X
+. . . . .
+X X . X .
+. . . X .
+maximizer 51:
+. X . . .
+. . . X X
+. . . . .
+X X . . X
+. . . . X
+maximizer 52:
+. X . . .
+. . . X X
+. . . . .
+X X . . .
+. . X X .
+maximizer 53:
+. X . . .
+. . . X X
+. . . . .
+X . . . .
+X . X X .
+maximizer 54:
+. X . . .
+. . . X X
+. . . . .
+. . . X .
+X X . X .
+maximizer 55:
+. X . . .
+. . . X X
+. . . . .
+. . . . X
+X X . . X
+maximizer 56:
+. . X X .
+X X . . .
+. . . . .
+. . . X X
+. X . . .
+maximizer 57:
+. . X X .
+. X . . .
+. X . . .
+. . . . .
+X . . X X
+maximizer 58:
+. . X . .
+X . . . X
+. . . . .
+. X . . .
+. X . X X
+maximizer 59:
+. . X . .
+X . . . X
+. . . . .
+. . . X .
+X X . X .
+maximizer 60:
+. . . X X
+X . . . .
+. . . . X
+. X . . X
+. X . . .
+maximizer 61:
+. . . X .
+X X . X .
+. . . . .
+X . . . X
+X . . . .
+maximizer 62:
+. . . X .
+X X . X .
+. . . . .
+. X . . X
+. X . . .
+maximizer 63:
+. . . X .
+X X . X .
+. . . . .
+. . . X X
+. X . . .
+maximizer 64:
+. . . X .
+X X . . .
+. . . . X
+X . . . .
+X . . X .
+maximizer 65:
+. . . X .
+X X . . .
+. . . . .
+X . . X X
+X . . . .
+maximizer 66:
+. . . X .
+X X . . .
+. . . . .
+X . . . .
+X . . X X
+maximizer 67:
+. . . X .
+X X . . .
+. . . . .
+. X . X X
+. X . . .
+maximizer 68:
+. . . X .
+X X . . .
+. . . . .
+. X . . .
+. X . X X
+maximizer 69:
+. . . X .
+X X . . .
+. . . . .
+. . . X X
+. X X . .
+maximizer 70:
+. . . X .
+X X . . .
+. . . . .
+. . . . X
+. X X . X
+maximizer 71:
+. . . X .
+X . . X .
+X . . . .
+. X . . X
+. X . . .
+maximizer 72:
+. . . X .
+X . . X .
+X . . . .
+. . . . X
+X X . . .
+maximizer 73:
+. . . X .
+X . . X .
+X . . . .
+. . . . .
+X X . . X
+maximizer 74:
+. . . X .
+X . . X .
+. . . . X
+. X . . X
+. X . . .
+maximizer 75:
+. . . X .
+X . . X .
+. . . . .
+. X . X X
+. X . . .
+maximizer 76:
+. . . X .
+X . . X .
+. . . . .
+. X . . .
+. X . X X
+maximizer 77:
+. . . X .
+. X . X .
+. X . . .
+. . . . .
+X X . . X
+maximizer 78:
+. . . X .
+. X . X .
+. X . . .
+. . . . .
+X . . X X
+maximizer 79:
+. . . . X
+X X . . X
+. . . . .
+. X X . .
+. . . . X
+maximizer 80:
+. . . . X
+X X . . X
+. . . . .
+. . . X X
+. X . . .
+maximizer 81:
+. . . . X
+X X . . .
+. . . . .
+. X X . X
+. . . . X
+maximizer 82:
+. . . . X
+X X . . .
+. . . . .
+. . . . X
+. X X . X
+maximizer 83:
+. . . . X
+X . . . X
+X . . . .
+. X X . .
+. . . . X
+maximizer 84:
+. . . . X
+X . . . X
+. . . . .
+. X . X X
+. X . . .
+maximizer 85:
+. . . . X
+X . . . X
+. . . . .
+. X . . .
+. X . X X
+maximizer 86:
+. . . . X
+. X X . X
+. . . . .
+X X . . .
+. . . . X
+maximizer 87:
+. . . . X
+. X X . .
+X . . . .
+X . . . X
+. . . . X
+maximizer 88:
+. . . . X
+. X X . .
+. . . . .
+X X . . X
+. . . . X

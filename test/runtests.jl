@@ -4,6 +4,7 @@ include("../src/simulation.jl")
 include("../src/minimal.jl")
 include("../experiments/enumerate.jl")
 include("../experiments/symmetry.jl")
+include("../experiments/search_exact.jl")
 
 @testset "Bootstrap Percolation Simulator" begin 
 
@@ -102,6 +103,32 @@ include("../experiments/symmetry.jl")
         @test all(finalGrid .== "X")
     end
     
+end
+
+@testset "Size-Ordered Exact Search" begin
+    @testset "Grid generation from positions matches row-major convention" begin
+        @test grid_from_positions(2, [1, 4]) == [
+            "X" ".";
+            "." "X"
+        ]
+
+        @test grid_from_positions(2, [2, 3]) == [
+            "." "X";
+            "X" "."
+        ]
+    end
+
+    @testset "Descending search matches exhaustive baseline" begin
+        for n in 2:4
+            baseline = enumerate_minimal_percolating(n)
+            result = exact_search_descending(n; upper_size = n * n)
+
+            @test result.certified
+            @test result.maximum_size == baseline.maximum_size
+            @test length(result.maximizers) == length(baseline.maximizers)
+            @test Set(grid_key.(result.maximizers)) == Set(grid_key.(baseline.maximizers))
+        end
+    end
 end
 
 @testset "Symmetry Reduction" begin
