@@ -113,23 +113,96 @@ The construction also matches the exact search values for every `2 <= n <= 12`.
 The generated examples through `n = 15` are saved in
 `experiments/results/two_row_constructions_2_to_15.txt`.
 
-## Remaining Proof Obligation
+## Percolation Mechanism
 
-The only part not written as a formal mathematical proof here is the inductive
-verification that the construction is inclusion-minimal percolating for every
-`n`.
+Write the top-row cell in column `j` as `T_j` and the bottom-row cell as `B_j`.
 
-The intended proof should use the repeated block structure:
+The construction is designed so that the bottom row fills first:
+
+- in every repeated block `01 01 00`, the empty bottom cell in the `00` column
+  has infected bottom neighbors on both sides, except at the terminal end where
+  the terminal block supplies the missing neighbor or vertical support;
+- therefore the initially empty bottom cells become infected before the top row
+  has to do any substantial work.
+
+After the bottom row has filled, the top row is infected by a right-to-left
+wave. The terminal block always supplies a top seed at the right end:
+
+- `... 11` for `n = 0, 1 mod 3`;
+- `... 10` for `n = 2 mod 3`.
+
+Once `T_{j+1}` is infected and `B_j` is infected, the cell `T_j` has two
+infected neighbors and becomes infected. Thus the top infection propagates one
+column at a time from right to left.
+
+The infection-time matrices computed by the simulator have exactly this shape:
+the bottom row is infected at time `0` or `1`, and the top row then fills from
+right to left.
+
+## Minimality Mechanism
+
+There are two kinds of initially infected cells.
+
+### Removing The Top Seed
+
+The construction has exactly one top-row seed. If that seed is removed, then the
+top row has no initially infected cells. A top-row cell can only become infected
+using its vertical bottom neighbor together with an infected horizontal top
+neighbor. Since there is no first infected top-row cell, the top row never
+starts. Hence the set does not percolate.
+
+### Removing A Bottom Seed
+
+Deleting a bottom seed creates a stable obstruction in the bottom row.
+
+In the repeated block pattern
 
 ```text
 01 01 00
 ```
 
-together with the terminal block determined by `n mod 3`. The infection spreads
-through the repeated blocks once the terminal columns activate the nearest empty
-column. Minimality should follow because each seed is needed either to complete
-its own column or to supply one of the two neighbors that activates a later
-empty column.
+the bottom seeds occur in adjacent pairs followed by an empty bottom cell. If
+one of the two bottom seeds in such a pair is removed, then either:
+
+- the removed cell and the following empty bottom cell form two adjacent
+  uninfected bottom cells, or
+- the preceding empty bottom cell and the removed cell form two adjacent
+  uninfected bottom cells.
+
+At the left boundary, removing the first bottom seed leaves the first column
+uninfected forever. At the right boundary, the terminal block gives the analogous
+one- or two-column obstruction.
+
+For an interior adjacent uninfected pair `B_j, B_{j+1}`, infection cannot pass
+through the pair:
+
+- `B_j` needs either `B_{j-1}` and `B_{j+1}`, or `B_{j+1}` and `T_j`, or
+  `B_{j-1}` and `T_j`;
+- `B_{j+1}` has the analogous dependency;
+- the top cells `T_j` and `T_{j+1}` also need vertical support from the
+  corresponding bottom cells in order for the right-to-left top wave to cross.
+
+Thus the pair creates a mutual dependency: the bottom cells need the top cells
+or each other, while the top cells need the bottom cells. The infection may fill
+on the right side of the obstruction, but it cannot cross the obstruction and
+infect every cell.
+
+This matches the simulator's removal checks: after deleting any bottom seed, the
+final state always contains an uninfected boundary cell or an adjacent pair of
+uninfected bottom cells together with the corresponding top-row blockage.
+
+## Formal Proof Still To Write
+
+The remaining polishing work is to convert the mechanisms above into a concise
+induction over the repeated block `01 01 00`.
+
+The proof should have three lemmas:
+
+1. bottom-row filling lemma;
+2. top-row right-to-left propagation lemma;
+3. bottom-seed removal barrier lemma.
+
+Together with Morris's upper bound, these lemmas prove the formula.
 
 ## Research Status
 
