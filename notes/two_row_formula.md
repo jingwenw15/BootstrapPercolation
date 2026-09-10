@@ -139,7 +139,7 @@ The infection-time matrices computed by the simulator have exactly this shape:
 the bottom row is infected at time `0` or `1`, and the top row then fills from
 right to left.
 
-## Minimality Mechanism
+## Minimality Proof
 
 There are two kinds of initially infected cells.
 
@@ -161,48 +161,87 @@ In the repeated block pattern
 01 01 00
 ```
 
-the bottom seeds occur in adjacent pairs followed by an empty bottom cell. If
-one of the two bottom seeds in such a pair is removed, then either:
+the bottom seeds occur in adjacent pairs followed by an empty bottom cell. If a
+bottom seed is removed, then one of the following happens:
 
-- the removed cell and the following empty bottom cell form two adjacent
-  uninfected bottom cells, or
-- the preceding empty bottom cell and the removed cell form two adjacent
-  uninfected bottom cells.
+- at the left boundary, the first bottom cell is left uninfected;
+- otherwise, the removed cell and one adjacent originally empty bottom cell
+  form a pair of adjacent uninfected bottom cells.
 
-At the left boundary, removing the first bottom seed leaves the first column
-uninfected forever. At the right boundary, the terminal block gives the analogous
-one- or two-column obstruction.
+More explicitly:
 
-For an interior adjacent uninfected pair `B_j, B_{j+1}`, infection cannot pass
-through the pair:
+- if the removed bottom seed is the first seed of a pair, then the preceding
+  column is a `00` column, except at the left boundary;
+- if the removed bottom seed is the second seed of a pair, then the following
+  column is a `00` column;
+- if the removed bottom seed lies in the terminal block, the terminal block was
+  chosen so that the same adjacent-pair obstruction still exists.
 
-- `B_j` needs either `B_{j-1}` and `B_{j+1}`, or `B_{j+1}` and `T_j`, or
-  `B_{j-1}` and `T_j`;
-- `B_{j+1}` has the analogous dependency;
-- the top cells `T_j` and `T_{j+1}` also need vertical support from the
-  corresponding bottom cells in order for the right-to-left top wave to cross.
+So, apart from the left-boundary case, there are adjacent columns `a` and
+`a + 1` such that both `B_a` and `B_{a+1}` are initially uninfected after the
+removal.
 
-Thus the pair creates a mutual dependency: the bottom cells need the top cells
-or each other, while the top cells need the bottom cells. The infection may fill
-on the right side of the obstruction, but it cannot cross the obstruction and
-infect every cell.
+We claim that this adjacent bottom pair blocks full percolation.
+
+Let
+
+```text
+S = {B_a, B_{a+1}} union {T_j : 1 <= j <= a+1},
+```
+
+unless `a + 1 = n`, in which case omit the initially infected terminal top cell
+`T_n` and take
+
+```text
+S = {B_{n-1}, B_n} union {T_j : 1 <= j <= n-1}.
+```
+
+Every cell in `S` is initially uninfected after the bottom seed is removed.
+Moreover, no cell in `S` can ever be the first cell of `S` to become infected:
+
+- `B_a` has at most one infected neighbor outside `S`, namely `B_{a-1}`;
+- `B_{a+1}` has at most one infected neighbor outside `S`, namely `B_{a+2}` or,
+  at the right boundary, the terminal top cell `T_n`;
+- each top cell `T_j` with `j < a+1` has all of its top-row neighbors still in
+  `S`, and therefore has at most one infected neighbor outside `S`, namely its
+  bottom neighbor;
+- the boundary top cell `T_{a+1}` has at most one infected neighbor outside
+  `S`, namely `T_{a+2}`.
+
+Thus every cell in `S` always has at most one infected neighbor outside `S`
+until some other cell in `S` is infected. Since infection requires two infected
+neighbors, no cell of `S` can ever become infected. Therefore the modified set
+does not percolate.
+
+The left-boundary case is similar and even simpler. If `B_1` is removed, then
+`T_1` and `B_1` are both initially uninfected. The cell `B_1` can only use
+`B_2` and `T_1`, while `T_1` can only use `T_2` and `B_1`. Since `B_1` and
+`T_1` depend on each other and neither is initially infected, column 1 never
+fully infects.
 
 This matches the simulator's removal checks: after deleting any bottom seed, the
 final state always contains an uninfected boundary cell or an adjacent pair of
 uninfected bottom cells together with the corresponding top-row blockage.
 
-## Formal Proof Still To Write
+## Formal Proof Summary
 
-The remaining polishing work is to convert the mechanisms above into a concise
-induction over the repeated block `01 01 00`.
+Combining the previous sections:
 
-The proof should have three lemmas:
+1. The construction has exactly `floor(2(n + 2) / 3)` initially infected cells.
+2. The construction percolates: the bottom row fills first, then the top row
+   fills from right to left.
+3. Removing the unique top seed prevents the top row from ever starting.
+4. Removing any bottom seed creates a permanent obstruction, so the modified
+   set does not percolate.
 
-1. bottom-row filling lemma;
-2. top-row right-to-left propagation lemma;
-3. bottom-seed removal barrier lemma.
+Therefore the construction is inclusion-minimal percolating and has size
+`floor(2(n + 2) / 3)`. Morris's upper bound gives the reverse inequality, so
 
-Together with Morris's upper bound, these lemmas prove the formula.
+```text
+E(2,n) = floor(2(n + 2) / 3)
+```
+
+for every `n >= 2`.
 
 ## Research Status
 
