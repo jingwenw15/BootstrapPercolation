@@ -5,6 +5,7 @@ include("../src/minimal.jl")
 include("../experiments/enumerate.jl")
 include("../experiments/symmetry.jl")
 include("../experiments/search_exact.jl")
+include("../experiments/two_row_construction.jl")
 
 @testset "Bootstrap Percolation Simulator" begin 
 
@@ -103,6 +104,34 @@ include("../experiments/search_exact.jl")
         @test all(finalGrid .== "X")
     end
     
+end
+
+@testset "Two-Row Extremal Construction" begin
+    @testset "Column-word construction" begin
+        @test grid_from_column_words(["01", "10"]) == [
+            "." "X";
+            "X" "."
+        ]
+    end
+
+    @testset "Construction matches Morris upper bound and is minimal" begin
+        for n in 2:30
+            grid = two_row_extremal_construction(n)
+
+            @test size(grid) == (2, n)
+            @test count_infected(grid) == morris_upper_bound_size(2, n)
+            @test is_minimal_percolating(grid)
+        end
+    end
+
+    @testset "Construction matches exact search for computed range" begin
+        for n in 2:12
+            result = exact_search_summary(2, n; upper_size = morris_upper_bound_size(2, n))
+
+            @test result.certified
+            @test count_infected(two_row_extremal_construction(n)) == result.maximum_size
+        end
+    end
 end
 
 @testset "Size-Ordered Exact Search" begin

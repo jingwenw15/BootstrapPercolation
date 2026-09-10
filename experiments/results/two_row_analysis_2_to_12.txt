@@ -1,0 +1,1570 @@
+n = 2
+upper size: 2
+E(2,n): 2
+raw maximizers: 2
+rectangle symmetry classes: 1
+class 1 size 2: 01 10
+  column counts: 00:0 01:1 10:1 11:0
+
+n = 3
+upper size: 3
+E(2,n): 3
+raw maximizers: 10
+rectangle symmetry classes: 3
+class 1 size 4: 01 00 11
+  column counts: 00:1 01:1 10:0 11:1
+class 2 size 4: 01 01 10
+  column counts: 00:0 01:2 10:1 11:0
+class 3 size 2: 01 10 01
+  column counts: 00:0 01:2 10:1 11:0
+
+n = 4
+upper size: 4
+E(2,n): 4
+raw maximizers: 6
+rectangle symmetry classes: 2
+class 1 size 4: 01 01 00 11
+  column counts: 00:1 01:2 10:0 11:1
+class 2 size 2: 01 01 10 10
+  column counts: 00:0 01:2 10:2 11:0
+
+n = 5
+upper size: 4
+E(2,n): 4
+raw maximizers: 48
+rectangle symmetry classes: 14
+class 1 size 4: 01 00 01 00 11
+  column counts: 00:2 01:2 10:0 11:1
+class 2 size 4: 01 00 01 01 10
+  column counts: 00:1 01:3 10:1 11:0
+class 3 size 4: 01 00 01 10 01
+  column counts: 00:1 01:3 10:1 11:0
+class 4 size 4: 01 00 01 10 10
+  column counts: 00:1 01:2 10:2 11:0
+class 5 size 4: 01 00 10 00 11
+  column counts: 00:2 01:1 10:1 11:1
+class 6 size 4: 01 00 10 01 01
+  column counts: 00:1 01:3 10:1 11:0
+class 7 size 4: 01 00 10 01 10
+  column counts: 00:1 01:2 10:2 11:0
+class 8 size 4: 01 00 10 10 01
+  column counts: 00:1 01:2 10:2 11:0
+class 9 size 2: 01 00 11 00 01
+  column counts: 00:2 01:2 10:0 11:1
+class 10 size 2: 01 00 11 00 10
+  column counts: 00:2 01:1 10:1 11:1
+class 11 size 4: 01 01 00 01 10
+  column counts: 00:1 01:3 10:1 11:0
+class 12 size 4: 01 01 00 10 01
+  column counts: 00:1 01:3 10:1 11:0
+class 13 size 2: 01 10 00 01 10
+  column counts: 00:1 01:2 10:2 11:0
+class 14 size 2: 01 10 00 10 01
+  column counts: 00:1 01:2 10:2 11:0
+
+n = 6
+upper size: 5
+E(2,n): 5
+raw maximizers: 56
+rectangle symmetry classes: 14
+class 1 size 4: 01 00 01 01 00 11
+  column counts: 00:2 01:3 10:0 11:1
+class 2 size 4: 01 00 01 01 10 10
+  column counts: 00:1 01:3 10:2 11:0
+class 3 size 4: 01 00 10 10 00 11
+  column counts: 00:2 01:1 10:2 11:1
+class 4 size 4: 01 00 10 10 01 01
+  column counts: 00:1 01:3 10:2 11:0
+class 5 size 4: 01 00 11 00 01 01
+  column counts: 00:2 01:3 10:0 11:1
+class 6 size 4: 01 00 11 00 10 10
+  column counts: 00:2 01:1 10:2 11:1
+class 7 size 4: 01 01 00 01 00 11
+  column counts: 00:2 01:3 10:0 11:1
+class 8 size 4: 01 01 00 01 01 10
+  column counts: 00:1 01:4 10:1 11:0
+class 9 size 4: 01 01 00 01 10 01
+  column counts: 00:1 01:4 10:1 11:0
+class 10 size 4: 01 01 00 01 10 10
+  column counts: 00:1 01:3 10:2 11:0
+class 11 size 4: 01 01 00 10 00 11
+  column counts: 00:2 01:2 10:1 11:1
+class 12 size 4: 01 01 00 10 01 01
+  column counts: 00:1 01:4 10:1 11:0
+class 13 size 4: 01 01 00 10 01 10
+  column counts: 00:1 01:3 10:2 11:0
+class 14 size 4: 01 01 00 10 10 01
+  column counts: 00:1 01:3 10:2 11:0
+
+n = 7
+upper size: 6
+E(2,n): 6
+raw maximizers: 20
+rectangle symmetry classes: 6
+class 1 size 4: 01 01 00 01 01 00 11
+  column counts: 00:2 01:4 10:0 11:1
+class 2 size 4: 01 01 00 01 01 10 10
+  column counts: 00:1 01:4 10:2 11:0
+class 3 size 4: 01 01 00 10 10 00 11
+  column counts: 00:2 01:2 10:2 11:1
+class 4 size 4: 01 01 00 10 10 01 01
+  column counts: 00:1 01:4 10:2 11:0
+class 5 size 2: 01 01 00 11 00 01 01
+  column counts: 00:2 01:4 10:0 11:1
+class 6 size 2: 01 01 00 11 00 10 10
+  column counts: 00:2 01:2 10:2 11:1
+
+n = 8
+upper size: 6
+E(2,n): 6
+raw maximizers: 320
+rectangle symmetry classes: 84
+class 1 size 4: 01 00 01 00 01 01 00 11
+  column counts: 00:3 01:4 10:0 11:1
+class 2 size 4: 01 00 01 00 01 01 10 10
+  column counts: 00:2 01:4 10:2 11:0
+class 3 size 4: 01 00 01 00 10 10 00 11
+  column counts: 00:3 01:2 10:2 11:1
+class 4 size 4: 01 00 01 00 10 10 01 01
+  column counts: 00:2 01:4 10:2 11:0
+class 5 size 4: 01 00 01 00 11 00 01 01
+  column counts: 00:3 01:4 10:0 11:1
+class 6 size 4: 01 00 01 00 11 00 10 10
+  column counts: 00:3 01:2 10:2 11:1
+class 7 size 4: 01 00 01 01 00 01 00 11
+  column counts: 00:3 01:4 10:0 11:1
+class 8 size 4: 01 00 01 01 00 01 01 10
+  column counts: 00:2 01:5 10:1 11:0
+class 9 size 4: 01 00 01 01 00 01 10 01
+  column counts: 00:2 01:5 10:1 11:0
+class 10 size 4: 01 00 01 01 00 01 10 10
+  column counts: 00:2 01:4 10:2 11:0
+class 11 size 4: 01 00 01 01 00 10 00 11
+  column counts: 00:3 01:3 10:1 11:1
+class 12 size 4: 01 00 01 01 00 10 01 01
+  column counts: 00:2 01:5 10:1 11:0
+class 13 size 4: 01 00 01 01 00 10 01 10
+  column counts: 00:2 01:4 10:2 11:0
+class 14 size 4: 01 00 01 01 00 10 10 01
+  column counts: 00:2 01:4 10:2 11:0
+class 15 size 4: 01 00 01 01 00 11 00 01
+  column counts: 00:3 01:4 10:0 11:1
+class 16 size 4: 01 00 01 01 00 11 00 10
+  column counts: 00:3 01:3 10:1 11:1
+class 17 size 4: 01 00 01 01 10 00 01 01
+  column counts: 00:2 01:5 10:1 11:0
+class 18 size 4: 01 00 01 01 10 00 10 10
+  column counts: 00:2 01:3 10:3 11:0
+class 19 size 4: 01 00 01 01 10 10 00 01
+  column counts: 00:2 01:4 10:2 11:0
+class 20 size 2: 01 00 01 01 10 10 00 10
+  column counts: 00:2 01:3 10:3 11:0
+class 21 size 4: 01 00 01 10 01 00 01 01
+  column counts: 00:2 01:5 10:1 11:0
+class 22 size 4: 01 00 01 10 01 00 10 10
+  column counts: 00:2 01:3 10:3 11:0
+class 23 size 4: 01 00 01 10 10 00 01 01
+  column counts: 00:2 01:4 10:2 11:0
+class 24 size 4: 01 00 01 10 10 00 10 10
+  column counts: 00:2 01:2 10:4 11:0
+class 25 size 4: 01 00 10 00 01 01 00 11
+  column counts: 00:3 01:3 10:1 11:1
+class 26 size 4: 01 00 10 00 01 01 10 10
+  column counts: 00:2 01:3 10:3 11:0
+class 27 size 4: 01 00 10 00 10 10 00 11
+  column counts: 00:3 01:1 10:3 11:1
+class 28 size 4: 01 00 10 00 10 10 01 01
+  column counts: 00:2 01:3 10:3 11:0
+class 29 size 4: 01 00 10 00 11 00 01 01
+  column counts: 00:3 01:3 10:1 11:1
+class 30 size 4: 01 00 10 00 11 00 10 10
+  column counts: 00:3 01:1 10:3 11:1
+class 31 size 4: 01 00 10 01 01 00 01 01
+  column counts: 00:2 01:5 10:1 11:0
+class 32 size 4: 01 00 10 01 01 00 10 10
+  column counts: 00:2 01:3 10:3 11:0
+class 33 size 4: 01 00 10 01 10 00 01 01
+  column counts: 00:2 01:4 10:2 11:0
+class 34 size 4: 01 00 10 01 10 00 10 10
+  column counts: 00:2 01:2 10:4 11:0
+class 35 size 4: 01 00 10 10 00 01 00 11
+  column counts: 00:3 01:2 10:2 11:1
+class 36 size 4: 01 00 10 10 00 01 01 10
+  column counts: 00:2 01:3 10:3 11:0
+class 37 size 4: 01 00 10 10 00 01 10 01
+  column counts: 00:2 01:3 10:3 11:0
+class 38 size 4: 01 00 10 10 00 01 10 10
+  column counts: 00:2 01:2 10:4 11:0
+class 39 size 4: 01 00 10 10 00 10 00 11
+  column counts: 00:3 01:1 10:3 11:1
+class 40 size 4: 01 00 10 10 00 10 01 01
+  column counts: 00:2 01:3 10:3 11:0
+class 41 size 4: 01 00 10 10 00 10 01 10
+  column counts: 00:2 01:2 10:4 11:0
+class 42 size 4: 01 00 10 10 00 10 10 01
+  column counts: 00:2 01:2 10:4 11:0
+class 43 size 4: 01 00 10 10 00 11 00 01
+  column counts: 00:3 01:2 10:2 11:1
+class 44 size 4: 01 00 10 10 00 11 00 10
+  column counts: 00:3 01:1 10:3 11:1
+class 45 size 4: 01 00 10 10 01 00 01 01
+  column counts: 00:2 01:4 10:2 11:0
+class 46 size 4: 01 00 10 10 01 00 10 10
+  column counts: 00:2 01:2 10:4 11:0
+class 47 size 2: 01 00 10 10 01 01 00 10
+  column counts: 00:2 01:3 10:3 11:0
+class 48 size 4: 01 00 11 00 01 00 01 01
+  column counts: 00:3 01:4 10:0 11:1
+class 49 size 4: 01 00 11 00 01 00 10 10
+  column counts: 00:3 01:2 10:2 11:1
+class 50 size 4: 01 00 11 00 10 00 01 01
+  column counts: 00:3 01:3 10:1 11:1
+class 51 size 4: 01 00 11 00 10 00 10 10
+  column counts: 00:3 01:1 10:3 11:1
+class 52 size 4: 01 01 00 01 00 01 00 11
+  column counts: 00:3 01:4 10:0 11:1
+class 53 size 4: 01 01 00 01 00 01 01 10
+  column counts: 00:2 01:5 10:1 11:0
+class 54 size 4: 01 01 00 01 00 01 10 01
+  column counts: 00:2 01:5 10:1 11:0
+class 55 size 4: 01 01 00 01 00 01 10 10
+  column counts: 00:2 01:4 10:2 11:0
+class 56 size 4: 01 01 00 01 00 10 00 11
+  column counts: 00:3 01:3 10:1 11:1
+class 57 size 4: 01 01 00 01 00 10 01 01
+  column counts: 00:2 01:5 10:1 11:0
+class 58 size 4: 01 01 00 01 00 10 01 10
+  column counts: 00:2 01:4 10:2 11:0
+class 59 size 4: 01 01 00 01 00 10 10 01
+  column counts: 00:2 01:4 10:2 11:0
+class 60 size 4: 01 01 00 01 01 00 01 10
+  column counts: 00:2 01:5 10:1 11:0
+class 61 size 4: 01 01 00 01 01 00 10 01
+  column counts: 00:2 01:5 10:1 11:0
+class 62 size 4: 01 01 00 01 10 00 01 01
+  column counts: 00:2 01:5 10:1 11:0
+class 63 size 4: 01 01 00 01 10 00 01 10
+  column counts: 00:2 01:4 10:2 11:0
+class 64 size 4: 01 01 00 01 10 00 10 01
+  column counts: 00:2 01:4 10:2 11:0
+class 65 size 2: 01 01 00 01 10 00 10 10
+  column counts: 00:2 01:3 10:3 11:0
+class 66 size 4: 01 01 00 10 00 01 00 11
+  column counts: 00:3 01:3 10:1 11:1
+class 67 size 4: 01 01 00 10 00 01 01 10
+  column counts: 00:2 01:4 10:2 11:0
+class 68 size 4: 01 01 00 10 00 01 10 01
+  column counts: 00:2 01:4 10:2 11:0
+class 69 size 4: 01 01 00 10 00 01 10 10
+  column counts: 00:2 01:3 10:3 11:0
+class 70 size 4: 01 01 00 10 00 10 00 11
+  column counts: 00:3 01:2 10:2 11:1
+class 71 size 4: 01 01 00 10 00 10 01 01
+  column counts: 00:2 01:4 10:2 11:0
+class 72 size 4: 01 01 00 10 00 10 01 10
+  column counts: 00:2 01:3 10:3 11:0
+class 73 size 4: 01 01 00 10 00 10 10 01
+  column counts: 00:2 01:3 10:3 11:0
+class 74 size 4: 01 01 00 10 01 00 01 10
+  column counts: 00:2 01:4 10:2 11:0
+class 75 size 4: 01 01 00 10 01 00 10 01
+  column counts: 00:2 01:4 10:2 11:0
+class 76 size 2: 01 01 00 10 01 00 10 10
+  column counts: 00:2 01:3 10:3 11:0
+class 77 size 4: 01 01 00 10 10 00 01 10
+  column counts: 00:2 01:3 10:3 11:0
+class 78 size 4: 01 01 00 10 10 00 10 01
+  column counts: 00:2 01:3 10:3 11:0
+class 79 size 4: 01 10 00 01 01 00 01 10
+  column counts: 00:2 01:4 10:2 11:0
+class 80 size 2: 01 10 00 01 01 00 10 01
+  column counts: 00:2 01:4 10:2 11:0
+class 81 size 2: 01 10 00 01 10 00 01 10
+  column counts: 00:2 01:3 10:3 11:0
+class 82 size 4: 01 10 00 01 10 00 10 01
+  column counts: 00:2 01:3 10:3 11:0
+class 83 size 2: 01 10 00 10 01 00 01 10
+  column counts: 00:2 01:3 10:3 11:0
+class 84 size 2: 01 10 00 10 10 00 10 01
+  column counts: 00:2 01:2 10:4 11:0
+
+n = 9
+upper size: 7
+E(2,n): 7
+raw maximizers: 216
+rectangle symmetry classes: 55
+class 1 size 4: 01 00 01 01 00 01 01 00 11
+  column counts: 00:3 01:5 10:0 11:1
+class 2 size 4: 01 00 01 01 00 01 01 10 10
+  column counts: 00:2 01:5 10:2 11:0
+class 3 size 4: 01 00 01 01 00 10 10 00 11
+  column counts: 00:3 01:3 10:2 11:1
+class 4 size 4: 01 00 01 01 00 10 10 01 01
+  column counts: 00:2 01:5 10:2 11:0
+class 5 size 4: 01 00 01 01 00 11 00 01 01
+  column counts: 00:3 01:5 10:0 11:1
+class 6 size 4: 01 00 01 01 00 11 00 10 10
+  column counts: 00:3 01:3 10:2 11:1
+class 7 size 4: 01 00 01 01 10 10 00 01 01
+  column counts: 00:2 01:5 10:2 11:0
+class 8 size 4: 01 00 01 01 10 10 00 10 10
+  column counts: 00:2 01:3 10:4 11:0
+class 9 size 4: 01 00 10 10 00 01 01 00 11
+  column counts: 00:3 01:3 10:2 11:1
+class 10 size 4: 01 00 10 10 00 01 01 10 10
+  column counts: 00:2 01:3 10:4 11:0
+class 11 size 4: 01 00 10 10 00 10 10 00 11
+  column counts: 00:3 01:1 10:4 11:1
+class 12 size 4: 01 00 10 10 00 10 10 01 01
+  column counts: 00:2 01:3 10:4 11:0
+class 13 size 4: 01 00 10 10 00 11 00 01 01
+  column counts: 00:3 01:3 10:2 11:1
+class 14 size 4: 01 00 10 10 00 11 00 10 10
+  column counts: 00:3 01:1 10:4 11:1
+class 15 size 4: 01 00 10 10 01 01 00 01 01
+  column counts: 00:2 01:5 10:2 11:0
+class 16 size 4: 01 00 10 10 01 01 00 10 10
+  column counts: 00:2 01:3 10:4 11:0
+class 17 size 4: 01 00 11 00 01 01 00 01 01
+  column counts: 00:3 01:5 10:0 11:1
+class 18 size 4: 01 00 11 00 01 01 00 10 10
+  column counts: 00:3 01:3 10:2 11:1
+class 19 size 4: 01 00 11 00 10 10 00 01 01
+  column counts: 00:3 01:3 10:2 11:1
+class 20 size 4: 01 00 11 00 10 10 00 10 10
+  column counts: 00:3 01:1 10:4 11:1
+class 21 size 4: 01 01 00 01 00 01 01 00 11
+  column counts: 00:3 01:5 10:0 11:1
+class 22 size 4: 01 01 00 01 00 01 01 10 10
+  column counts: 00:2 01:5 10:2 11:0
+class 23 size 4: 01 01 00 01 00 10 10 00 11
+  column counts: 00:3 01:3 10:2 11:1
+class 24 size 4: 01 01 00 01 00 10 10 01 01
+  column counts: 00:2 01:5 10:2 11:0
+class 25 size 4: 01 01 00 01 00 11 00 01 01
+  column counts: 00:3 01:5 10:0 11:1
+class 26 size 4: 01 01 00 01 00 11 00 10 10
+  column counts: 00:3 01:3 10:2 11:1
+class 27 size 4: 01 01 00 01 01 00 01 00 11
+  column counts: 00:3 01:5 10:0 11:1
+class 28 size 4: 01 01 00 01 01 00 01 01 10
+  column counts: 00:2 01:6 10:1 11:0
+class 29 size 4: 01 01 00 01 01 00 01 10 01
+  column counts: 00:2 01:6 10:1 11:0
+class 30 size 4: 01 01 00 01 01 00 01 10 10
+  column counts: 00:2 01:5 10:2 11:0
+class 31 size 4: 01 01 00 01 01 00 10 00 11
+  column counts: 00:3 01:4 10:1 11:1
+class 32 size 4: 01 01 00 01 01 00 10 01 01
+  column counts: 00:2 01:6 10:1 11:0
+class 33 size 4: 01 01 00 01 01 00 10 01 10
+  column counts: 00:2 01:5 10:2 11:0
+class 34 size 4: 01 01 00 01 01 00 10 10 01
+  column counts: 00:2 01:5 10:2 11:0
+class 35 size 4: 01 01 00 01 01 10 00 01 01
+  column counts: 00:2 01:6 10:1 11:0
+class 36 size 4: 01 01 00 01 01 10 00 10 10
+  column counts: 00:2 01:4 10:3 11:0
+class 37 size 2: 01 01 00 01 10 01 00 01 01
+  column counts: 00:2 01:6 10:1 11:0
+class 38 size 4: 01 01 00 01 10 01 00 10 10
+  column counts: 00:2 01:4 10:3 11:0
+class 39 size 4: 01 01 00 01 10 10 00 01 01
+  column counts: 00:2 01:5 10:2 11:0
+class 40 size 4: 01 01 00 10 00 01 01 00 11
+  column counts: 00:3 01:4 10:1 11:1
+class 41 size 4: 01 01 00 10 00 01 01 10 10
+  column counts: 00:2 01:4 10:3 11:0
+class 42 size 4: 01 01 00 10 00 10 10 00 11
+  column counts: 00:3 01:2 10:3 11:1
+class 43 size 4: 01 01 00 10 00 10 10 01 01
+  column counts: 00:2 01:4 10:3 11:0
+class 44 size 4: 01 01 00 10 00 11 00 01 01
+  column counts: 00:3 01:4 10:1 11:1
+class 45 size 4: 01 01 00 10 00 11 00 10 10
+  column counts: 00:3 01:2 10:3 11:1
+class 46 size 4: 01 01 00 10 01 01 00 10 10
+  column counts: 00:2 01:4 10:3 11:0
+class 47 size 2: 01 01 00 10 01 10 00 01 01
+  column counts: 00:2 01:5 10:2 11:0
+class 48 size 4: 01 01 00 10 10 00 01 00 11
+  column counts: 00:3 01:3 10:2 11:1
+class 49 size 4: 01 01 00 10 10 00 01 01 10
+  column counts: 00:2 01:4 10:3 11:0
+class 50 size 4: 01 01 00 10 10 00 01 10 01
+  column counts: 00:2 01:4 10:3 11:0
+class 51 size 4: 01 01 00 10 10 00 01 10 10
+  column counts: 00:2 01:3 10:4 11:0
+class 52 size 4: 01 01 00 10 10 00 10 00 11
+  column counts: 00:3 01:2 10:3 11:1
+class 53 size 4: 01 01 00 10 10 00 10 01 01
+  column counts: 00:2 01:4 10:3 11:0
+class 54 size 4: 01 01 00 10 10 00 10 01 10
+  column counts: 00:2 01:3 10:4 11:0
+class 55 size 4: 01 01 00 10 10 00 10 10 01
+  column counts: 00:2 01:3 10:4 11:0
+
+n = 10
+upper size: 8
+E(2,n): 8
+raw maximizers: 56
+rectangle symmetry classes: 15
+class 1 size 4: 01 01 00 01 01 00 01 01 00 11
+  column counts: 00:3 01:6 10:0 11:1
+class 2 size 4: 01 01 00 01 01 00 01 01 10 10
+  column counts: 00:2 01:6 10:2 11:0
+class 3 size 4: 01 01 00 01 01 00 10 10 00 11
+  column counts: 00:3 01:4 10:2 11:1
+class 4 size 4: 01 01 00 01 01 00 10 10 01 01
+  column counts: 00:2 01:6 10:2 11:0
+class 5 size 4: 01 01 00 01 01 00 11 00 01 01
+  column counts: 00:3 01:6 10:0 11:1
+class 6 size 4: 01 01 00 01 01 00 11 00 10 10
+  column counts: 00:3 01:4 10:2 11:1
+class 7 size 4: 01 01 00 01 01 10 10 00 01 01
+  column counts: 00:2 01:6 10:2 11:0
+class 8 size 2: 01 01 00 01 01 10 10 00 10 10
+  column counts: 00:2 01:4 10:4 11:0
+class 9 size 4: 01 01 00 10 10 00 01 01 00 11
+  column counts: 00:3 01:4 10:2 11:1
+class 10 size 4: 01 01 00 10 10 00 01 01 10 10
+  column counts: 00:2 01:4 10:4 11:0
+class 11 size 4: 01 01 00 10 10 00 10 10 00 11
+  column counts: 00:3 01:2 10:4 11:1
+class 12 size 4: 01 01 00 10 10 00 10 10 01 01
+  column counts: 00:2 01:4 10:4 11:0
+class 13 size 4: 01 01 00 10 10 00 11 00 01 01
+  column counts: 00:3 01:4 10:2 11:1
+class 14 size 4: 01 01 00 10 10 00 11 00 10 10
+  column counts: 00:3 01:2 10:4 11:1
+class 15 size 2: 01 01 00 10 10 01 01 00 10 10
+  column counts: 00:2 01:4 10:4 11:0
+
+n = 11
+upper size: 8
+E(2,n): 8
+raw maximizers: 1488
+rectangle symmetry classes: 382
+class 1 size 4: 01 00 01 00 01 01 00 01 01 00 11
+  column counts: 00:4 01:6 10:0 11:1
+class 2 size 4: 01 00 01 00 01 01 00 01 01 10 10
+  column counts: 00:3 01:6 10:2 11:0
+class 3 size 4: 01 00 01 00 01 01 00 10 10 00 11
+  column counts: 00:4 01:4 10:2 11:1
+class 4 size 4: 01 00 01 00 01 01 00 10 10 01 01
+  column counts: 00:3 01:6 10:2 11:0
+class 5 size 4: 01 00 01 00 01 01 00 11 00 01 01
+  column counts: 00:4 01:6 10:0 11:1
+class 6 size 4: 01 00 01 00 01 01 00 11 00 10 10
+  column counts: 00:4 01:4 10:2 11:1
+class 7 size 4: 01 00 01 00 01 01 10 10 00 01 01
+  column counts: 00:3 01:6 10:2 11:0
+class 8 size 4: 01 00 01 00 01 01 10 10 00 10 10
+  column counts: 00:3 01:4 10:4 11:0
+class 9 size 4: 01 00 01 00 10 10 00 01 01 00 11
+  column counts: 00:4 01:4 10:2 11:1
+class 10 size 4: 01 00 01 00 10 10 00 01 01 10 10
+  column counts: 00:3 01:4 10:4 11:0
+class 11 size 4: 01 00 01 00 10 10 00 10 10 00 11
+  column counts: 00:4 01:2 10:4 11:1
+class 12 size 4: 01 00 01 00 10 10 00 10 10 01 01
+  column counts: 00:3 01:4 10:4 11:0
+class 13 size 4: 01 00 01 00 10 10 00 11 00 01 01
+  column counts: 00:4 01:4 10:2 11:1
+class 14 size 4: 01 00 01 00 10 10 00 11 00 10 10
+  column counts: 00:4 01:2 10:4 11:1
+class 15 size 4: 01 00 01 00 10 10 01 01 00 01 01
+  column counts: 00:3 01:6 10:2 11:0
+class 16 size 4: 01 00 01 00 10 10 01 01 00 10 10
+  column counts: 00:3 01:4 10:4 11:0
+class 17 size 4: 01 00 01 00 11 00 01 01 00 01 01
+  column counts: 00:4 01:6 10:0 11:1
+class 18 size 4: 01 00 01 00 11 00 01 01 00 10 10
+  column counts: 00:4 01:4 10:2 11:1
+class 19 size 4: 01 00 01 00 11 00 10 10 00 01 01
+  column counts: 00:4 01:4 10:2 11:1
+class 20 size 4: 01 00 01 00 11 00 10 10 00 10 10
+  column counts: 00:4 01:2 10:4 11:1
+class 21 size 4: 01 00 01 01 00 01 00 01 01 00 11
+  column counts: 00:4 01:6 10:0 11:1
+class 22 size 4: 01 00 01 01 00 01 00 01 01 10 10
+  column counts: 00:3 01:6 10:2 11:0
+class 23 size 4: 01 00 01 01 00 01 00 10 10 00 11
+  column counts: 00:4 01:4 10:2 11:1
+class 24 size 4: 01 00 01 01 00 01 00 10 10 01 01
+  column counts: 00:3 01:6 10:2 11:0
+class 25 size 4: 01 00 01 01 00 01 00 11 00 01 01
+  column counts: 00:4 01:6 10:0 11:1
+class 26 size 4: 01 00 01 01 00 01 00 11 00 10 10
+  column counts: 00:4 01:4 10:2 11:1
+class 27 size 4: 01 00 01 01 00 01 01 00 01 00 11
+  column counts: 00:4 01:6 10:0 11:1
+class 28 size 4: 01 00 01 01 00 01 01 00 01 01 10
+  column counts: 00:3 01:7 10:1 11:0
+class 29 size 4: 01 00 01 01 00 01 01 00 01 10 01
+  column counts: 00:3 01:7 10:1 11:0
+class 30 size 4: 01 00 01 01 00 01 01 00 01 10 10
+  column counts: 00:3 01:6 10:2 11:0
+class 31 size 4: 01 00 01 01 00 01 01 00 10 00 11
+  column counts: 00:4 01:5 10:1 11:1
+class 32 size 4: 01 00 01 01 00 01 01 00 10 01 01
+  column counts: 00:3 01:7 10:1 11:0
+class 33 size 4: 01 00 01 01 00 01 01 00 10 01 10
+  column counts: 00:3 01:6 10:2 11:0
+class 34 size 4: 01 00 01 01 00 01 01 00 10 10 01
+  column counts: 00:3 01:6 10:2 11:0
+class 35 size 4: 01 00 01 01 00 01 01 00 11 00 01
+  column counts: 00:4 01:6 10:0 11:1
+class 36 size 4: 01 00 01 01 00 01 01 00 11 00 10
+  column counts: 00:4 01:5 10:1 11:1
+class 37 size 4: 01 00 01 01 00 01 01 10 00 01 01
+  column counts: 00:3 01:7 10:1 11:0
+class 38 size 4: 01 00 01 01 00 01 01 10 00 10 10
+  column counts: 00:3 01:5 10:3 11:0
+class 39 size 4: 01 00 01 01 00 01 01 10 10 00 01
+  column counts: 00:3 01:6 10:2 11:0
+class 40 size 4: 01 00 01 01 00 01 01 10 10 00 10
+  column counts: 00:3 01:5 10:3 11:0
+class 41 size 4: 01 00 01 01 00 01 10 01 00 01 01
+  column counts: 00:3 01:7 10:1 11:0
+class 42 size 4: 01 00 01 01 00 01 10 01 00 10 10
+  column counts: 00:3 01:5 10:3 11:0
+class 43 size 4: 01 00 01 01 00 01 10 10 00 01 01
+  column counts: 00:3 01:6 10:2 11:0
+class 44 size 4: 01 00 01 01 00 01 10 10 00 10 10
+  column counts: 00:3 01:4 10:4 11:0
+class 45 size 4: 01 00 01 01 00 10 00 01 01 00 11
+  column counts: 00:4 01:5 10:1 11:1
+class 46 size 4: 01 00 01 01 00 10 00 01 01 10 10
+  column counts: 00:3 01:5 10:3 11:0
+class 47 size 4: 01 00 01 01 00 10 00 10 10 00 11
+  column counts: 00:4 01:3 10:3 11:1
+class 48 size 4: 01 00 01 01 00 10 00 10 10 01 01
+  column counts: 00:3 01:5 10:3 11:0
+class 49 size 4: 01 00 01 01 00 10 00 11 00 01 01
+  column counts: 00:4 01:5 10:1 11:1
+class 50 size 4: 01 00 01 01 00 10 00 11 00 10 10
+  column counts: 00:4 01:3 10:3 11:1
+class 51 size 4: 01 00 01 01 00 10 01 01 00 01 01
+  column counts: 00:3 01:7 10:1 11:0
+class 52 size 4: 01 00 01 01 00 10 01 01 00 10 10
+  column counts: 00:3 01:5 10:3 11:0
+class 53 size 4: 01 00 01 01 00 10 01 10 00 01 01
+  column counts: 00:3 01:6 10:2 11:0
+class 54 size 4: 01 00 01 01 00 10 01 10 00 10 10
+  column counts: 00:3 01:4 10:4 11:0
+class 55 size 4: 01 00 01 01 00 10 10 00 01 00 11
+  column counts: 00:4 01:4 10:2 11:1
+class 56 size 4: 01 00 01 01 00 10 10 00 01 01 10
+  column counts: 00:3 01:5 10:3 11:0
+class 57 size 4: 01 00 01 01 00 10 10 00 01 10 01
+  column counts: 00:3 01:5 10:3 11:0
+class 58 size 4: 01 00 01 01 00 10 10 00 01 10 10
+  column counts: 00:3 01:4 10:4 11:0
+class 59 size 4: 01 00 01 01 00 10 10 00 10 00 11
+  column counts: 00:4 01:3 10:3 11:1
+class 60 size 4: 01 00 01 01 00 10 10 00 10 01 01
+  column counts: 00:3 01:5 10:3 11:0
+class 61 size 4: 01 00 01 01 00 10 10 00 10 01 10
+  column counts: 00:3 01:4 10:4 11:0
+class 62 size 4: 01 00 01 01 00 10 10 00 10 10 01
+  column counts: 00:3 01:4 10:4 11:0
+class 63 size 4: 01 00 01 01 00 10 10 00 11 00 01
+  column counts: 00:4 01:4 10:2 11:1
+class 64 size 4: 01 00 01 01 00 10 10 00 11 00 10
+  column counts: 00:4 01:3 10:3 11:1
+class 65 size 4: 01 00 01 01 00 10 10 01 00 01 01
+  column counts: 00:3 01:6 10:2 11:0
+class 66 size 4: 01 00 01 01 00 10 10 01 00 10 10
+  column counts: 00:3 01:4 10:4 11:0
+class 67 size 4: 01 00 01 01 00 10 10 01 01 00 01
+  column counts: 00:3 01:6 10:2 11:0
+class 68 size 4: 01 00 01 01 00 10 10 01 01 00 10
+  column counts: 00:3 01:5 10:3 11:0
+class 69 size 4: 01 00 01 01 00 11 00 01 00 01 01
+  column counts: 00:4 01:6 10:0 11:1
+class 70 size 4: 01 00 01 01 00 11 00 01 00 10 10
+  column counts: 00:4 01:4 10:2 11:1
+class 71 size 2: 01 00 01 01 00 11 00 01 01 00 01
+  column counts: 00:4 01:6 10:0 11:1
+class 72 size 4: 01 00 01 01 00 11 00 01 01 00 10
+  column counts: 00:4 01:5 10:1 11:1
+class 73 size 4: 01 00 01 01 00 11 00 10 00 01 01
+  column counts: 00:4 01:5 10:1 11:1
+class 74 size 4: 01 00 01 01 00 11 00 10 00 10 10
+  column counts: 00:4 01:3 10:3 11:1
+class 75 size 4: 01 00 01 01 00 11 00 10 10 00 01
+  column counts: 00:4 01:4 10:2 11:1
+class 76 size 2: 01 00 01 01 00 11 00 10 10 00 10
+  column counts: 00:4 01:3 10:3 11:1
+class 77 size 4: 01 00 01 01 10 00 01 01 00 01 01
+  column counts: 00:3 01:7 10:1 11:0
+class 78 size 4: 01 00 01 01 10 00 01 01 00 10 10
+  column counts: 00:3 01:5 10:3 11:0
+class 79 size 4: 01 00 01 01 10 00 10 10 00 01 01
+  column counts: 00:3 01:5 10:3 11:0
+class 80 size 4: 01 00 01 01 10 00 10 10 00 10 10
+  column counts: 00:3 01:3 10:5 11:0
+class 81 size 4: 01 00 01 01 10 10 00 01 00 01 01
+  column counts: 00:3 01:6 10:2 11:0
+class 82 size 4: 01 00 01 01 10 10 00 01 00 10 10
+  column counts: 00:3 01:4 10:4 11:0
+class 83 size 4: 01 00 01 01 10 10 00 01 01 00 10
+  column counts: 00:3 01:5 10:3 11:0
+class 84 size 4: 01 00 01 01 10 10 00 10 00 01 01
+  column counts: 00:3 01:5 10:3 11:0
+class 85 size 4: 01 00 01 01 10 10 00 10 00 10 10
+  column counts: 00:3 01:3 10:5 11:0
+class 86 size 4: 01 00 01 01 10 10 00 10 10 00 01
+  column counts: 00:3 01:4 10:4 11:0
+class 87 size 4: 01 00 01 10 01 00 01 01 00 01 01
+  column counts: 00:3 01:7 10:1 11:0
+class 88 size 4: 01 00 01 10 01 00 01 01 00 10 10
+  column counts: 00:3 01:5 10:3 11:0
+class 89 size 4: 01 00 01 10 01 00 10 10 00 01 01
+  column counts: 00:3 01:5 10:3 11:0
+class 90 size 4: 01 00 01 10 01 00 10 10 00 10 10
+  column counts: 00:3 01:3 10:5 11:0
+class 91 size 4: 01 00 01 10 10 00 01 01 00 01 01
+  column counts: 00:3 01:6 10:2 11:0
+class 92 size 4: 01 00 01 10 10 00 01 01 00 10 10
+  column counts: 00:3 01:4 10:4 11:0
+class 93 size 4: 01 00 01 10 10 00 10 10 00 01 01
+  column counts: 00:3 01:4 10:4 11:0
+class 94 size 4: 01 00 01 10 10 00 10 10 00 10 10
+  column counts: 00:3 01:2 10:6 11:0
+class 95 size 4: 01 00 10 00 01 01 00 01 01 00 11
+  column counts: 00:4 01:5 10:1 11:1
+class 96 size 4: 01 00 10 00 01 01 00 01 01 10 10
+  column counts: 00:3 01:5 10:3 11:0
+class 97 size 4: 01 00 10 00 01 01 00 10 10 00 11
+  column counts: 00:4 01:3 10:3 11:1
+class 98 size 4: 01 00 10 00 01 01 00 10 10 01 01
+  column counts: 00:3 01:5 10:3 11:0
+class 99 size 4: 01 00 10 00 01 01 00 11 00 01 01
+  column counts: 00:4 01:5 10:1 11:1
+class 100 size 4: 01 00 10 00 01 01 00 11 00 10 10
+  column counts: 00:4 01:3 10:3 11:1
+class 101 size 4: 01 00 10 00 01 01 10 10 00 01 01
+  column counts: 00:3 01:5 10:3 11:0
+class 102 size 4: 01 00 10 00 01 01 10 10 00 10 10
+  column counts: 00:3 01:3 10:5 11:0
+class 103 size 4: 01 00 10 00 10 10 00 01 01 00 11
+  column counts: 00:4 01:3 10:3 11:1
+class 104 size 4: 01 00 10 00 10 10 00 01 01 10 10
+  column counts: 00:3 01:3 10:5 11:0
+class 105 size 4: 01 00 10 00 10 10 00 10 10 00 11
+  column counts: 00:4 01:1 10:5 11:1
+class 106 size 4: 01 00 10 00 10 10 00 10 10 01 01
+  column counts: 00:3 01:3 10:5 11:0
+class 107 size 4: 01 00 10 00 10 10 00 11 00 01 01
+  column counts: 00:4 01:3 10:3 11:1
+class 108 size 4: 01 00 10 00 10 10 00 11 00 10 10
+  column counts: 00:4 01:1 10:5 11:1
+class 109 size 4: 01 00 10 00 10 10 01 01 00 01 01
+  column counts: 00:3 01:5 10:3 11:0
+class 110 size 4: 01 00 10 00 10 10 01 01 00 10 10
+  column counts: 00:3 01:3 10:5 11:0
+class 111 size 4: 01 00 10 00 11 00 01 01 00 01 01
+  column counts: 00:4 01:5 10:1 11:1
+class 112 size 4: 01 00 10 00 11 00 01 01 00 10 10
+  column counts: 00:4 01:3 10:3 11:1
+class 113 size 4: 01 00 10 00 11 00 10 10 00 01 01
+  column counts: 00:4 01:3 10:3 11:1
+class 114 size 4: 01 00 10 00 11 00 10 10 00 10 10
+  column counts: 00:4 01:1 10:5 11:1
+class 115 size 4: 01 00 10 01 01 00 01 01 00 01 01
+  column counts: 00:3 01:7 10:1 11:0
+class 116 size 4: 01 00 10 01 01 00 01 01 00 10 10
+  column counts: 00:3 01:5 10:3 11:0
+class 117 size 4: 01 00 10 01 01 00 10 10 00 01 01
+  column counts: 00:3 01:5 10:3 11:0
+class 118 size 4: 01 00 10 01 01 00 10 10 00 10 10
+  column counts: 00:3 01:3 10:5 11:0
+class 119 size 4: 01 00 10 01 10 00 01 01 00 01 01
+  column counts: 00:3 01:6 10:2 11:0
+class 120 size 4: 01 00 10 01 10 00 01 01 00 10 10
+  column counts: 00:3 01:4 10:4 11:0
+class 121 size 4: 01 00 10 01 10 00 10 10 00 01 01
+  column counts: 00:3 01:4 10:4 11:0
+class 122 size 4: 01 00 10 01 10 00 10 10 00 10 10
+  column counts: 00:3 01:2 10:6 11:0
+class 123 size 4: 01 00 10 10 00 01 00 01 01 00 11
+  column counts: 00:4 01:4 10:2 11:1
+class 124 size 4: 01 00 10 10 00 01 00 01 01 10 10
+  column counts: 00:3 01:4 10:4 11:0
+class 125 size 4: 01 00 10 10 00 01 00 10 10 00 11
+  column counts: 00:4 01:2 10:4 11:1
+class 126 size 4: 01 00 10 10 00 01 00 10 10 01 01
+  column counts: 00:3 01:4 10:4 11:0
+class 127 size 4: 01 00 10 10 00 01 00 11 00 01 01
+  column counts: 00:4 01:4 10:2 11:1
+class 128 size 4: 01 00 10 10 00 01 00 11 00 10 10
+  column counts: 00:4 01:2 10:4 11:1
+class 129 size 4: 01 00 10 10 00 01 01 00 01 00 11
+  column counts: 00:4 01:4 10:2 11:1
+class 130 size 4: 01 00 10 10 00 01 01 00 01 01 10
+  column counts: 00:3 01:5 10:3 11:0
+class 131 size 4: 01 00 10 10 00 01 01 00 01 10 01
+  column counts: 00:3 01:5 10:3 11:0
+class 132 size 4: 01 00 10 10 00 01 01 00 01 10 10
+  column counts: 00:3 01:4 10:4 11:0
+class 133 size 4: 01 00 10 10 00 01 01 00 10 00 11
+  column counts: 00:4 01:3 10:3 11:1
+class 134 size 4: 01 00 10 10 00 01 01 00 10 01 01
+  column counts: 00:3 01:5 10:3 11:0
+class 135 size 4: 01 00 10 10 00 01 01 00 10 01 10
+  column counts: 00:3 01:4 10:4 11:0
+class 136 size 4: 01 00 10 10 00 01 01 00 10 10 01
+  column counts: 00:3 01:4 10:4 11:0
+class 137 size 4: 01 00 10 10 00 01 01 00 11 00 01
+  column counts: 00:4 01:4 10:2 11:1
+class 138 size 4: 01 00 10 10 00 01 01 00 11 00 10
+  column counts: 00:4 01:3 10:3 11:1
+class 139 size 4: 01 00 10 10 00 01 01 10 00 01 01
+  column counts: 00:3 01:5 10:3 11:0
+class 140 size 4: 01 00 10 10 00 01 01 10 00 10 10
+  column counts: 00:3 01:3 10:5 11:0
+class 141 size 4: 01 00 10 10 00 01 01 10 10 00 01
+  column counts: 00:3 01:4 10:4 11:0
+class 142 size 4: 01 00 10 10 00 01 10 01 00 01 01
+  column counts: 00:3 01:5 10:3 11:0
+class 143 size 4: 01 00 10 10 00 01 10 01 00 10 10
+  column counts: 00:3 01:3 10:5 11:0
+class 144 size 4: 01 00 10 10 00 01 10 10 00 01 01
+  column counts: 00:3 01:4 10:4 11:0
+class 145 size 4: 01 00 10 10 00 01 10 10 00 10 10
+  column counts: 00:3 01:2 10:6 11:0
+class 146 size 4: 01 00 10 10 00 10 00 01 01 00 11
+  column counts: 00:4 01:3 10:3 11:1
+class 147 size 4: 01 00 10 10 00 10 00 01 01 10 10
+  column counts: 00:3 01:3 10:5 11:0
+class 148 size 4: 01 00 10 10 00 10 00 10 10 00 11
+  column counts: 00:4 01:1 10:5 11:1
+class 149 size 4: 01 00 10 10 00 10 00 10 10 01 01
+  column counts: 00:3 01:3 10:5 11:0
+class 150 size 4: 01 00 10 10 00 10 00 11 00 01 01
+  column counts: 00:4 01:3 10:3 11:1
+class 151 size 4: 01 00 10 10 00 10 00 11 00 10 10
+  column counts: 00:4 01:1 10:5 11:1
+class 152 size 4: 01 00 10 10 00 10 01 01 00 01 01
+  column counts: 00:3 01:5 10:3 11:0
+class 153 size 4: 01 00 10 10 00 10 01 01 00 10 10
+  column counts: 00:3 01:3 10:5 11:0
+class 154 size 4: 01 00 10 10 00 10 01 10 00 01 01
+  column counts: 00:3 01:4 10:4 11:0
+class 155 size 4: 01 00 10 10 00 10 01 10 00 10 10
+  column counts: 00:3 01:2 10:6 11:0
+class 156 size 4: 01 00 10 10 00 10 10 00 01 00 11
+  column counts: 00:4 01:2 10:4 11:1
+class 157 size 4: 01 00 10 10 00 10 10 00 01 01 10
+  column counts: 00:3 01:3 10:5 11:0
+class 158 size 4: 01 00 10 10 00 10 10 00 01 10 01
+  column counts: 00:3 01:3 10:5 11:0
+class 159 size 4: 01 00 10 10 00 10 10 00 01 10 10
+  column counts: 00:3 01:2 10:6 11:0
+class 160 size 4: 01 00 10 10 00 10 10 00 10 00 11
+  column counts: 00:4 01:1 10:5 11:1
+class 161 size 4: 01 00 10 10 00 10 10 00 10 01 01
+  column counts: 00:3 01:3 10:5 11:0
+class 162 size 4: 01 00 10 10 00 10 10 00 10 01 10
+  column counts: 00:3 01:2 10:6 11:0
+class 163 size 4: 01 00 10 10 00 10 10 00 10 10 01
+  column counts: 00:3 01:2 10:6 11:0
+class 164 size 4: 01 00 10 10 00 10 10 00 11 00 01
+  column counts: 00:4 01:2 10:4 11:1
+class 165 size 4: 01 00 10 10 00 10 10 00 11 00 10
+  column counts: 00:4 01:1 10:5 11:1
+class 166 size 4: 01 00 10 10 00 10 10 01 00 01 01
+  column counts: 00:3 01:4 10:4 11:0
+class 167 size 4: 01 00 10 10 00 10 10 01 00 10 10
+  column counts: 00:3 01:2 10:6 11:0
+class 168 size 4: 01 00 10 10 00 10 10 01 01 00 10
+  column counts: 00:3 01:3 10:5 11:0
+class 169 size 4: 01 00 10 10 00 11 00 01 00 01 01
+  column counts: 00:4 01:4 10:2 11:1
+class 170 size 4: 01 00 10 10 00 11 00 01 00 10 10
+  column counts: 00:4 01:2 10:4 11:1
+class 171 size 2: 01 00 10 10 00 11 00 01 01 00 10
+  column counts: 00:4 01:3 10:3 11:1
+class 172 size 4: 01 00 10 10 00 11 00 10 00 01 01
+  column counts: 00:4 01:3 10:3 11:1
+class 173 size 4: 01 00 10 10 00 11 00 10 00 10 10
+  column counts: 00:4 01:1 10:5 11:1
+class 174 size 2: 01 00 10 10 00 11 00 10 10 00 01
+  column counts: 00:4 01:2 10:4 11:1
+class 175 size 4: 01 00 10 10 01 00 01 01 00 01 01
+  column counts: 00:3 01:6 10:2 11:0
+class 176 size 4: 01 00 10 10 01 00 01 01 00 10 10
+  column counts: 00:3 01:4 10:4 11:0
+class 177 size 4: 01 00 10 10 01 00 10 10 00 01 01
+  column counts: 00:3 01:4 10:4 11:0
+class 178 size 4: 01 00 10 10 01 00 10 10 00 10 10
+  column counts: 00:3 01:2 10:6 11:0
+class 179 size 4: 01 00 10 10 01 01 00 01 00 01 01
+  column counts: 00:3 01:6 10:2 11:0
+class 180 size 4: 01 00 10 10 01 01 00 01 00 10 10
+  column counts: 00:3 01:4 10:4 11:0
+class 181 size 4: 01 00 10 10 01 01 00 10 00 01 01
+  column counts: 00:3 01:5 10:3 11:0
+class 182 size 4: 01 00 10 10 01 01 00 10 00 10 10
+  column counts: 00:3 01:3 10:5 11:0
+class 183 size 4: 01 00 11 00 01 00 01 01 00 01 01
+  column counts: 00:4 01:6 10:0 11:1
+class 184 size 4: 01 00 11 00 01 00 01 01 00 10 10
+  column counts: 00:4 01:4 10:2 11:1
+class 185 size 4: 01 00 11 00 01 00 10 10 00 01 01
+  column counts: 00:4 01:4 10:2 11:1
+class 186 size 4: 01 00 11 00 01 00 10 10 00 10 10
+  column counts: 00:4 01:2 10:4 11:1
+class 187 size 4: 01 00 11 00 01 01 00 01 00 01 01
+  column counts: 00:4 01:6 10:0 11:1
+class 188 size 4: 01 00 11 00 01 01 00 01 00 10 10
+  column counts: 00:4 01:4 10:2 11:1
+class 189 size 4: 01 00 11 00 01 01 00 10 00 01 01
+  column counts: 00:4 01:5 10:1 11:1
+class 190 size 4: 01 00 11 00 01 01 00 10 00 10 10
+  column counts: 00:4 01:3 10:3 11:1
+class 191 size 4: 01 00 11 00 10 00 01 01 00 01 01
+  column counts: 00:4 01:5 10:1 11:1
+class 192 size 4: 01 00 11 00 10 00 01 01 00 10 10
+  column counts: 00:4 01:3 10:3 11:1
+class 193 size 4: 01 00 11 00 10 00 10 10 00 01 01
+  column counts: 00:4 01:3 10:3 11:1
+class 194 size 4: 01 00 11 00 10 00 10 10 00 10 10
+  column counts: 00:4 01:1 10:5 11:1
+class 195 size 4: 01 00 11 00 10 10 00 01 00 01 01
+  column counts: 00:4 01:4 10:2 11:1
+class 196 size 4: 01 00 11 00 10 10 00 01 00 10 10
+  column counts: 00:4 01:2 10:4 11:1
+class 197 size 4: 01 00 11 00 10 10 00 10 00 01 01
+  column counts: 00:4 01:3 10:3 11:1
+class 198 size 4: 01 00 11 00 10 10 00 10 00 10 10
+  column counts: 00:4 01:1 10:5 11:1
+class 199 size 4: 01 01 00 01 00 01 00 01 01 00 11
+  column counts: 00:4 01:6 10:0 11:1
+class 200 size 4: 01 01 00 01 00 01 00 01 01 10 10
+  column counts: 00:3 01:6 10:2 11:0
+class 201 size 4: 01 01 00 01 00 01 00 10 10 00 11
+  column counts: 00:4 01:4 10:2 11:1
+class 202 size 4: 01 01 00 01 00 01 00 10 10 01 01
+  column counts: 00:3 01:6 10:2 11:0
+class 203 size 4: 01 01 00 01 00 01 00 11 00 01 01
+  column counts: 00:4 01:6 10:0 11:1
+class 204 size 4: 01 01 00 01 00 01 00 11 00 10 10
+  column counts: 00:4 01:4 10:2 11:1
+class 205 size 4: 01 01 00 01 00 01 01 00 01 00 11
+  column counts: 00:4 01:6 10:0 11:1
+class 206 size 4: 01 01 00 01 00 01 01 00 01 01 10
+  column counts: 00:3 01:7 10:1 11:0
+class 207 size 4: 01 01 00 01 00 01 01 00 01 10 01
+  column counts: 00:3 01:7 10:1 11:0
+class 208 size 4: 01 01 00 01 00 01 01 00 01 10 10
+  column counts: 00:3 01:6 10:2 11:0
+class 209 size 4: 01 01 00 01 00 01 01 00 10 00 11
+  column counts: 00:4 01:5 10:1 11:1
+class 210 size 4: 01 01 00 01 00 01 01 00 10 01 01
+  column counts: 00:3 01:7 10:1 11:0
+class 211 size 4: 01 01 00 01 00 01 01 00 10 01 10
+  column counts: 00:3 01:6 10:2 11:0
+class 212 size 4: 01 01 00 01 00 01 01 00 10 10 01
+  column counts: 00:3 01:6 10:2 11:0
+class 213 size 4: 01 01 00 01 00 01 01 10 00 01 01
+  column counts: 00:3 01:7 10:1 11:0
+class 214 size 4: 01 01 00 01 00 01 01 10 00 10 10
+  column counts: 00:3 01:5 10:3 11:0
+class 215 size 4: 01 01 00 01 00 01 10 01 00 01 01
+  column counts: 00:3 01:7 10:1 11:0
+class 216 size 4: 01 01 00 01 00 01 10 01 00 10 10
+  column counts: 00:3 01:5 10:3 11:0
+class 217 size 4: 01 01 00 01 00 01 10 10 00 01 01
+  column counts: 00:3 01:6 10:2 11:0
+class 218 size 4: 01 01 00 01 00 01 10 10 00 10 10
+  column counts: 00:3 01:4 10:4 11:0
+class 219 size 4: 01 01 00 01 00 10 00 01 01 00 11
+  column counts: 00:4 01:5 10:1 11:1
+class 220 size 4: 01 01 00 01 00 10 00 01 01 10 10
+  column counts: 00:3 01:5 10:3 11:0
+class 221 size 4: 01 01 00 01 00 10 00 10 10 00 11
+  column counts: 00:4 01:3 10:3 11:1
+class 222 size 4: 01 01 00 01 00 10 00 10 10 01 01
+  column counts: 00:3 01:5 10:3 11:0
+class 223 size 4: 01 01 00 01 00 10 00 11 00 01 01
+  column counts: 00:4 01:5 10:1 11:1
+class 224 size 4: 01 01 00 01 00 10 00 11 00 10 10
+  column counts: 00:4 01:3 10:3 11:1
+class 225 size 4: 01 01 00 01 00 10 01 01 00 01 01
+  column counts: 00:3 01:7 10:1 11:0
+class 226 size 4: 01 01 00 01 00 10 01 01 00 10 10
+  column counts: 00:3 01:5 10:3 11:0
+class 227 size 4: 01 01 00 01 00 10 01 10 00 01 01
+  column counts: 00:3 01:6 10:2 11:0
+class 228 size 4: 01 01 00 01 00 10 01 10 00 10 10
+  column counts: 00:3 01:4 10:4 11:0
+class 229 size 4: 01 01 00 01 00 10 10 00 01 00 11
+  column counts: 00:4 01:4 10:2 11:1
+class 230 size 4: 01 01 00 01 00 10 10 00 01 01 10
+  column counts: 00:3 01:5 10:3 11:0
+class 231 size 4: 01 01 00 01 00 10 10 00 01 10 01
+  column counts: 00:3 01:5 10:3 11:0
+class 232 size 4: 01 01 00 01 00 10 10 00 01 10 10
+  column counts: 00:3 01:4 10:4 11:0
+class 233 size 4: 01 01 00 01 00 10 10 00 10 00 11
+  column counts: 00:4 01:3 10:3 11:1
+class 234 size 4: 01 01 00 01 00 10 10 00 10 01 01
+  column counts: 00:3 01:5 10:3 11:0
+class 235 size 4: 01 01 00 01 00 10 10 00 10 01 10
+  column counts: 00:3 01:4 10:4 11:0
+class 236 size 4: 01 01 00 01 00 10 10 00 10 10 01
+  column counts: 00:3 01:4 10:4 11:0
+class 237 size 4: 01 01 00 01 00 10 10 01 00 01 01
+  column counts: 00:3 01:6 10:2 11:0
+class 238 size 4: 01 01 00 01 00 10 10 01 00 10 10
+  column counts: 00:3 01:4 10:4 11:0
+class 239 size 2: 01 01 00 01 00 11 00 01 00 01 01
+  column counts: 00:4 01:6 10:0 11:1
+class 240 size 4: 01 01 00 01 00 11 00 01 00 10 10
+  column counts: 00:4 01:4 10:2 11:1
+class 241 size 4: 01 01 00 01 00 11 00 10 00 01 01
+  column counts: 00:4 01:5 10:1 11:1
+class 242 size 2: 01 01 00 01 00 11 00 10 00 10 10
+  column counts: 00:4 01:3 10:3 11:1
+class 243 size 4: 01 01 00 01 01 00 01 00 01 00 11
+  column counts: 00:4 01:6 10:0 11:1
+class 244 size 4: 01 01 00 01 01 00 01 00 01 01 10
+  column counts: 00:3 01:7 10:1 11:0
+class 245 size 4: 01 01 00 01 01 00 01 00 01 10 01
+  column counts: 00:3 01:7 10:1 11:0
+class 246 size 4: 01 01 00 01 01 00 01 00 01 10 10
+  column counts: 00:3 01:6 10:2 11:0
+class 247 size 4: 01 01 00 01 01 00 01 00 10 00 11
+  column counts: 00:4 01:5 10:1 11:1
+class 248 size 4: 01 01 00 01 01 00 01 00 10 01 01
+  column counts: 00:3 01:7 10:1 11:0
+class 249 size 4: 01 01 00 01 01 00 01 00 10 01 10
+  column counts: 00:3 01:6 10:2 11:0
+class 250 size 4: 01 01 00 01 01 00 01 00 10 10 01
+  column counts: 00:3 01:6 10:2 11:0
+class 251 size 4: 01 01 00 01 01 00 01 01 00 01 10
+  column counts: 00:3 01:7 10:1 11:0
+class 252 size 4: 01 01 00 01 01 00 01 01 00 10 01
+  column counts: 00:3 01:7 10:1 11:0
+class 253 size 4: 01 01 00 01 01 00 01 10 00 01 01
+  column counts: 00:3 01:7 10:1 11:0
+class 254 size 4: 01 01 00 01 01 00 01 10 00 01 10
+  column counts: 00:3 01:6 10:2 11:0
+class 255 size 4: 01 01 00 01 01 00 01 10 00 10 01
+  column counts: 00:3 01:6 10:2 11:0
+class 256 size 4: 01 01 00 01 01 00 01 10 00 10 10
+  column counts: 00:3 01:5 10:3 11:0
+class 257 size 4: 01 01 00 01 01 00 10 00 01 00 11
+  column counts: 00:4 01:5 10:1 11:1
+class 258 size 4: 01 01 00 01 01 00 10 00 01 01 10
+  column counts: 00:3 01:6 10:2 11:0
+class 259 size 4: 01 01 00 01 01 00 10 00 01 10 01
+  column counts: 00:3 01:6 10:2 11:0
+class 260 size 4: 01 01 00 01 01 00 10 00 01 10 10
+  column counts: 00:3 01:5 10:3 11:0
+class 261 size 4: 01 01 00 01 01 00 10 00 10 00 11
+  column counts: 00:4 01:4 10:2 11:1
+class 262 size 4: 01 01 00 01 01 00 10 00 10 01 01
+  column counts: 00:3 01:6 10:2 11:0
+class 263 size 4: 01 01 00 01 01 00 10 00 10 01 10
+  column counts: 00:3 01:5 10:3 11:0
+class 264 size 4: 01 01 00 01 01 00 10 00 10 10 01
+  column counts: 00:3 01:5 10:3 11:0
+class 265 size 4: 01 01 00 01 01 00 10 01 00 01 01
+  column counts: 00:3 01:7 10:1 11:0
+class 266 size 4: 01 01 00 01 01 00 10 01 00 01 10
+  column counts: 00:3 01:6 10:2 11:0
+class 267 size 4: 01 01 00 01 01 00 10 01 00 10 01
+  column counts: 00:3 01:6 10:2 11:0
+class 268 size 4: 01 01 00 01 01 00 10 01 00 10 10
+  column counts: 00:3 01:5 10:3 11:0
+class 269 size 4: 01 01 00 01 01 00 10 10 00 01 10
+  column counts: 00:3 01:5 10:3 11:0
+class 270 size 4: 01 01 00 01 01 00 10 10 00 10 01
+  column counts: 00:3 01:5 10:3 11:0
+class 271 size 4: 01 01 00 01 01 10 00 01 00 10 10
+  column counts: 00:3 01:5 10:3 11:0
+class 272 size 4: 01 01 00 01 01 10 00 10 00 01 01
+  column counts: 00:3 01:6 10:2 11:0
+class 273 size 4: 01 01 00 01 10 00 01 01 00 01 10
+  column counts: 00:3 01:6 10:2 11:0
+class 274 size 4: 01 01 00 01 10 00 01 01 00 10 01
+  column counts: 00:3 01:6 10:2 11:0
+class 275 size 4: 01 01 00 01 10 00 01 01 00 10 10
+  column counts: 00:3 01:5 10:3 11:0
+class 276 size 4: 01 01 00 01 10 00 01 10 00 01 01
+  column counts: 00:3 01:6 10:2 11:0
+class 277 size 4: 01 01 00 01 10 00 01 10 00 01 10
+  column counts: 00:3 01:5 10:3 11:0
+class 278 size 4: 01 01 00 01 10 00 01 10 00 10 01
+  column counts: 00:3 01:5 10:3 11:0
+class 279 size 2: 01 01 00 01 10 00 01 10 00 10 10
+  column counts: 00:3 01:4 10:4 11:0
+class 280 size 2: 01 01 00 01 10 00 10 01 00 01 01
+  column counts: 00:3 01:6 10:2 11:0
+class 281 size 4: 01 01 00 01 10 00 10 01 00 01 10
+  column counts: 00:3 01:5 10:3 11:0
+class 282 size 4: 01 01 00 01 10 00 10 01 00 10 01
+  column counts: 00:3 01:5 10:3 11:0
+class 283 size 4: 01 01 00 01 10 00 10 01 00 10 10
+  column counts: 00:3 01:4 10:4 11:0
+class 284 size 4: 01 01 00 01 10 00 10 10 00 01 01
+  column counts: 00:3 01:5 10:3 11:0
+class 285 size 4: 01 01 00 01 10 00 10 10 00 01 10
+  column counts: 00:3 01:4 10:4 11:0
+class 286 size 4: 01 01 00 01 10 00 10 10 00 10 01
+  column counts: 00:3 01:4 10:4 11:0
+class 287 size 4: 01 01 00 01 10 01 00 01 00 10 10
+  column counts: 00:3 01:5 10:3 11:0
+class 288 size 4: 01 01 00 01 10 01 00 10 00 01 01
+  column counts: 00:3 01:6 10:2 11:0
+class 289 size 4: 01 01 00 01 10 10 00 01 00 10 10
+  column counts: 00:3 01:4 10:4 11:0
+class 290 size 4: 01 01 00 01 10 10 00 10 00 01 01
+  column counts: 00:3 01:5 10:3 11:0
+class 291 size 4: 01 01 00 10 00 01 00 01 01 00 11
+  column counts: 00:4 01:5 10:1 11:1
+class 292 size 4: 01 01 00 10 00 01 00 01 01 10 10
+  column counts: 00:3 01:5 10:3 11:0
+class 293 size 4: 01 01 00 10 00 01 00 10 10 00 11
+  column counts: 00:4 01:3 10:3 11:1
+class 294 size 4: 01 01 00 10 00 01 00 10 10 01 01
+  column counts: 00:3 01:5 10:3 11:0
+class 295 size 4: 01 01 00 10 00 01 00 11 00 01 01
+  column counts: 00:4 01:5 10:1 11:1
+class 296 size 4: 01 01 00 10 00 01 00 11 00 10 10
+  column counts: 00:4 01:3 10:3 11:1
+class 297 size 4: 01 01 00 10 00 01 01 00 01 00 11
+  column counts: 00:4 01:5 10:1 11:1
+class 298 size 4: 01 01 00 10 00 01 01 00 01 01 10
+  column counts: 00:3 01:6 10:2 11:0
+class 299 size 4: 01 01 00 10 00 01 01 00 01 10 01
+  column counts: 00:3 01:6 10:2 11:0
+class 300 size 4: 01 01 00 10 00 01 01 00 01 10 10
+  column counts: 00:3 01:5 10:3 11:0
+class 301 size 4: 01 01 00 10 00 01 01 00 10 00 11
+  column counts: 00:4 01:4 10:2 11:1
+class 302 size 4: 01 01 00 10 00 01 01 00 10 01 01
+  column counts: 00:3 01:6 10:2 11:0
+class 303 size 4: 01 01 00 10 00 01 01 00 10 01 10
+  column counts: 00:3 01:5 10:3 11:0
+class 304 size 4: 01 01 00 10 00 01 01 00 10 10 01
+  column counts: 00:3 01:5 10:3 11:0
+class 305 size 4: 01 01 00 10 00 01 01 10 00 01 01
+  column counts: 00:3 01:6 10:2 11:0
+class 306 size 4: 01 01 00 10 00 01 10 01 00 10 10
+  column counts: 00:3 01:4 10:4 11:0
+class 307 size 4: 01 01 00 10 00 01 10 10 00 01 01
+  column counts: 00:3 01:5 10:3 11:0
+class 308 size 4: 01 01 00 10 00 10 00 01 01 00 11
+  column counts: 00:4 01:4 10:2 11:1
+class 309 size 4: 01 01 00 10 00 10 00 01 01 10 10
+  column counts: 00:3 01:4 10:4 11:0
+class 310 size 4: 01 01 00 10 00 10 00 10 10 00 11
+  column counts: 00:4 01:2 10:4 11:1
+class 311 size 4: 01 01 00 10 00 10 00 10 10 01 01
+  column counts: 00:3 01:4 10:4 11:0
+class 312 size 4: 01 01 00 10 00 10 00 11 00 01 01
+  column counts: 00:4 01:4 10:2 11:1
+class 313 size 4: 01 01 00 10 00 10 00 11 00 10 10
+  column counts: 00:4 01:2 10:4 11:1
+class 314 size 4: 01 01 00 10 00 10 01 01 00 10 10
+  column counts: 00:3 01:4 10:4 11:0
+class 315 size 4: 01 01 00 10 00 10 01 10 00 01 01
+  column counts: 00:3 01:5 10:3 11:0
+class 316 size 4: 01 01 00 10 00 10 10 00 01 00 11
+  column counts: 00:4 01:3 10:3 11:1
+class 317 size 4: 01 01 00 10 00 10 10 00 01 01 10
+  column counts: 00:3 01:4 10:4 11:0
+class 318 size 4: 01 01 00 10 00 10 10 00 01 10 01
+  column counts: 00:3 01:4 10:4 11:0
+class 319 size 4: 01 01 00 10 00 10 10 00 01 10 10
+  column counts: 00:3 01:3 10:5 11:0
+class 320 size 4: 01 01 00 10 00 10 10 00 10 00 11
+  column counts: 00:4 01:2 10:4 11:1
+class 321 size 4: 01 01 00 10 00 10 10 00 10 01 01
+  column counts: 00:3 01:4 10:4 11:0
+class 322 size 4: 01 01 00 10 00 10 10 00 10 01 10
+  column counts: 00:3 01:3 10:5 11:0
+class 323 size 4: 01 01 00 10 00 10 10 00 10 10 01
+  column counts: 00:3 01:3 10:5 11:0
+class 324 size 4: 01 01 00 10 00 10 10 01 00 10 10
+  column counts: 00:3 01:3 10:5 11:0
+class 325 size 2: 01 01 00 10 00 11 00 01 00 10 10
+  column counts: 00:4 01:3 10:3 11:1
+class 326 size 2: 01 01 00 10 00 11 00 10 00 01 01
+  column counts: 00:4 01:4 10:2 11:1
+class 327 size 4: 01 01 00 10 01 00 01 01 00 01 10
+  column counts: 00:3 01:6 10:2 11:0
+class 328 size 4: 01 01 00 10 01 00 01 01 00 10 01
+  column counts: 00:3 01:6 10:2 11:0
+class 329 size 4: 01 01 00 10 01 00 01 01 00 10 10
+  column counts: 00:3 01:5 10:3 11:0
+class 330 size 2: 01 01 00 10 01 00 01 10 00 01 01
+  column counts: 00:3 01:6 10:2 11:0
+class 331 size 4: 01 01 00 10 01 00 01 10 00 01 10
+  column counts: 00:3 01:5 10:3 11:0
+class 332 size 4: 01 01 00 10 01 00 01 10 00 10 01
+  column counts: 00:3 01:5 10:3 11:0
+class 333 size 4: 01 01 00 10 01 00 10 01 00 01 10
+  column counts: 00:3 01:5 10:3 11:0
+class 334 size 4: 01 01 00 10 01 00 10 01 00 10 01
+  column counts: 00:3 01:5 10:3 11:0
+class 335 size 2: 01 01 00 10 01 00 10 01 00 10 10
+  column counts: 00:3 01:4 10:4 11:0
+class 336 size 4: 01 01 00 10 01 00 10 10 00 01 01
+  column counts: 00:3 01:5 10:3 11:0
+class 337 size 4: 01 01 00 10 01 00 10 10 00 01 10
+  column counts: 00:3 01:4 10:4 11:0
+class 338 size 4: 01 01 00 10 01 00 10 10 00 10 01
+  column counts: 00:3 01:4 10:4 11:0
+class 339 size 4: 01 01 00 10 10 00 01 00 01 00 11
+  column counts: 00:4 01:4 10:2 11:1
+class 340 size 4: 01 01 00 10 10 00 01 00 01 01 10
+  column counts: 00:3 01:5 10:3 11:0
+class 341 size 4: 01 01 00 10 10 00 01 00 01 10 01
+  column counts: 00:3 01:5 10:3 11:0
+class 342 size 4: 01 01 00 10 10 00 01 00 01 10 10
+  column counts: 00:3 01:4 10:4 11:0
+class 343 size 4: 01 01 00 10 10 00 01 00 10 00 11
+  column counts: 00:4 01:3 10:3 11:1
+class 344 size 4: 01 01 00 10 10 00 01 00 10 01 01
+  column counts: 00:3 01:5 10:3 11:0
+class 345 size 4: 01 01 00 10 10 00 01 00 10 01 10
+  column counts: 00:3 01:4 10:4 11:0
+class 346 size 4: 01 01 00 10 10 00 01 00 10 10 01
+  column counts: 00:3 01:4 10:4 11:0
+class 347 size 4: 01 01 00 10 10 00 01 01 00 01 10
+  column counts: 00:3 01:5 10:3 11:0
+class 348 size 4: 01 01 00 10 10 00 01 01 00 10 01
+  column counts: 00:3 01:5 10:3 11:0
+class 349 size 4: 01 01 00 10 10 00 01 10 00 01 10
+  column counts: 00:3 01:4 10:4 11:0
+class 350 size 4: 01 01 00 10 10 00 01 10 00 10 01
+  column counts: 00:3 01:4 10:4 11:0
+class 351 size 4: 01 01 00 10 10 00 10 00 01 00 11
+  column counts: 00:4 01:3 10:3 11:1
+class 352 size 4: 01 01 00 10 10 00 10 00 01 01 10
+  column counts: 00:3 01:4 10:4 11:0
+class 353 size 4: 01 01 00 10 10 00 10 00 01 10 01
+  column counts: 00:3 01:4 10:4 11:0
+class 354 size 4: 01 01 00 10 10 00 10 00 01 10 10
+  column counts: 00:3 01:3 10:5 11:0
+class 355 size 4: 01 01 00 10 10 00 10 00 10 00 11
+  column counts: 00:4 01:2 10:4 11:1
+class 356 size 4: 01 01 00 10 10 00 10 00 10 01 01
+  column counts: 00:3 01:4 10:4 11:0
+class 357 size 4: 01 01 00 10 10 00 10 00 10 01 10
+  column counts: 00:3 01:3 10:5 11:0
+class 358 size 4: 01 01 00 10 10 00 10 00 10 10 01
+  column counts: 00:3 01:3 10:5 11:0
+class 359 size 4: 01 01 00 10 10 00 10 01 00 01 10
+  column counts: 00:3 01:4 10:4 11:0
+class 360 size 4: 01 01 00 10 10 00 10 01 00 10 01
+  column counts: 00:3 01:4 10:4 11:0
+class 361 size 4: 01 01 00 10 10 00 10 10 00 01 10
+  column counts: 00:3 01:3 10:5 11:0
+class 362 size 4: 01 01 00 10 10 00 10 10 00 10 01
+  column counts: 00:3 01:3 10:5 11:0
+class 363 size 4: 01 10 00 01 01 00 01 01 00 01 10
+  column counts: 00:3 01:6 10:2 11:0
+class 364 size 2: 01 10 00 01 01 00 01 01 00 10 01
+  column counts: 00:3 01:6 10:2 11:0
+class 365 size 4: 01 10 00 01 01 00 01 10 00 01 10
+  column counts: 00:3 01:5 10:3 11:0
+class 366 size 4: 01 10 00 01 01 00 01 10 00 10 01
+  column counts: 00:3 01:5 10:3 11:0
+class 367 size 4: 01 10 00 01 01 00 10 01 00 01 10
+  column counts: 00:3 01:5 10:3 11:0
+class 368 size 4: 01 10 00 01 01 00 10 01 00 10 01
+  column counts: 00:3 01:5 10:3 11:0
+class 369 size 2: 01 10 00 01 01 00 10 10 00 01 10
+  column counts: 00:3 01:4 10:4 11:0
+class 370 size 4: 01 10 00 01 01 00 10 10 00 10 01
+  column counts: 00:3 01:4 10:4 11:0
+class 371 size 4: 01 10 00 01 10 00 01 01 00 01 10
+  column counts: 00:3 01:5 10:3 11:0
+class 372 size 2: 01 10 00 01 10 00 01 10 00 01 10
+  column counts: 00:3 01:4 10:4 11:0
+class 373 size 4: 01 10 00 01 10 00 01 10 00 10 01
+  column counts: 00:3 01:4 10:4 11:0
+class 374 size 4: 01 10 00 01 10 00 10 01 00 01 10
+  column counts: 00:3 01:4 10:4 11:0
+class 375 size 2: 01 10 00 01 10 00 10 01 00 10 01
+  column counts: 00:3 01:4 10:4 11:0
+class 376 size 4: 01 10 00 01 10 00 10 10 00 10 01
+  column counts: 00:3 01:3 10:5 11:0
+class 377 size 4: 01 10 00 10 01 00 01 01 00 01 10
+  column counts: 00:3 01:5 10:3 11:0
+class 378 size 2: 01 10 00 10 01 00 01 10 00 10 01
+  column counts: 00:3 01:4 10:4 11:0
+class 379 size 2: 01 10 00 10 01 00 10 01 00 01 10
+  column counts: 00:3 01:4 10:4 11:0
+class 380 size 4: 01 10 00 10 01 00 10 10 00 10 01
+  column counts: 00:3 01:3 10:5 11:0
+class 381 size 2: 01 10 00 10 10 00 01 01 00 01 10
+  column counts: 00:3 01:4 10:4 11:0
+class 382 size 2: 01 10 00 10 10 00 10 10 00 10 01
+  column counts: 00:3 01:2 10:6 11:0
+
+n = 12
+upper size: 9
+E(2,n): 9
+raw maximizers: 704
+rectangle symmetry classes: 176
+class 1 size 4: 01 00 01 01 00 01 01 00 01 01 00 11
+  column counts: 00:4 01:7 10:0 11:1
+class 2 size 4: 01 00 01 01 00 01 01 00 01 01 10 10
+  column counts: 00:3 01:7 10:2 11:0
+class 3 size 4: 01 00 01 01 00 01 01 00 10 10 00 11
+  column counts: 00:4 01:5 10:2 11:1
+class 4 size 4: 01 00 01 01 00 01 01 00 10 10 01 01
+  column counts: 00:3 01:7 10:2 11:0
+class 5 size 4: 01 00 01 01 00 01 01 00 11 00 01 01
+  column counts: 00:4 01:7 10:0 11:1
+class 6 size 4: 01 00 01 01 00 01 01 00 11 00 10 10
+  column counts: 00:4 01:5 10:2 11:1
+class 7 size 4: 01 00 01 01 00 01 01 10 10 00 01 01
+  column counts: 00:3 01:7 10:2 11:0
+class 8 size 4: 01 00 01 01 00 01 01 10 10 00 10 10
+  column counts: 00:3 01:5 10:4 11:0
+class 9 size 4: 01 00 01 01 00 10 10 00 01 01 00 11
+  column counts: 00:4 01:5 10:2 11:1
+class 10 size 4: 01 00 01 01 00 10 10 00 01 01 10 10
+  column counts: 00:3 01:5 10:4 11:0
+class 11 size 4: 01 00 01 01 00 10 10 00 10 10 00 11
+  column counts: 00:4 01:3 10:4 11:1
+class 12 size 4: 01 00 01 01 00 10 10 00 10 10 01 01
+  column counts: 00:3 01:5 10:4 11:0
+class 13 size 4: 01 00 01 01 00 10 10 00 11 00 01 01
+  column counts: 00:4 01:5 10:2 11:1
+class 14 size 4: 01 00 01 01 00 10 10 00 11 00 10 10
+  column counts: 00:4 01:3 10:4 11:1
+class 15 size 4: 01 00 01 01 00 10 10 01 01 00 01 01
+  column counts: 00:3 01:7 10:2 11:0
+class 16 size 4: 01 00 01 01 00 10 10 01 01 00 10 10
+  column counts: 00:3 01:5 10:4 11:0
+class 17 size 4: 01 00 01 01 00 11 00 01 01 00 01 01
+  column counts: 00:4 01:7 10:0 11:1
+class 18 size 4: 01 00 01 01 00 11 00 01 01 00 10 10
+  column counts: 00:4 01:5 10:2 11:1
+class 19 size 4: 01 00 01 01 00 11 00 10 10 00 01 01
+  column counts: 00:4 01:5 10:2 11:1
+class 20 size 4: 01 00 01 01 00 11 00 10 10 00 10 10
+  column counts: 00:4 01:3 10:4 11:1
+class 21 size 4: 01 00 01 01 10 10 00 01 01 00 01 01
+  column counts: 00:3 01:7 10:2 11:0
+class 22 size 4: 01 00 01 01 10 10 00 01 01 00 10 10
+  column counts: 00:3 01:5 10:4 11:0
+class 23 size 4: 01 00 01 01 10 10 00 10 10 00 01 01
+  column counts: 00:3 01:5 10:4 11:0
+class 24 size 4: 01 00 01 01 10 10 00 10 10 00 10 10
+  column counts: 00:3 01:3 10:6 11:0
+class 25 size 4: 01 00 10 10 00 01 01 00 01 01 00 11
+  column counts: 00:4 01:5 10:2 11:1
+class 26 size 4: 01 00 10 10 00 01 01 00 01 01 10 10
+  column counts: 00:3 01:5 10:4 11:0
+class 27 size 4: 01 00 10 10 00 01 01 00 10 10 00 11
+  column counts: 00:4 01:3 10:4 11:1
+class 28 size 4: 01 00 10 10 00 01 01 00 10 10 01 01
+  column counts: 00:3 01:5 10:4 11:0
+class 29 size 4: 01 00 10 10 00 01 01 00 11 00 01 01
+  column counts: 00:4 01:5 10:2 11:1
+class 30 size 4: 01 00 10 10 00 01 01 00 11 00 10 10
+  column counts: 00:4 01:3 10:4 11:1
+class 31 size 4: 01 00 10 10 00 01 01 10 10 00 01 01
+  column counts: 00:3 01:5 10:4 11:0
+class 32 size 4: 01 00 10 10 00 01 01 10 10 00 10 10
+  column counts: 00:3 01:3 10:6 11:0
+class 33 size 4: 01 00 10 10 00 10 10 00 01 01 00 11
+  column counts: 00:4 01:3 10:4 11:1
+class 34 size 4: 01 00 10 10 00 10 10 00 01 01 10 10
+  column counts: 00:3 01:3 10:6 11:0
+class 35 size 4: 01 00 10 10 00 10 10 00 10 10 00 11
+  column counts: 00:4 01:1 10:6 11:1
+class 36 size 4: 01 00 10 10 00 10 10 00 10 10 01 01
+  column counts: 00:3 01:3 10:6 11:0
+class 37 size 4: 01 00 10 10 00 10 10 00 11 00 01 01
+  column counts: 00:4 01:3 10:4 11:1
+class 38 size 4: 01 00 10 10 00 10 10 00 11 00 10 10
+  column counts: 00:4 01:1 10:6 11:1
+class 39 size 4: 01 00 10 10 00 10 10 01 01 00 01 01
+  column counts: 00:3 01:5 10:4 11:0
+class 40 size 4: 01 00 10 10 00 10 10 01 01 00 10 10
+  column counts: 00:3 01:3 10:6 11:0
+class 41 size 4: 01 00 10 10 00 11 00 01 01 00 01 01
+  column counts: 00:4 01:5 10:2 11:1
+class 42 size 4: 01 00 10 10 00 11 00 01 01 00 10 10
+  column counts: 00:4 01:3 10:4 11:1
+class 43 size 4: 01 00 10 10 00 11 00 10 10 00 01 01
+  column counts: 00:4 01:3 10:4 11:1
+class 44 size 4: 01 00 10 10 00 11 00 10 10 00 10 10
+  column counts: 00:4 01:1 10:6 11:1
+class 45 size 4: 01 00 10 10 01 01 00 01 01 00 01 01
+  column counts: 00:3 01:7 10:2 11:0
+class 46 size 4: 01 00 10 10 01 01 00 01 01 00 10 10
+  column counts: 00:3 01:5 10:4 11:0
+class 47 size 4: 01 00 10 10 01 01 00 10 10 00 01 01
+  column counts: 00:3 01:5 10:4 11:0
+class 48 size 4: 01 00 10 10 01 01 00 10 10 00 10 10
+  column counts: 00:3 01:3 10:6 11:0
+class 49 size 4: 01 00 11 00 01 01 00 01 01 00 01 01
+  column counts: 00:4 01:7 10:0 11:1
+class 50 size 4: 01 00 11 00 01 01 00 01 01 00 10 10
+  column counts: 00:4 01:5 10:2 11:1
+class 51 size 4: 01 00 11 00 01 01 00 10 10 00 01 01
+  column counts: 00:4 01:5 10:2 11:1
+class 52 size 4: 01 00 11 00 01 01 00 10 10 00 10 10
+  column counts: 00:4 01:3 10:4 11:1
+class 53 size 4: 01 00 11 00 10 10 00 01 01 00 01 01
+  column counts: 00:4 01:5 10:2 11:1
+class 54 size 4: 01 00 11 00 10 10 00 01 01 00 10 10
+  column counts: 00:4 01:3 10:4 11:1
+class 55 size 4: 01 00 11 00 10 10 00 10 10 00 01 01
+  column counts: 00:4 01:3 10:4 11:1
+class 56 size 4: 01 00 11 00 10 10 00 10 10 00 10 10
+  column counts: 00:4 01:1 10:6 11:1
+class 57 size 4: 01 01 00 01 00 01 01 00 01 01 00 11
+  column counts: 00:4 01:7 10:0 11:1
+class 58 size 4: 01 01 00 01 00 01 01 00 01 01 10 10
+  column counts: 00:3 01:7 10:2 11:0
+class 59 size 4: 01 01 00 01 00 01 01 00 10 10 00 11
+  column counts: 00:4 01:5 10:2 11:1
+class 60 size 4: 01 01 00 01 00 01 01 00 10 10 01 01
+  column counts: 00:3 01:7 10:2 11:0
+class 61 size 4: 01 01 00 01 00 01 01 00 11 00 01 01
+  column counts: 00:4 01:7 10:0 11:1
+class 62 size 4: 01 01 00 01 00 01 01 00 11 00 10 10
+  column counts: 00:4 01:5 10:2 11:1
+class 63 size 4: 01 01 00 01 00 01 01 10 10 00 01 01
+  column counts: 00:3 01:7 10:2 11:0
+class 64 size 4: 01 01 00 01 00 01 01 10 10 00 10 10
+  column counts: 00:3 01:5 10:4 11:0
+class 65 size 4: 01 01 00 01 00 10 10 00 01 01 00 11
+  column counts: 00:4 01:5 10:2 11:1
+class 66 size 4: 01 01 00 01 00 10 10 00 01 01 10 10
+  column counts: 00:3 01:5 10:4 11:0
+class 67 size 4: 01 01 00 01 00 10 10 00 10 10 00 11
+  column counts: 00:4 01:3 10:4 11:1
+class 68 size 4: 01 01 00 01 00 10 10 00 10 10 01 01
+  column counts: 00:3 01:5 10:4 11:0
+class 69 size 4: 01 01 00 01 00 10 10 00 11 00 01 01
+  column counts: 00:4 01:5 10:2 11:1
+class 70 size 4: 01 01 00 01 00 10 10 00 11 00 10 10
+  column counts: 00:4 01:3 10:4 11:1
+class 71 size 4: 01 01 00 01 00 10 10 01 01 00 01 01
+  column counts: 00:3 01:7 10:2 11:0
+class 72 size 4: 01 01 00 01 00 10 10 01 01 00 10 10
+  column counts: 00:3 01:5 10:4 11:0
+class 73 size 4: 01 01 00 01 00 11 00 01 01 00 01 01
+  column counts: 00:4 01:7 10:0 11:1
+class 74 size 4: 01 01 00 01 00 11 00 01 01 00 10 10
+  column counts: 00:4 01:5 10:2 11:1
+class 75 size 4: 01 01 00 01 00 11 00 10 10 00 01 01
+  column counts: 00:4 01:5 10:2 11:1
+class 76 size 4: 01 01 00 01 00 11 00 10 10 00 10 10
+  column counts: 00:4 01:3 10:4 11:1
+class 77 size 4: 01 01 00 01 01 00 01 00 01 01 00 11
+  column counts: 00:4 01:7 10:0 11:1
+class 78 size 4: 01 01 00 01 01 00 01 00 01 01 10 10
+  column counts: 00:3 01:7 10:2 11:0
+class 79 size 4: 01 01 00 01 01 00 01 00 10 10 00 11
+  column counts: 00:4 01:5 10:2 11:1
+class 80 size 4: 01 01 00 01 01 00 01 00 10 10 01 01
+  column counts: 00:3 01:7 10:2 11:0
+class 81 size 4: 01 01 00 01 01 00 01 00 11 00 01 01
+  column counts: 00:4 01:7 10:0 11:1
+class 82 size 4: 01 01 00 01 01 00 01 00 11 00 10 10
+  column counts: 00:4 01:5 10:2 11:1
+class 83 size 4: 01 01 00 01 01 00 01 01 00 01 00 11
+  column counts: 00:4 01:7 10:0 11:1
+class 84 size 4: 01 01 00 01 01 00 01 01 00 01 01 10
+  column counts: 00:3 01:8 10:1 11:0
+class 85 size 4: 01 01 00 01 01 00 01 01 00 01 10 01
+  column counts: 00:3 01:8 10:1 11:0
+class 86 size 4: 01 01 00 01 01 00 01 01 00 01 10 10
+  column counts: 00:3 01:7 10:2 11:0
+class 87 size 4: 01 01 00 01 01 00 01 01 00 10 00 11
+  column counts: 00:4 01:6 10:1 11:1
+class 88 size 4: 01 01 00 01 01 00 01 01 00 10 01 01
+  column counts: 00:3 01:8 10:1 11:0
+class 89 size 4: 01 01 00 01 01 00 01 01 00 10 01 10
+  column counts: 00:3 01:7 10:2 11:0
+class 90 size 4: 01 01 00 01 01 00 01 01 00 10 10 01
+  column counts: 00:3 01:7 10:2 11:0
+class 91 size 4: 01 01 00 01 01 00 01 01 10 00 01 01
+  column counts: 00:3 01:8 10:1 11:0
+class 92 size 4: 01 01 00 01 01 00 01 01 10 00 10 10
+  column counts: 00:3 01:6 10:3 11:0
+class 93 size 4: 01 01 00 01 01 00 01 10 01 00 01 01
+  column counts: 00:3 01:8 10:1 11:0
+class 94 size 4: 01 01 00 01 01 00 01 10 01 00 10 10
+  column counts: 00:3 01:6 10:3 11:0
+class 95 size 4: 01 01 00 01 01 00 01 10 10 00 01 01
+  column counts: 00:3 01:7 10:2 11:0
+class 96 size 4: 01 01 00 01 01 00 01 10 10 00 10 10
+  column counts: 00:3 01:5 10:4 11:0
+class 97 size 4: 01 01 00 01 01 00 10 00 01 01 00 11
+  column counts: 00:4 01:6 10:1 11:1
+class 98 size 4: 01 01 00 01 01 00 10 00 01 01 10 10
+  column counts: 00:3 01:6 10:3 11:0
+class 99 size 4: 01 01 00 01 01 00 10 00 10 10 00 11
+  column counts: 00:4 01:4 10:3 11:1
+class 100 size 4: 01 01 00 01 01 00 10 00 10 10 01 01
+  column counts: 00:3 01:6 10:3 11:0
+class 101 size 4: 01 01 00 01 01 00 10 00 11 00 01 01
+  column counts: 00:4 01:6 10:1 11:1
+class 102 size 4: 01 01 00 01 01 00 10 00 11 00 10 10
+  column counts: 00:4 01:4 10:3 11:1
+class 103 size 4: 01 01 00 01 01 00 10 01 01 00 01 01
+  column counts: 00:3 01:8 10:1 11:0
+class 104 size 4: 01 01 00 01 01 00 10 01 01 00 10 10
+  column counts: 00:3 01:6 10:3 11:0
+class 105 size 4: 01 01 00 01 01 00 10 01 10 00 01 01
+  column counts: 00:3 01:7 10:2 11:0
+class 106 size 4: 01 01 00 01 01 00 10 01 10 00 10 10
+  column counts: 00:3 01:5 10:4 11:0
+class 107 size 4: 01 01 00 01 01 00 10 10 00 01 00 11
+  column counts: 00:4 01:5 10:2 11:1
+class 108 size 4: 01 01 00 01 01 00 10 10 00 01 01 10
+  column counts: 00:3 01:6 10:3 11:0
+class 109 size 4: 01 01 00 01 01 00 10 10 00 01 10 01
+  column counts: 00:3 01:6 10:3 11:0
+class 110 size 4: 01 01 00 01 01 00 10 10 00 01 10 10
+  column counts: 00:3 01:5 10:4 11:0
+class 111 size 4: 01 01 00 01 01 00 10 10 00 10 00 11
+  column counts: 00:4 01:4 10:3 11:1
+class 112 size 4: 01 01 00 01 01 00 10 10 00 10 01 01
+  column counts: 00:3 01:6 10:3 11:0
+class 113 size 4: 01 01 00 01 01 00 10 10 00 10 01 10
+  column counts: 00:3 01:5 10:4 11:0
+class 114 size 4: 01 01 00 01 01 00 10 10 00 10 10 01
+  column counts: 00:3 01:5 10:4 11:0
+class 115 size 4: 01 01 00 01 01 00 10 10 01 00 01 01
+  column counts: 00:3 01:7 10:2 11:0
+class 116 size 4: 01 01 00 01 01 00 10 10 01 00 10 10
+  column counts: 00:3 01:5 10:4 11:0
+class 117 size 4: 01 01 00 01 01 00 11 00 01 00 10 10
+  column counts: 00:4 01:5 10:2 11:1
+class 118 size 4: 01 01 00 01 01 00 11 00 10 00 01 01
+  column counts: 00:4 01:6 10:1 11:1
+class 119 size 4: 01 01 00 01 01 10 00 01 01 00 10 10
+  column counts: 00:3 01:6 10:3 11:0
+class 120 size 4: 01 01 00 01 01 10 00 10 10 00 01 01
+  column counts: 00:3 01:6 10:3 11:0
+class 121 size 4: 01 01 00 01 01 10 10 00 01 00 10 10
+  column counts: 00:3 01:5 10:4 11:0
+class 122 size 4: 01 01 00 01 01 10 10 00 10 00 01 01
+  column counts: 00:3 01:6 10:3 11:0
+class 123 size 4: 01 01 00 01 10 01 00 01 01 00 10 10
+  column counts: 00:3 01:6 10:3 11:0
+class 124 size 4: 01 01 00 01 10 01 00 10 10 00 01 01
+  column counts: 00:3 01:6 10:3 11:0
+class 125 size 4: 01 01 00 01 10 10 00 01 01 00 10 10
+  column counts: 00:3 01:5 10:4 11:0
+class 126 size 4: 01 01 00 01 10 10 00 10 10 00 01 01
+  column counts: 00:3 01:5 10:4 11:0
+class 127 size 4: 01 01 00 10 00 01 01 00 01 01 00 11
+  column counts: 00:4 01:6 10:1 11:1
+class 128 size 4: 01 01 00 10 00 01 01 00 01 01 10 10
+  column counts: 00:3 01:6 10:3 11:0
+class 129 size 4: 01 01 00 10 00 01 01 00 10 10 00 11
+  column counts: 00:4 01:4 10:3 11:1
+class 130 size 4: 01 01 00 10 00 01 01 00 10 10 01 01
+  column counts: 00:3 01:6 10:3 11:0
+class 131 size 4: 01 01 00 10 00 01 01 00 11 00 01 01
+  column counts: 00:4 01:6 10:1 11:1
+class 132 size 4: 01 01 00 10 00 01 01 00 11 00 10 10
+  column counts: 00:4 01:4 10:3 11:1
+class 133 size 4: 01 01 00 10 00 01 01 10 10 00 01 01
+  column counts: 00:3 01:6 10:3 11:0
+class 134 size 4: 01 01 00 10 00 10 10 00 01 01 00 11
+  column counts: 00:4 01:4 10:3 11:1
+class 135 size 4: 01 01 00 10 00 10 10 00 01 01 10 10
+  column counts: 00:3 01:4 10:5 11:0
+class 136 size 4: 01 01 00 10 00 10 10 00 10 10 00 11
+  column counts: 00:4 01:2 10:5 11:1
+class 137 size 4: 01 01 00 10 00 10 10 00 10 10 01 01
+  column counts: 00:3 01:4 10:5 11:0
+class 138 size 4: 01 01 00 10 00 10 10 00 11 00 01 01
+  column counts: 00:4 01:4 10:3 11:1
+class 139 size 4: 01 01 00 10 00 10 10 00 11 00 10 10
+  column counts: 00:4 01:2 10:5 11:1
+class 140 size 4: 01 01 00 10 00 10 10 01 01 00 10 10
+  column counts: 00:3 01:4 10:5 11:0
+class 141 size 4: 01 01 00 10 00 11 00 01 01 00 10 10
+  column counts: 00:4 01:4 10:3 11:1
+class 142 size 4: 01 01 00 10 00 11 00 10 10 00 01 01
+  column counts: 00:4 01:4 10:3 11:1
+class 143 size 4: 01 01 00 10 01 01 00 01 01 00 10 10
+  column counts: 00:3 01:6 10:3 11:0
+class 144 size 4: 01 01 00 10 01 01 00 10 10 00 01 01
+  column counts: 00:3 01:6 10:3 11:0
+class 145 size 4: 01 01 00 10 01 10 00 01 01 00 10 10
+  column counts: 00:3 01:5 10:4 11:0
+class 146 size 4: 01 01 00 10 01 10 00 10 10 00 01 01
+  column counts: 00:3 01:5 10:4 11:0
+class 147 size 4: 01 01 00 10 10 00 01 00 01 01 00 11
+  column counts: 00:4 01:5 10:2 11:1
+class 148 size 4: 01 01 00 10 10 00 01 00 01 01 10 10
+  column counts: 00:3 01:5 10:4 11:0
+class 149 size 4: 01 01 00 10 10 00 01 00 10 10 00 11
+  column counts: 00:4 01:3 10:4 11:1
+class 150 size 4: 01 01 00 10 10 00 01 00 10 10 01 01
+  column counts: 00:3 01:5 10:4 11:0
+class 151 size 4: 01 01 00 10 10 00 01 00 11 00 01 01
+  column counts: 00:4 01:5 10:2 11:1
+class 152 size 4: 01 01 00 10 10 00 01 00 11 00 10 10
+  column counts: 00:4 01:3 10:4 11:1
+class 153 size 4: 01 01 00 10 10 00 01 01 00 01 00 11
+  column counts: 00:4 01:5 10:2 11:1
+class 154 size 4: 01 01 00 10 10 00 01 01 00 01 01 10
+  column counts: 00:3 01:6 10:3 11:0
+class 155 size 4: 01 01 00 10 10 00 01 01 00 01 10 01
+  column counts: 00:3 01:6 10:3 11:0
+class 156 size 4: 01 01 00 10 10 00 01 01 00 01 10 10
+  column counts: 00:3 01:5 10:4 11:0
+class 157 size 4: 01 01 00 10 10 00 01 01 00 10 00 11
+  column counts: 00:4 01:4 10:3 11:1
+class 158 size 4: 01 01 00 10 10 00 01 01 00 10 01 01
+  column counts: 00:3 01:6 10:3 11:0
+class 159 size 4: 01 01 00 10 10 00 01 01 00 10 01 10
+  column counts: 00:3 01:5 10:4 11:0
+class 160 size 4: 01 01 00 10 10 00 01 01 00 10 10 01
+  column counts: 00:3 01:5 10:4 11:0
+class 161 size 4: 01 01 00 10 10 00 01 10 10 00 01 01
+  column counts: 00:3 01:5 10:4 11:0
+class 162 size 4: 01 01 00 10 10 00 10 00 01 01 00 11
+  column counts: 00:4 01:4 10:3 11:1
+class 163 size 4: 01 01 00 10 10 00 10 00 01 01 10 10
+  column counts: 00:3 01:4 10:5 11:0
+class 164 size 4: 01 01 00 10 10 00 10 00 10 10 00 11
+  column counts: 00:4 01:2 10:5 11:1
+class 165 size 4: 01 01 00 10 10 00 10 00 10 10 01 01
+  column counts: 00:3 01:4 10:5 11:0
+class 166 size 4: 01 01 00 10 10 00 10 00 11 00 01 01
+  column counts: 00:4 01:4 10:3 11:1
+class 167 size 4: 01 01 00 10 10 00 10 00 11 00 10 10
+  column counts: 00:4 01:2 10:5 11:1
+class 168 size 4: 01 01 00 10 10 00 10 01 01 00 10 10
+  column counts: 00:3 01:4 10:5 11:0
+class 169 size 4: 01 01 00 10 10 00 10 10 00 01 00 11
+  column counts: 00:4 01:3 10:4 11:1
+class 170 size 4: 01 01 00 10 10 00 10 10 00 01 01 10
+  column counts: 00:3 01:4 10:5 11:0
+class 171 size 4: 01 01 00 10 10 00 10 10 00 01 10 01
+  column counts: 00:3 01:4 10:5 11:0
+class 172 size 4: 01 01 00 10 10 00 10 10 00 01 10 10
+  column counts: 00:3 01:3 10:6 11:0
+class 173 size 4: 01 01 00 10 10 00 10 10 00 10 00 11
+  column counts: 00:4 01:2 10:5 11:1
+class 174 size 4: 01 01 00 10 10 00 10 10 00 10 01 01
+  column counts: 00:3 01:4 10:5 11:0
+class 175 size 4: 01 01 00 10 10 00 10 10 00 10 01 10
+  column counts: 00:3 01:3 10:6 11:0
+class 176 size 4: 01 01 00 10 10 00 10 10 00 10 10 01
+  column counts: 00:3 01:3 10:6 11:0
+

@@ -3,7 +3,7 @@
 This file records conjectures suggested by the exact computations. They are not
 proved.
 
-## Conjecture 1: Exact Formula For 2 x n
+## Result Candidate 1: Exact Formula For 2 x n
 
 For every `n >= 2`,
 
@@ -17,7 +17,8 @@ Evidence:
 
 - verified exactly for `2 <= n <= 12`;
 - every tested `2 x n` case attains the upper-bound start immediately;
-- this is the simplest family where a direct proof may be possible.
+- an explicit construction matching the upper bound is implemented in
+  `experiments/two_row_construction.jl`.
 
 ## Conjecture 2: Small-Rectangle Gap Is At Most One
 
@@ -74,3 +75,5 @@ The `2 x n` formula is the best first target. A proof would likely need:
 Because a `2 x n` grid has only vertical pairs and horizontal chains, it should
 be possible to translate the process into a one-dimensional constraint problem
 on columns.
+
+See `notes/two_row_formula.md` for the construction and proof outline.

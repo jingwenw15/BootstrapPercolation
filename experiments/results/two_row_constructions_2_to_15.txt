@@ -1,0 +1,112 @@
+n = 2
+column words: 01 10
+size: 2
+Morris upper bound: 2
+minimal percolating: true
+. X
+X .
+
+n = 3
+column words: 01 00 11
+size: 3
+Morris upper bound: 3
+minimal percolating: true
+. . X
+X . X
+
+n = 4
+column words: 01 01 00 11
+size: 4
+Morris upper bound: 4
+minimal percolating: true
+. . . X
+X X . X
+
+n = 5
+column words: 01 01 00 01 10
+size: 4
+Morris upper bound: 4
+minimal percolating: true
+. . . . X
+X X . X .
+
+n = 6
+column words: 01 01 00 01 00 11
+size: 5
+Morris upper bound: 5
+minimal percolating: true
+. . . . . X
+X X . X . X
+
+n = 7
+column words: 01 01 00 01 01 00 11
+size: 6
+Morris upper bound: 6
+minimal percolating: true
+. . . . . . X
+X X . X X . X
+
+n = 8
+column words: 01 01 00 01 01 00 01 10
+size: 6
+Morris upper bound: 6
+minimal percolating: true
+. . . . . . . X
+X X . X X . X .
+
+n = 9
+column words: 01 01 00 01 01 00 01 00 11
+size: 7
+Morris upper bound: 7
+minimal percolating: true
+. . . . . . . . X
+X X . X X . X . X
+
+n = 10
+column words: 01 01 00 01 01 00 01 01 00 11
+size: 8
+Morris upper bound: 8
+minimal percolating: true
+. . . . . . . . . X
+X X . X X . X X . X
+
+n = 11
+column words: 01 01 00 01 01 00 01 01 00 01 10
+size: 8
+Morris upper bound: 8
+minimal percolating: true
+. . . . . . . . . . X
+X X . X X . X X . X .
+
+n = 12
+column words: 01 01 00 01 01 00 01 01 00 01 00 11
+size: 9
+Morris upper bound: 9
+minimal percolating: true
+. . . . . . . . . . . X
+X X . X X . X X . X . X
+
+n = 13
+column words: 01 01 00 01 01 00 01 01 00 01 01 00 11
+size: 10
+Morris upper bound: 10
+minimal percolating: true
+. . . . . . . . . . . . X
+X X . X X . X X . X X . X
+
+n = 14
+column words: 01 01 00 01 01 00 01 01 00 01 01 00 01 10
+size: 10
+Morris upper bound: 10
+minimal percolating: true
+. . . . . . . . . . . . . X
+X X . X X . X X . X X . X .
+
+n = 15
+column words: 01 01 00 01 01 00 01 01 00 01 01 00 01 00 11
+size: 11
+Morris upper bound: 11
+minimal percolating: true
+. . . . . . . . . . . . . . X
+X X . X X . X X . X X . X . X
+
