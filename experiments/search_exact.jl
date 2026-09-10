@@ -119,6 +119,63 @@ function exact_search_descending(n; upper_size = n * n, lower_size = 1)
     return exact_search_descending(n, n; upper_size = upper_size, lower_size = lower_size)
 end
 
+function exact_search_summary(rows, cols; upper_size = rows * cols, lower_size = 1)
+    rows <= 0 && throw(ArgumentError("rows must be positive"))
+    cols <= 0 && throw(ArgumentError("cols must be positive"))
+    0 <= lower_size <= upper_size <= rows * cols ||
+        throw(ArgumentError("expected 0 <= lower_size <= upper_size <= rows * cols"))
+
+    checked_by_size = Pair{Int, Int}[]
+    total_checked = 0
+
+    for size in upper_size:-1:lower_size
+        checked = 0
+        matches = 0
+
+        foreach_combination(rows * cols, size) do positions
+            checked += 1
+            grid = grid_from_positions(rows, cols, positions)
+
+            if is_minimal_percolating(grid)
+                matches += 1
+            end
+        end
+
+        push!(checked_by_size, size => checked)
+        total_checked += checked
+
+        if matches > 0
+            return (
+                rows = rows,
+                cols = cols,
+                maximum_size = size,
+                raw_maximizers = matches,
+                total_checked = total_checked,
+                checked_by_size = checked_by_size,
+                upper_size = upper_size,
+                lower_size = lower_size,
+                certified = true,
+            )
+        end
+    end
+
+    return (
+        rows = rows,
+        cols = cols,
+        maximum_size = nothing,
+        raw_maximizers = 0,
+        total_checked = total_checked,
+        checked_by_size = checked_by_size,
+        upper_size = upper_size,
+        lower_size = lower_size,
+        certified = false,
+    )
+end
+
+function exact_search_summary(n; upper_size = n * n, lower_size = 1)
+    return exact_search_summary(n, n; upper_size = upper_size, lower_size = lower_size)
+end
+
 function print_exact_search_result(result)
     if result.rows == result.cols
         println("n = ", result.rows)

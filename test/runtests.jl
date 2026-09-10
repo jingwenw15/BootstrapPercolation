@@ -146,6 +146,18 @@ end
             @test length(result.maximizers) == length(transposed.maximizers)
         end
     end
+
+    @testset "Summary search matches stored exact search" begin
+        for (rows, cols) in [(2, 5), (3, 4), (4, 4)]
+            full = exact_search_descending(rows, cols; upper_size = morris_upper_bound_size(rows, cols))
+            summary = exact_search_summary(rows, cols; upper_size = morris_upper_bound_size(rows, cols))
+
+            @test summary.certified == full.certified
+            @test summary.maximum_size == full.maximum_size
+            @test summary.raw_maximizers == length(full.maximizers)
+            @test summary.total_checked == full.total_checked
+        end
+    end
 end
 
 @testset "Symmetry Reduction" begin

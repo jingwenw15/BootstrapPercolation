@@ -121,3 +121,102 @@ The upper-bound-attaining cases are:
 This suggests a concrete next conjecture-search problem: characterize small
 rectangles for which `E(m,n) = floor((m + 2)(n + 2) / 6)` versus those for which
 the exact value is one lower.
+
+## Thin-Rectangle Families
+
+The summary search was extended to:
+
+- `2 x n` for `2 <= n <= 12`
+- `3 x n` for `3 <= n <= 9`
+- `4 x n` for `4 <= n <= 7`
+
+The machine-readable table is saved as
+`experiments/results/thin_rectangle_table.csv`.
+
+### 2 x n
+
+For every tested value `2 <= n <= 12`, the exact value attains Morris's upper
+bound:
+
+```text
+E(2,n) = floor(2(n + 2) / 3).
+```
+
+Computed values:
+
+| n | E(2,n) | raw maximizers |
+|---|-------:|---------------:|
+| 2 | 2 | 2 |
+| 3 | 3 | 10 |
+| 4 | 4 | 6 |
+| 5 | 4 | 48 |
+| 6 | 5 | 56 |
+| 7 | 6 | 20 |
+| 8 | 6 | 320 |
+| 9 | 7 | 216 |
+| 10 | 8 | 56 |
+| 11 | 8 | 1,488 |
+| 12 | 9 | 704 |
+
+This is the cleanest candidate for a provable exact formula.
+
+### 3 x n
+
+Computed values:
+
+| n | Morris upper start | E(3,n) | gap |
+|---|-------------------:|-------:|----:|
+| 3 | 4 | 4 | 0 |
+| 4 | 5 | 4 | 1 |
+| 5 | 5 | 5 | 0 |
+| 6 | 6 | 6 | 0 |
+| 7 | 7 | 6 | 1 |
+| 8 | 8 | 7 | 1 |
+| 9 | 9 | 8 | 1 |
+
+This family is more subtle than `2 x n`: some values attain the upper bound,
+while others fall one below.
+
+### 4 x n
+
+Computed values:
+
+| n | Morris upper start | E(4,n) | raw maximizers | gap |
+|---|-------------------:|-------:|---------------:|----:|
+| 4 | 6 | 5 | 360 | 1 |
+| 5 | 7 | 6 | 280 | 1 |
+| 6 | 8 | 7 | 40 | 1 |
+| 7 | 9 | 8 | 2 | 1 |
+
+Every tested `4 x n` rectangle falls exactly one below Morris's upper-bound
+start. The case `4 x 7` is especially rigid: only two raw maximizers were found.
+
+## Candidate Conjectures
+
+The data suggests the following targeted conjectures.
+
+1. For all `n >= 2`,
+
+   ```text
+   E(2,n) = floor(2(n + 2) / 3).
+   ```
+
+2. For all tested `m,n`, the value is either Morris's upper-bound start or one
+   below it:
+
+   ```text
+   E(m,n) in { floor((m + 2)(n + 2) / 6),
+               floor((m + 2)(n + 2) / 6) - 1 }.
+   ```
+
+3. For `4 x n`, the data suggests
+
+   ```text
+   E(4,n) = floor((6)(n + 2) / 6) - 1 = n + 1
+   ```
+
+   at least for `4 <= n <= 7`.
+
+These are computational conjectures only. The next step should be to prove the
+`2 x n` formula first, since the data is cleanest and the grid has only two
+rows.
