@@ -1,0 +1,7 @@
+grid = 4 x 9
+size = 10
+locally viable generated = 41584711
+representatives checked = 10399116
+skipped noncanonical = 31185595
+raw minimal percolating = 0
+symmetry classes = 0

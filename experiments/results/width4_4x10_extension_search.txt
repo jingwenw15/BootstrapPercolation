@@ -1,0 +1,11 @@
+grid = 4 x 10
+size = 11
+found: false
+grid = 4 x 10
+size = 10
+found: true
+insert_before = 3
+X X . . . . . X X .
+. . . X X . . . . .
+. . . . . . . . X X
+. . . . X X . . . .

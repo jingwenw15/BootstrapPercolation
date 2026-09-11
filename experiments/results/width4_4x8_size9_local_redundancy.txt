@@ -1,0 +1,111 @@
+grid = 4 x 8
+size = 9
+percolating sets: 9564940
+locally forced seed count histogram:
+  0: 3206768
+  1: 3726800
+  2: 1848528
+  3: 515144
+  4: 249364
+  5: 18336
+examples with no locally forced seed:
+example 1:
+X . X . X . X X
+X . X . X . . .
+. . . . . . . .
+X . . . . . . .
+example 2:
+X X . X X . X X
+. . X . . X . .
+. . . . . . . .
+X . . . . . . .
+example 3:
+X . X . X . X X
+X . X . . X . .
+. . . . . . . .
+X . . . . . . .
+example 4:
+X . . X X . X X
+X . X . . X . .
+. . . . . . . .
+X . . . . . . .
+example 5:
+. X . X X . X X
+X . X . . X . .
+. . . . . . . .
+X . . . . . . .
+example 6:
+X . . X X . X X
+. X X . . X . .
+. . . . . . . .
+X . . . . . . .
+example 7:
+X . X . X . X X
+X . . X . X . .
+. . . . . . . .
+X . . . . . . .
+example 8:
+. X X . X . X X
+X . . X . X . .
+. . . . . . . .
+X . . . . . . .
+example 9:
+X . X . X . X X
+. X . X . X . .
+. . . . . . . .
+X . . . . . . .
+example 10:
+. . X . X . X X
+X X . X . X . .
+. . . . . . . .
+X . . . . . . .
+example 11:
+X X . . X . X X
+. . X X . X . .
+. . . . . . . .
+X . . . . . . .
+example 12:
+X . . . X . X X
+X . X X . X . .
+. . . . . . . .
+X . . . . . . .
+example 13:
+. X . . X . X X
+X . X X . X . .
+. . . . . . . .
+X . . . . . . .
+example 14:
+X . X X . . X X
+X . . . X X . .
+. . . . . . . .
+X . . . . . . .
+example 15:
+X . X X . . X X
+. X . . X X . .
+. . . . . . . .
+X . . . . . . .
+example 16:
+. . X X . . X X
+X X . . X X . .
+. . . . . . . .
+X . . . . . . .
+example 17:
+X X . X . . X X
+. . X . X X . .
+. . . . . . . .
+X . . . . . . .
+example 18:
+X . X . . . X X
+X . X . X X . .
+. . . . . . . .
+X . . . . . . .
+example 19:
+X . . X . . X X
+X . X . X X . .
+. . . . . . . .
+X . . . . . . .
+example 20:
+. X . X . . X X
+X . X . X X . .
+. . . . . . . .
+X . . . . . . .

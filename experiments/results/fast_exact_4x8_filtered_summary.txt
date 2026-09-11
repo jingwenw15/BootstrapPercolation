@@ -1,0 +1,19 @@
+grid = 4 x 8
+upper = 10
+E = 8
+raw maximizers = 7074
+total candidates = 103079340
+skipped locally forced = 87312793
+checked after filter = 15766547
+candidates by size:
+  10: 64512240
+  9: 28048800
+  8: 10518300
+skipped by size:
+  10: 57897898
+  9: 22431380
+  8: 6983515
+checked by size:
+  10: 6614342
+  9: 5617420
+  8: 3534785

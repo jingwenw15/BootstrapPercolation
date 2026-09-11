@@ -7,6 +7,7 @@ include("../experiments/symmetry.jl")
 include("../experiments/search_exact.jl")
 include("../experiments/two_row_construction.jl")
 include("../experiments/fast_exact.jl")
+include("../experiments/extend_width4.jl")
 
 @testset "Bootstrap Percolation Simulator" begin 
 
@@ -142,6 +143,69 @@ end
             @test fast.raw_maximizers == baseline.raw_maximizers
             @test fast.total_checked == baseline.total_checked
         end
+    end
+
+    @testset "Local forced-seed filter is a valid necessary condition" begin
+        neighbors = neighbor_masks(3, 3)
+        locally_forced = bitmask_from_positions(3, 3, [2, 4, 5])
+        not_locally_forced = bitmask_from_positions(3, 3, [1, 3, 7])
+
+        @test has_locally_forced_seed(locally_forced, neighbors)
+        @test !has_locally_forced_seed(not_locally_forced, neighbors)
+    end
+
+    @testset "Filtered fast exact search matches unfiltered search" begin
+        for (rows, cols) in [(3, 4), (4, 4), (4, 5)]
+            upper = morris_upper_bound_size(rows, cols)
+            unfiltered = fast_exact_search_descending(rows, cols; upper_size = upper, store = false)
+            filtered = fast_exact_search_descending_filtered(rows, cols; upper_size = upper, store = false)
+
+            @test filtered.certified == unfiltered.certified
+            @test filtered.maximum_size == unfiltered.maximum_size
+            @test filtered.raw_maximizers == unfiltered.raw_maximizers
+            @test filtered.total_checked <= filtered.total_candidates
+            @test filtered.total_candidates == unfiltered.total_checked
+        end
+    end
+
+    @testset "Generated fast exact search matches filtered search" begin
+        for (rows, cols) in [(3, 4), (4, 4), (4, 5)]
+            upper = morris_upper_bound_size(rows, cols)
+            filtered = fast_exact_search_descending_filtered(rows, cols; upper_size = upper, store = false)
+            generated = fast_exact_search_descending_generated(rows, cols; upper_size = upper, store = false)
+
+            @test generated.certified == filtered.certified
+            @test generated.maximum_size == filtered.maximum_size
+            @test generated.raw_maximizers == filtered.raw_maximizers
+            @test generated.total_generated == filtered.total_checked
+        end
+    end
+
+    @testset "Symmetry-generated search matches generated search" begin
+        for (rows, cols) in [(3, 4), (4, 4), (4, 5)]
+            upper = morris_upper_bound_size(rows, cols)
+            generated = fast_exact_search_descending_generated(rows, cols; upper_size = upper, store = false)
+            canonical = fast_exact_search_descending_generated_canonical(rows, cols; upper_size = upper, store = false)
+
+            @test canonical.certified == generated.certified
+            @test canonical.maximum_size == generated.maximum_size
+            @test canonical.raw_maximizers == generated.raw_maximizers
+            @test canonical.total_checked_representatives <= canonical.total_generated
+        end
+    end
+end
+
+@testset "Width-Four Extension Search" begin
+    @testset "Blank column insertion preserves row-major seeds" begin
+        mask = bitmask_from_positions(4, 3, [1, 6, 12])
+        inserted = insert_empty_column_mask(4, 3, mask, 2)
+
+        @test bitmask_to_grid(4, 4, inserted) == [
+            "X" "." "." ".";
+            "." "." "." "X";
+            "." "." "." ".";
+            "." "." "." "X"
+        ]
     end
 end
 

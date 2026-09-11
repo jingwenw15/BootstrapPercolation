@@ -1,0 +1,4 @@
+grid = 4 x 9
+size = 11
+generated = 50749182
+minimal percolating = 0
