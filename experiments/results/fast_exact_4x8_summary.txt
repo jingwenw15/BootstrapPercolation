@@ -1,0 +1,10 @@
+grid = 4 x 8
+search size range: 10 down to 1
+total configurations checked: 103079340
+checked by size:
+  size 10: 64512240
+  size 9: 28048800
+  size 8: 10518300
+certified: true
+E(m,n): 8
+raw maximizers: 7074

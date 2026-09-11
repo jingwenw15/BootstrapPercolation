@@ -1,0 +1,33 @@
+grid = 4 x 8
+size = 9
+total checked: 28048800
+percolating: 9564940
+nonpercolating: 18483860
+minimal percolating: 0
+removable-seed histogram among percolating sets:
+  1: 240
+  2: 28964
+  3: 347580
+  4: 1592912
+  5: 3106772
+  6: 2959324
+  7: 1347784
+  8: 181364
+final-uninfected histogram among nonpercolating sets:
+  4: 6957656
+  8: 4137496
+  9: 229992
+  10: 608800
+  11: 1650512
+  12: 1113216
+  13: 370992
+  14: 1099820
+  15: 533572
+  16: 505604
+  17: 381900
+  18: 325088
+  19: 203996
+  20: 162164
+  21: 109688
+  22: 66380
+  23: 26984

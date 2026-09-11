@@ -6,6 +6,7 @@ include("../experiments/enumerate.jl")
 include("../experiments/symmetry.jl")
 include("../experiments/search_exact.jl")
 include("../experiments/two_row_construction.jl")
+include("../experiments/fast_exact.jl")
 
 @testset "Bootstrap Percolation Simulator" begin 
 
@@ -104,6 +105,44 @@ include("../experiments/two_row_construction.jl")
         @test all(finalGrid .== "X")
     end
     
+end
+
+@testset "Fast Bitmask Exact Search" begin
+    @testset "Bitmask grid conversion" begin
+        mask = bitmask_from_positions(2, 3, [1, 3, 5])
+
+        @test bitmask_to_grid(2, 3, mask) == [
+            "X" "." "X";
+            "." "X" "."
+        ]
+    end
+
+    @testset "Fast predicates match grid predicates" begin
+        for rows in 2:4, cols in rows:5
+            neighbors = neighbor_masks(rows, cols)
+            total = rows * cols
+
+            for x in 0:min(2^total - 1, 255)
+                mask = UInt64(x)
+                grid = bitmask_to_grid(rows, cols, mask)
+
+                @test fast_percolates(rows, cols, mask, neighbors) == percolates(grid)
+                @test fast_is_minimal_percolating(rows, cols, mask, neighbors) == is_minimal_percolating(grid)
+            end
+        end
+    end
+
+    @testset "Fast exact search matches exact baseline" begin
+        for (rows, cols) in [(2, 5), (3, 4), (4, 4), (4, 5)]
+            baseline = exact_search_summary(rows, cols; upper_size = morris_upper_bound_size(rows, cols))
+            fast = fast_exact_search_descending(rows, cols; upper_size = morris_upper_bound_size(rows, cols), store = false)
+
+            @test fast.certified == baseline.certified
+            @test fast.maximum_size == baseline.maximum_size
+            @test fast.raw_maximizers == baseline.raw_maximizers
+            @test fast.total_checked == baseline.total_checked
+        end
+    end
 end
 
 @testset "Two-Row Extremal Construction" begin

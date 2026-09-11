@@ -187,9 +187,12 @@ Computed values:
 | 5 | 7 | 6 | 280 | 1 |
 | 6 | 8 | 7 | 40 | 1 |
 | 7 | 9 | 8 | 2 | 1 |
+| 8 | 10 | 8 | 7,074 | 2 |
 
-Every tested `4 x n` rectangle falls exactly one below Morris's upper-bound
-start. The case `4 x 7` is especially rigid: only two raw maximizers were found.
+The `4 x 8` case changes the picture. The first four width-4 values fall
+exactly one below Morris's upper-bound start, but `4 x 8` falls two below it.
+The case `4 x 7` is especially rigid, with only two raw maximizers; the next
+case `4 x 8` has 7,074 raw maximizers.
 
 ## Candidate Conjectures
 
@@ -201,22 +204,24 @@ The data suggests the following targeted conjectures.
    E(2,n) = floor(2(n + 2) / 3).
    ```
 
-2. For all tested `m,n`, the value is either Morris's upper-bound start or one
-   below it:
+2. A now-disproved candidate was that every tested `m,n` value is either
+   Morris's upper-bound start or one below it:
 
    ```text
    E(m,n) in { floor((m + 2)(n + 2) / 6),
                floor((m + 2)(n + 2) / 6) - 1 }.
    ```
 
-3. For `4 x n`, the data suggests
+   Exact search for `4 x 8` disproves this, since Morris's upper-bound start is
+   10 but `E(4,8) = 8`.
+
+3. A now-disproved candidate for `4 x n` was
 
    ```text
    E(4,n) = floor((6)(n + 2) / 6) - 1 = n + 1
    ```
 
-   at least for `4 <= n <= 7`.
+   based on `4 <= n <= 7`. Exact search gives `E(4,8) = 8`, not 9.
 
-These are computational conjectures only. The next step should be to prove the
-`2 x n` formula first, since the data is cleanest and the grid has only two
-rows.
+The corrected next step is to understand the width-4 sequence and explain why
+the additional drop appears at `n = 8`.
