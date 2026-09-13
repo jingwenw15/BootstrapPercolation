@@ -1,0 +1,10 @@
+grid = 4 x 10
+size 12
+  locally viable = 388350293
+  locally viable and percolating = 256942360
+size 11
+  locally viable = 309117476
+  locally viable and percolating = 159572568
+size 10
+  locally viable = 192959628
+  locally viable and percolating = 68033874

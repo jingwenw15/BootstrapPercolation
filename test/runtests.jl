@@ -9,6 +9,7 @@ include("../experiments/two_row_construction.jl")
 include("../experiments/fast_exact.jl")
 include("../experiments/extend_width4.jl")
 include("../experiments/width4_transfer.jl")
+include("../experiments/width4_stable_sets.jl")
 
 @testset "Bootstrap Percolation Simulator" begin 
 
@@ -221,6 +222,58 @@ end
             @test transfer.checked == generated.checked_representatives
             @test transfer.raw_maximizers == generated.raw_maximizers
             @test transfer.symmetry_classes == generated.symmetry_classes
+        end
+    end
+end
+
+@testset "Width-Four Stable Set Characterization" begin
+    @testset "Stable-set predicates match simulator on 4 x 4" begin
+        neighbors = neighbor_masks(4, 4)
+
+        for x in UInt64(0):(UInt64(1) << 16) - UInt64(1)
+            tuple_summary = width4_stable_witness_summary(4, x)
+            bit_summary = width4_stable_witness_summary_bits(4, x)
+
+            @test tuple_summary.has_zero_seed_obstruction == bit_summary.has_zero_seed_obstruction
+            @test tuple_summary.witnessed_seeds == bit_summary.witnessed_seeds
+            @test width4_percolates_by_stable_sets(4, x) == fast_percolates(4, 4, x, neighbors)
+            @test width4_is_minimal_percolating_by_stable_sets(4, x) == fast_is_minimal_percolating(4, 4, x, neighbors)
+            @test width4_is_minimal_percolating_by_witness_summary(4, x) == fast_is_minimal_percolating(4, 4, x, neighbors)
+        end
+    end
+
+    @testset "Stable-set predicates certify known width-four examples" begin
+        example_4x10 = bitmask_from_positions(4, 10, [1, 2, 8, 9, 14, 15, 29, 30, 35, 36])
+
+        @test width4_is_minimal_percolating_by_stable_sets(10, example_4x10)
+        @test width4_is_minimal_percolating_by_witness_summary(10, example_4x10)
+        @test fast_is_minimal_percolating(4, 10, example_4x10)
+    end
+
+    @testset "Stable automaton counts locally viable percolating sets" begin
+        for (cols, size) in [(4, 5), (5, 6), (8, 8)]
+            neighbors = neighbor_masks(4, cols)
+            direct_count = 0
+
+            foreach_width4_locally_viable_sequence(cols, size) do mask
+                if fast_percolates(4, cols, mask, neighbors)
+                    direct_count += 1
+                end
+            end
+
+            @test width4_locally_viable_percolating_count(cols, size) == direct_count
+        end
+    end
+
+    @testset "Stable-witness search matches simulator search" begin
+        for (cols, size) in [(4, 5), (5, 6), (8, 8)]
+            simulator = width4_transfer_find_minimal_percolating(cols, size; store = false)
+            stable = width4_find_minimal_by_stable_witnesses(cols, size; store = false)
+
+            @test stable.generated == simulator.generated
+            @test stable.checked == simulator.checked
+            @test stable.raw_maximizers == simulator.raw_maximizers
+            @test stable.symmetry_classes == simulator.symmetry_classes
         end
     end
 end

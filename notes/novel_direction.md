@@ -287,3 +287,89 @@ the locally viable layer sizes are:
 So the next algorithm cannot merely generate candidates in a cleaner order. To
 certify the upper bound for `4 x 10`, we need a transfer state that also caches
 enough infection/minimality information to rule out large families at once.
+
+## Static Stable-Set Reformulation
+
+A better exact program should use the dual obstruction to percolation.
+
+Call a nonempty set `S` of cells stable if every cell in `S` has at most one
+orthogonal neighbor outside `S`. If `S` is initially uninfected, then no cell of
+`S` can ever become infected, even if every cell outside `S` eventually becomes
+infected.
+
+Therefore, for an initial infected set `A`:
+
+```text
+A percolates
+iff there is no nonempty stable set S with S cap A = empty.
+```
+
+Minimality also has a static certificate. Since `A` percolates, removing a seed
+`a` makes the set fail to percolate exactly when the new uninfected set contains
+a stable obstruction. Such an obstruction must contain `a` and no other seed of
+`A`. Thus:
+
+```text
+A is minimal percolating
+iff
+  no stable set avoids A, and
+  for every seed a in A, there is a stable set S with S cap A = {a}.
+```
+
+This is the right formulation for a fixed-height transfer program. For height
+4, a stable set has one of only 16 possible column patterns, and stability of a
+middle column is determined by the previous, current, and next stable-set
+columns. The first implementation of this idea is in
+`experiments/width4_stable_sets.jl`, and it matches the simulator/minimality
+predicate on all `4 x 4` configurations.
+
+The next exact search should combine:
+
+1. seed-column patterns;
+2. reachable zero-seed stable obstructions, to certify percolation;
+3. reachable one-seed stable obstructions, to certify minimality of each seed;
+4. dynamic-programming state merging, so many candidate infected sets are ruled
+   out together instead of simulated one at a time.
+
+The first merged-state version counts locally viable candidates that percolate
+without materializing each mask. For `4 x 10`, it gives:
+
+| size | locally viable | locally viable and percolating |
+|-----:|---------------:|--------------------------------:|
+| 12 | 388,350,293 | 256,942,360 |
+| 11 | 309,117,476 | 159,572,568 |
+| 10 | 192,959,628 | 68,033,874 |
+
+This is a useful reduction, but it also shows why minimality is the actual hard
+part. Even after local minimality pruning and percolation filtering, size 11
+still has more than 159 million percolating candidates. The next DP must encode
+the one-seed stable-set witnesses required for minimality.
+
+A second stable-set routine now computes those witnesses in one pass for a fixed
+candidate. It scans stable-set column patterns while tracking whether the stable
+set has hit zero seeds or exactly one seed of `A`. At the end it reports:
+
+1. whether there is a zero-seed stable obstruction, which means `A` does not
+   percolate;
+2. the set of seeds that have a one-seed stable witness, which is exactly the
+   removal certificate needed for minimality.
+
+Thus a candidate `A` is minimal percolating exactly when:
+
+```text
+no zero-seed stable obstruction exists, and
+the witnessed-seed mask equals A.
+```
+
+This single-pass witness summary matches the simulator/minimality predicate on
+all `4 x 4` configurations. It is still a per-candidate verifier, but its state
+is the right object to merge in the next full DP.
+
+The witness summary has also been wired into a width-4 search path. It verifies
+minimality by stable-set witnesses instead of by repeatedly simulating seed
+deletions. This makes the certification logic closer to the intended proof
+language, but it is not yet enough to certify `4 x 10`: when applied
+candidate-by-candidate to the `4 x 9` extremal layer, enumeration remains the
+dominant cost. The remaining algorithmic step is to merge the witness-summary
+states across seed-column prefixes, rather than recomputing them separately for
+each full candidate.
