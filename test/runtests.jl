@@ -8,6 +8,7 @@ include("../experiments/search_exact.jl")
 include("../experiments/two_row_construction.jl")
 include("../experiments/fast_exact.jl")
 include("../experiments/extend_width4.jl")
+include("../experiments/width4_transfer.jl")
 
 @testset "Bootstrap Percolation Simulator" begin 
 
@@ -206,6 +207,21 @@ end
             "." "." "." ".";
             "." "." "." "X"
         ]
+    end
+end
+
+@testset "Width-Four Column Transfer Search" begin
+    @testset "Column local viability matches generated search" begin
+        for (cols, size) in [(4, 5), (5, 6), (8, 8)]
+            generated = fast_find_minimal_percolating_sets_of_size_generated_canonical(4, cols, size; store = false)
+            transfer = width4_transfer_find_minimal_percolating(cols, size; store = false)
+
+            @test width4_locally_viable_count(cols, size) == generated.generated
+            @test transfer.generated == generated.generated
+            @test transfer.checked == generated.checked_representatives
+            @test transfer.raw_maximizers == generated.raw_maximizers
+            @test transfer.symmetry_classes == generated.symmetry_classes
+        end
     end
 end
 

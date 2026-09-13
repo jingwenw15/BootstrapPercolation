@@ -272,3 +272,18 @@ but it is not a proof and not yet an exact computation for `n = 10`. The next
 algorithmic step is to replace global subset generation with a fixed-height
 column-transfer search, so that upper bounds for `4 x 10`, `4 x 11`, and beyond
 can be certified.
+
+A first column-transfer prototype confirms the scale of the remaining problem.
+It generates the same locally viable candidates as the global generator, but can
+also count them by dynamic programming without materializing masks. For `4 x 10`
+the locally viable layer sizes are:
+
+| size | locally viable candidates |
+|-----:|--------------------------:|
+| 12 | 388,350,293 |
+| 11 | 309,117,476 |
+| 10 | 192,959,628 |
+
+So the next algorithm cannot merely generate candidates in a cleaner order. To
+certify the upper bound for `4 x 10`, we need a transfer state that also caches
+enough infection/minimality information to rule out large families at once.
