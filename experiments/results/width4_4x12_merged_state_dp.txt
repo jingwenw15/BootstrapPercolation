@@ -1,0 +1,20 @@
+grid = 4 x 12
+size = 14
+raw minimal percolating = 0
+states by column = [1, 15, 113, 496, 1736, 4672, 9706, 16859, 24734, 33431, 42196, 50977, 2264]
+
+grid = 4 x 12
+size = 13
+raw minimal percolating = 0
+states by column = [1, 15, 113, 496, 1736, 4672, 9706, 16859, 24734, 33431, 42181, 50668, 2188]
+
+grid = 4 x 12
+size = 12
+raw minimal percolating = 0
+states by column = [1, 15, 113, 496, 1736, 4672, 9706, 16859, 24734, 33431, 42020, 49513, 2092]
+
+grid = 4 x 12
+size = 11
+raw minimal percolating = 28640
+states by column = [1, 15, 113, 496, 1736, 4672, 9706, 16859, 24731, 33333, 41145, 46542, 1920]
+

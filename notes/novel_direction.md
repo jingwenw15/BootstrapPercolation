@@ -231,6 +231,7 @@ The current width-4 exact sequence is therefore:
 | 9 | 11 | 9 | 2 |
 | 10 | 12 | 10 | 2 |
 | 11 | 13 | 10 | 3 |
+| 12 | 14 | 11 | 3 |
 
 This suggests a sharper width-4 problem than the original square-grid baseline:
 determine whether the gap-2 behavior persists, grows, or becomes periodic for
@@ -443,6 +444,8 @@ Thus the exact width-4 sequence currently known is:
 | 8 | 8 |
 | 9 | 9 |
 | 10 | 10 |
+| 11 | 10 |
+| 12 | 11 |
 
 The next computation was `4 x 11`. It found:
 
@@ -466,7 +469,44 @@ This is important because it disproves the first natural conjecture
 5, 6, 7, 8, 8, 9, 10, 10
 ```
 
-for `n = 4,5,6,7,8,9,10,11`. The next computational target is `4 x 12`.
+for `n = 4,5,6,7,8,9,10,11`. The next computation was `4 x 12`. It found:
+
+```text
+4 x 12, size 14: 0
+4 x 12, size 13: 0
+4 x 12, size 12: 0
+4 x 12, size 11: 28,640
+```
+
+Therefore:
+
+```text
+E(4,12) = 11.
+```
+
+The current width-4 sequence is now:
+
+```text
+5, 6, 7, 8, 8, 9, 10, 10, 11
+```
+
+for `n = 4,5,6,7,8,9,10,11,12`. The next computational target is
+`4 x 13`.
+
+A compact sequence table is saved in
+`experiments/results/width4_sequence_4_to_12.csv`:
+
+| n | Morris upper | E(4,n) | gap | raw maximizers |
+|--:|-------------:|-------:|----:|---------------:|
+| 4 | 6 | 5 | 1 | 360 |
+| 5 | 7 | 6 | 1 | 280 |
+| 6 | 8 | 7 | 1 | 40 |
+| 7 | 9 | 8 | 1 | 2 |
+| 8 | 10 | 8 | 2 | 7,074 |
+| 9 | 11 | 9 | 2 | 1,312 |
+| 10 | 12 | 10 | 2 | 82 |
+| 11 | 13 | 10 | 3 | 145,332 |
+| 12 | 14 | 11 | 3 | 28,640 |
 
 ## Verification Script
 
@@ -483,5 +523,6 @@ This script verifies:
 3. the `4 x 10` locally viable and percolating DP counts;
 4. the `4 x 10` merged-state certificate for sizes 12, 11, and 10;
 5. the `4 x 11` merged-state certificate for sizes 13, 12, 11, and 10;
-6. the witness-pruned generator against trusted extremal-layer counts for
+6. the `4 x 12` merged-state certificate for sizes 14, 13, 12, and 11;
+7. the witness-pruned generator against trusted extremal-layer counts for
    `4 x 4`, `4 x 5`, and `4 x 8`.

@@ -88,12 +88,27 @@ function verify_4x11_merged_state_certificate()
     end
 end
 
+function verify_4x12_merged_state_certificate()
+    expected = Dict(
+        14 => 0,
+        13 => 0,
+        12 => 0,
+        11 => 28640,
+    )
+
+    for (size, count) in sort(collect(expected); by = pair -> -pair.first)
+        result = width4_count_minimal_by_merged_state(12, size)
+        require_equal("4 x 12, size $(size), merged-state minimal count", result.raw_minimal_percolating, count)
+    end
+end
+
 function verify_width4_findings()
     verify_4x9_certificate_files()
     verify_4x10_construction()
     verify_4x10_dp_counts()
     verify_4x10_merged_state_certificate()
     verify_4x11_merged_state_certificate()
+    verify_4x12_merged_state_certificate()
     verify_witness_pruned_layers()
     println("width-4 findings verified")
 end
