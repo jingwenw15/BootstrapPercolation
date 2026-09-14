@@ -1,0 +1,4 @@
+grid = 4 x 9
+size = 9
+raw minimal percolating = 1312
+states by column = [1, 15, 113, 496, 1736, 4672, 9706, 16838, 24323, 1433]

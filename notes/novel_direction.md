@@ -229,12 +229,14 @@ The current width-4 exact sequence is therefore:
 | 7 | 9 | 8 | 1 |
 | 8 | 10 | 8 | 2 |
 | 9 | 11 | 9 | 2 |
+| 10 | 12 | 10 | 2 |
+| 11 | 13 | 10 | 3 |
 
 This suggests a sharper width-4 problem than the original square-grid baseline:
 determine whether the gap-2 behavior persists, grows, or becomes periodic for
 `E(4,n)`.
 
-## First `4 x 10` Probe
+## Exact `4 x 10` Certificate
 
 The exact top-layer search for `4 x 10`, size 12, was too slow with the current
 global subset generator. This marks a real algorithmic boundary: local pruning
@@ -256,22 +258,31 @@ X X . . . . . X X .
 . . . . X X . . . .
 ```
 
-So we currently know:
+The merged-state DP later certified the matching upper bound. It found:
+
+| size | raw minimal percolating sets |
+|-----:|-----------------------------:|
+| 12 | 0 |
+| 11 | 0 |
+| 10 | 82 |
+
+Therefore:
 
 ```text
-E(4,10) >= 10
+E(4,10) = 10
 ```
 
-This is consistent with the conjectural pattern
+This was consistent with the conjectural pattern:
 
 ```text
-E(4,n) = n for n >= 8,
+E(4,n) = n for n >= 8.
 ```
 
-but it is not a proof and not yet an exact computation for `n = 10`. The next
-algorithmic step is to replace global subset generation with a fixed-height
-column-transfer search, so that upper bounds for `4 x 10`, `4 x 11`, and beyond
-can be certified.
+However, the next merged-state computation disproves that simple pattern:
+
+```text
+E(4,11) = 10.
+```
 
 A first column-transfer prototype confirms the scale of the remaining problem.
 It generates the same locally viable candidates as the global generator, but can
@@ -284,9 +295,8 @@ the locally viable layer sizes are:
 | 11 | 309,117,476 |
 | 10 | 192,959,628 |
 
-So the next algorithm cannot merely generate candidates in a cleaner order. To
-certify the upper bound for `4 x 10`, we need a transfer state that also caches
-enough infection/minimality information to rule out large families at once.
+These counts explained why a merged-state DP was needed: generating candidates
+in a cleaner order was not enough.
 
 ## Static Stable-Set Reformulation
 
@@ -340,10 +350,10 @@ without materializing each mask. For `4 x 10`, it gives:
 | 11 | 309,117,476 | 159,572,568 |
 | 10 | 192,959,628 | 68,033,874 |
 
-This is a useful reduction, but it also shows why minimality is the actual hard
-part. Even after local minimality pruning and percolation filtering, size 11
-still has more than 159 million percolating candidates. The next DP must encode
-the one-seed stable-set witnesses required for minimality.
+This was a useful reduction, but it also showed why minimality was the actual
+hard part. Even after local minimality pruning and percolation filtering, size
+11 still had more than 159 million percolating candidates. The next DP had to
+encode the one-seed stable-set witnesses required for minimality.
 
 A second stable-set routine now computes those witnesses in one pass for a fixed
 candidate. It scans stable-set column patterns while tracking whether the stable
@@ -365,11 +375,113 @@ This single-pass witness summary matches the simulator/minimality predicate on
 all `4 x 4` configurations. It is still a per-candidate verifier, but its state
 is the right object to merge in the next full DP.
 
-The witness summary has also been wired into a width-4 search path. It verifies
+The witness summary was also wired into a width-4 search path. It verifies
 minimality by stable-set witnesses instead of by repeatedly simulating seed
 deletions. This makes the certification logic closer to the intended proof
-language, but it is not yet enough to certify `4 x 10`: when applied
-candidate-by-candidate to the `4 x 9` extremal layer, enumeration remains the
-dominant cost. The remaining algorithmic step is to merge the witness-summary
-states across seed-column prefixes, rather than recomputing them separately for
-each full candidate.
+language, but candidate-by-candidate use was not enough: when applied to the
+`4 x 9` extremal layer, enumeration remained the dominant cost. This motivated
+merging witness-summary states across seed-column prefixes.
+
+A witness-pruned generator was added as an intermediate step. During column
+generation it carries the active one-seed witness states and immediately prunes
+a branch if any already-seen seed has no possible witness left. This is a safe
+minimality pruning rule: once a seed's column has passed, no future stable-set
+column can newly hit that seed.
+
+The witness-pruned generator matches the trusted exact counts on the checked
+extremal layers:
+
+| grid | size | raw minimal sets | symmetry classes |
+|------|-----:|-----------------:|-----------------:|
+| `4 x 4` | 5 | 360 | 90 |
+| `4 x 5` | 6 | 280 | 73 |
+| `4 x 8` | 8 | 7,074 | 1,778 |
+
+It generates exactly the minimal configurations on these layers. However, it
+still does not finish quickly on the `4 x 9`, size-9 layer, so the next version
+must merge equivalent prefix states rather than recursively enumerating all
+seed-column prefixes.
+
+## Merged-State DP
+
+The first successful merged-state DP is implemented in
+`experiments/width4_minimality_dp.jl`. It scans seed columns from left to right
+and merges prefixes with the same:
+
+1. seed count used so far;
+2. last two seed columns;
+3. active stable-set states avoiding all seeds;
+4. active one-seed witness obligations.
+
+The crucial compression is that witness obligations are identified by their
+future behavior, not by the absolute seed that created them. If two already-seen
+seeds have the same set of possible stable-witness frontier states, the future
+columns cannot distinguish them, so they can be represented once.
+
+This DP reproduces the known exact count for `4 x 9`, size 9:
+
+```text
+raw minimal percolating sets = 1,312
+```
+
+It then certifies:
+
+```text
+4 x 10, size 12: 0
+4 x 10, size 11: 0
+4 x 10, size 10: 82
+```
+
+Thus the exact width-4 sequence currently known is:
+
+| n | E(4,n) |
+|--:|-------:|
+| 4 | 5 |
+| 5 | 6 |
+| 6 | 7 |
+| 7 | 8 |
+| 8 | 8 |
+| 9 | 9 |
+| 10 | 10 |
+
+The next computation was `4 x 11`. It found:
+
+```text
+4 x 11, size 13: 0
+4 x 11, size 12: 0
+4 x 11, size 11: 0
+4 x 11, size 10: 145,332
+```
+
+Therefore:
+
+```text
+E(4,11) = 10.
+```
+
+This is important because it disproves the first natural conjecture
+`E(4,n)=n` for all `n >= 8`. The width-4 sequence now begins:
+
+```text
+5, 6, 7, 8, 8, 9, 10, 10
+```
+
+for `n = 4,5,6,7,8,9,10,11`. The next computational target is `4 x 12`.
+
+## Verification Script
+
+The current computational claims can be checked with:
+
+```text
+julia --project=. experiments/verify_width4_findings.jl
+```
+
+This script verifies:
+
+1. the stored `4 x 9` certificate files for sizes 11, 10, and 9;
+2. the `4 x 10` size-10 construction;
+3. the `4 x 10` locally viable and percolating DP counts;
+4. the `4 x 10` merged-state certificate for sizes 12, 11, and 10;
+5. the `4 x 11` merged-state certificate for sizes 13, 12, 11, and 10;
+6. the witness-pruned generator against trusted extremal-layer counts for
+   `4 x 4`, `4 x 5`, and `4 x 8`.

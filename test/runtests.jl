@@ -10,6 +10,7 @@ include("../experiments/fast_exact.jl")
 include("../experiments/extend_width4.jl")
 include("../experiments/width4_transfer.jl")
 include("../experiments/width4_stable_sets.jl")
+include("../experiments/width4_minimality_dp.jl")
 
 @testset "Bootstrap Percolation Simulator" begin 
 
@@ -274,6 +275,26 @@ end
             @test stable.checked == simulator.checked
             @test stable.raw_maximizers == simulator.raw_maximizers
             @test stable.symmetry_classes == simulator.symmetry_classes
+        end
+    end
+
+    @testset "Witness-pruned search matches simulator search" begin
+        for (cols, size) in [(4, 5), (5, 6)]
+            simulator = width4_transfer_find_minimal_percolating(cols, size; store = false)
+            pruned = width4_find_minimal_by_witness_pruning(cols, size; store = false)
+
+            @test pruned.raw_maximizers == simulator.raw_maximizers
+            @test pruned.symmetry_classes == simulator.symmetry_classes
+            @test pruned.generated_minimal == simulator.raw_maximizers
+        end
+    end
+
+    @testset "Merged-state DP matches simulator search" begin
+        for (cols, size) in [(4, 5), (5, 6)]
+            simulator = width4_transfer_find_minimal_percolating(cols, size; store = false, canonical = false)
+            merged = width4_count_minimal_by_merged_state(cols, size)
+
+            @test merged.raw_minimal_percolating == simulator.raw_maximizers
         end
     end
 end

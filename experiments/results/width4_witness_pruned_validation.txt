@@ -1,0 +1,18 @@
+grid = 4 x 4
+size = 5
+minimal candidates generated = 360
+raw minimal percolating = 360
+symmetry classes = 90
+
+grid = 4 x 5
+size = 6
+minimal candidates generated = 280
+raw minimal percolating = 280
+symmetry classes = 73
+
+grid = 4 x 8
+size = 8
+minimal candidates generated = 7074
+raw minimal percolating = 7074
+symmetry classes = 1778
+
