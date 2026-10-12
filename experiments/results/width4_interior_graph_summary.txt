@@ -1,0 +1,7 @@
+warmup_cols = 3
+states = 26009
+transitions = 114602
+truncated = false
+max_states = 250000
+states_csv = experiments/results/width4_interior_graph_states.csv
+transitions_csv = experiments/results/width4_interior_graph_transitions.csv

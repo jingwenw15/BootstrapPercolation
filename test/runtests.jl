@@ -11,6 +11,11 @@ include("../experiments/extend_width4.jl")
 include("../experiments/width4_transfer.jl")
 include("../experiments/width4_stable_sets.jl")
 include("../experiments/width4_minimality_dp.jl")
+include("../experiments/width4_graph_acceptance.jl")
+include("../experiments/width4_eventual_periodicity.jl")
+include("../experiments/width4_boundary_recurrence.jl")
+include("../experiments/width4_formula_constructions.jl")
+include("../experiments/check_width4_boundary_certificate.jl")
 
 @testset "Bootstrap Percolation Simulator" begin 
 
@@ -296,6 +301,62 @@ end
 
             @test merged.raw_minimal_percolating == simulator.raw_maximizers
         end
+    end
+
+    @testset "Graph acceptance matches merged-state exact values" begin
+        expected = Dict(
+            4 => (maximum_size = 5, raw = 360),
+            5 => (maximum_size = 6, raw = 280),
+            6 => (maximum_size = 7, raw = 40),
+        )
+
+        for (cols, values) in sort(collect(expected))
+            result = width4_graph_acceptance_value(cols)
+
+            @test result.maximum_size == values.maximum_size
+            @test result.raw_maximizers == values.raw
+        end
+
+        rows = width4_graph_acceptance_sequence(10; first_col = 4)
+        @test [(row.maximum_size, row.raw_maximizers) for row in rows] == [
+            (5, 360),
+            (6, 280),
+            (7, 40),
+            (8, 2),
+            (8, 7074),
+            (9, 1312),
+            (10, 82),
+        ]
+
+        report = width4_recurrence_report(rows)
+        @test report.earliest_start == 5
+        @test report.verified_comparisons == 3
+        @test isempty([row for row in rows if row.cols >= 5 && row.maximum_size != width4_formula(row.cols)])
+
+        certificate = width4_boundary_recurrence_certificate()
+        @test certificate.recurrence_start == 19
+        @test certificate.recurrence_end == 22
+        @test certificate.period == 3
+        @test certificate.gain == 2
+        @test all(certificate.values[n] == width4_formula(n) for n in 5:certificate.recurrence_end)
+
+        for cols in 9:15
+            construction = width4_formula_construction(cols)
+            @test construction.size == width4_formula(cols)
+            @test construction.verified_minimal_percolating
+        end
+
+        construction_certificate = width4_formula_construction_certificate()
+        @test construction_certificate.block_length == 3
+        @test construction_certificate.block_weight == 2
+        @test all(loop.returns_to_same_state for loop in construction_certificate.loops)
+        @test all(loop.suffix_accepts for loop in construction_certificate.loops)
+        @test all(loop.base_is_minimal_percolating for loop in construction_certificate.loops)
+
+        independent = check_width4_boundary_certificate()
+        @test independent.verified
+        @test independent.core_states == 15150
+        @test independent.core_edges == 46618
     end
 end
 

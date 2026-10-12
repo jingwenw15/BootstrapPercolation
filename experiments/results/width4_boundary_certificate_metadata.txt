@@ -1,0 +1,12 @@
+warmup_cols = 3
+states = 26009
+edges = 114602
+accepting_states = 8924
+boundary_core_states = 15150
+boundary_core_edges = 46618
+claimed_period = 3
+claimed_gain = 2
+claimed_recurrence_start = 19
+claimed_recurrence_end = 22
+vertices_csv = width4_boundary_certificate_vertices.csv
+edges_csv = width4_boundary_certificate_edges.csv

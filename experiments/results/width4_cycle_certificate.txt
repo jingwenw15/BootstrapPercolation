@@ -1,0 +1,7 @@
+max_mean = 4/3
+component_id = 1491
+component_size = 5446
+cycle_length = 3
+cycle_weight = 4
+seed_columns = 9,9,0
+seed_column_strings = X..X,X..X,....
