@@ -7,6 +7,7 @@ include("../experiments/symmetry.jl")
 include("../experiments/search_exact.jl")
 include("../experiments/two_row_construction.jl")
 include("../experiments/fast_exact.jl")
+include("../experiments/fixed_width_state_model.jl")
 include("../experiments/extend_width4.jl")
 include("../experiments/width4_transfer.jl")
 include("../experiments/width4_stable_sets.jl")
@@ -16,6 +17,32 @@ include("../experiments/width4_eventual_periodicity.jl")
 include("../experiments/width4_boundary_recurrence.jl")
 include("../experiments/width4_formula_constructions.jl")
 include("../experiments/check_width4_boundary_certificate.jl")
+
+@testset "Generic Fixed-Width State Model" begin
+    @testset "Every small word matches direct bootstrap closure" begin
+        for (height, cols) in ((1, 4), (2, 4), (3, 4))
+            neighbors = neighbor_masks(height, cols)
+            total = height * cols
+
+            for mask in UInt64(0):((UInt64(1) << total) - UInt64(1))
+                columns = fixed_width_columns_from_mask(height, cols, mask)
+                @test fixed_width_word_is_accepted(height, columns) ==
+                      fast_is_minimal_percolating(height, cols, mask, neighbors)
+            end
+        end
+    end
+
+    @testset "Merged counts and extrema match exhaustive search" begin
+        for (height, cols) in ((1, 4), (2, 4), (3, 4))
+            reference = fixed_width_reference_value(height, cols)
+            brute = fixed_width_brute_summary(height, cols)
+
+            @test reference.maximum_size == brute.maximum_size
+            @test reference.maximizing_count == brute.maximizing_count
+            @test reference.minimal_count == brute.minimal_count
+        end
+    end
+end
 
 @testset "Bootstrap Percolation Simulator" begin 
 

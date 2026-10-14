@@ -1,5 +1,19 @@
 # Most Reasonable Novel Direction
 
+## Fixed-Width Theorem Program
+
+Stage 1 of the general fixed-width program is complete. The semantic automaton
+and its soundness/completeness proof are in
+`notes/fixed_width_state_theorem.md`, with an independent literal reference
+implementation in `experiments/fixed_width_state_model.jl`.
+
+The audit corrected the original target: finiteness alone guarantees eventual
+affine behavior separately on residue classes, not necessarily one common
+gain for every residue. Stage 2 must prove that max-plus statement and then
+identify an additional bootstrap-specific condition under which all relevant
+residues have the same critical cycle mean. The width-four certificate already
+has this stronger common-gain property.
+
 ## Current Main Result
 
 The boundary-aware finite-state calculation now supports the exact formula
