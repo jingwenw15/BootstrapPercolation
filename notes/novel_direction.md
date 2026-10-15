@@ -7,12 +7,18 @@ and its soundness/completeness proof are in
 `notes/fixed_width_state_theorem.md`, with an independent literal reference
 implementation in `experiments/fixed_width_state_model.jl`.
 
-The audit corrected the original target: finiteness alone guarantees eventual
-affine behavior separately on residue classes, not necessarily one common
-gain for every residue. Stage 2 must prove that max-plus statement and then
-identify an additional bootstrap-specific condition under which all relevant
-residues have the same critical cycle mean. The width-four certificate already
-has this stronger common-gain property.
+Stage 2 is complete in `notes/fixed_width_eventual_growth.md`: the entire
+length/size spectrum is semilinear, and its maximum is eventually affine on
+each residue class. The proof uses a minimum-loss argument with exact residue
+and crossover certificates in `experiments/semilinear_growth.jl`.
+
+There need not be one common gain for every residue in a general finite
+automaton. Showing this stronger property for all bootstrap heights remains
+open in this project; monotonicity in length or a bounded adjacent difference
+would suffice, but neither has been proved here. The width-four certificate
+already has the stronger common-gain property. These general automata tools
+are classical, and novelty of their bootstrap-specific application has not
+been established.
 
 ## Current Main Result
 

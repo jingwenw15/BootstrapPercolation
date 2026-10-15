@@ -7,8 +7,9 @@ For a fixed height `h`, encode inclusion-minimal percolating sets on the
 columns. This note specifies the semantic state and proves the correspondence
 between accepted words and minimal percolating sets.
 
-The max-plus argument that converts this finite automaton into eventual
-residue-wise affine behavior is deliberately left for Stage 2.
+Stage 2 is now written in `fixed_width_eventual_growth.md`. It proves eventual
+residue-wise affine behavior using a semilinear description of accepted
+length/weight pairs and an elementary minimum-loss argument.
 
 ## Stable-set characterization
 
@@ -110,9 +111,11 @@ completed stable set has no vertices in future columns.
 
 During every ordinary transition, the next grid column is treated as existing;
 the missing right neighbor is applied only by the final acceptance operation.
-Consequently the transition relation is stationary after the two empty
-left-boundary columns have been consumed. Equivalently, the right boundary is
-a fixed zero-weight end marker.
+The first and second input columns use the appropriate left-boundary rules;
+from the third input column onward the transition relation is stationary.
+Include a finite phase (prefix length zero, one, or at least two) to make this
+an ordinary finite automaton. Equivalently, the right boundary is a fixed
+zero-weight end marker.
 
 The local seed-degree rejection is also sound. If a seed `a` initially has two
 infected neighbors, then after deleting `a` it is reinfected in the first
@@ -170,17 +173,20 @@ not part of every routine test run.
 This is executable evidence for the specification, not a substitute for the
 proof above.
 
-## Stage 2 proof obligation
+## Stage 2 conclusion
 
-It remains to prove the weighted-graph lemma in the following correct form:
+The proof in `fixed_width_eventual_growth.md` establishes the weighted-graph
+lemma in the following form:
 
 ```text
 For any finite integer-weighted automaton, the maximum weight f(n) of an
-accepted walk of length n is eventually affine on each residue class.
+accepted walk of length n is eventually affine on each residue class that
+has infinitely many accepted lengths, and is eventually absent on the others.
 ```
 
-More explicitly, there is a period `p` such that for every residue `r` there
-are integers `q_r`, `b_r`, and `K_r` with
+For the bootstrap automaton an accepted word exists at every positive length.
+Thus there is a period `p` such that for every residue `r` there are integers
+`q_r`, `b_r`, and `K_r` with
 
 ```text
 f(pk + r) = q_r k + b_r  for all k >= K_r.

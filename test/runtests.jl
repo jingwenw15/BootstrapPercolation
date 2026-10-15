@@ -1,4 +1,5 @@
 using Test 
+include("semilinear_growth.jl")
 
 include("../src/simulation.jl")
 include("../src/minimal.jl")
