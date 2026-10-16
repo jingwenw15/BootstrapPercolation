@@ -12,13 +12,22 @@ length/size spectrum is semilinear, and its maximum is eventually affine on
 each residue class. The proof uses a minimum-loss argument with exact residue
 and crossover certificates in `experiments/semilinear_growth.jl`.
 
-There need not be one common gain for every residue in a general finite
-automaton. Showing this stronger property for all bootstrap heights remains
-open in this project; monotonicity in length or a bounded adjacent difference
-would suffice, but neither has been proved here. The width-four certificate
-already has the stronger common-gain property. These general automata tools
-are classical, and novelty of their bootstrap-specific application has not
-been established.
+Stage 3 is complete in `notes/fixed_width_common_growth.md`. Morris (2009),
+Lemma 7, already proves dimension monotonicity; our earlier notes missed it.
+Combining that known lemma with Stage 2 forces a common gain for all residues:
+
+```text
+For each fixed h there are effective p_h > 0, q_h >= 0, N_h such that
+E(h,n+p_h) = E(h,n)+q_h for all n >= N_h.
+Thus lim E(h,n)/n exists and is rational.
+```
+
+The dimension-extension construction is implemented and tested in
+`experiments/minimal_extension.jl`. It is Morris's construction, not a novel
+lemma. General finite automata can still have different residue slopes; the
+bootstrap monotonicity is the extra ingredient here. Novelty of the resulting
+fixed-height theorem remains unconfirmed, and its rational density has not
+been computed for additional heights in this stage.
 
 ## Current Main Result
 

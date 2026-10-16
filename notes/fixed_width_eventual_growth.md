@@ -19,9 +19,11 @@ limsup E(h,n)/n = max_r q_r/p.
 ```
 
 This follows from the finite-state characterization in
-`fixed_width_state_theorem.md` and the elementary argument below. A common
-gain across all residues is not established for arbitrary `h`. The known
-width-four computer certificate does establish a common gain for that height.
+`fixed_width_state_theorem.md` and the elementary argument below. Stage 3 in
+`fixed_width_common_growth.md` now proves that all residue gains agree, using
+Morris's published dimension-monotonicity lemma. Consequently the lower and
+upper limiting densities above are equal and a common eventual recurrence
+holds for every fixed `h`.
 
 The mathematical tools concerning regular languages and semilinear sets are
 classical. This note gives their proof and application here; it does not claim
@@ -176,7 +178,7 @@ quasi-linear as stated at the beginning of this note. Its residue slopes,
 lower limiting density, and upper limiting density are rational and effectively
 computable.
 
-## 4. Why a common growth rate needs another argument
+## 4. Why monotonicity is needed for a common growth rate
 
 Consider a weighted automaton with two disjoint branches. One accepts only
 even lengths `2k` with weight `2k`, and the other accepts only odd lengths
@@ -190,9 +192,8 @@ Its spectrum is the union of the two families
 (1,0) + k*(2,0).
 ```
 
-Our general theorem permits exactly this behavior. To deduce a single slope
-for bootstrap percolation we must prove an additional property. For example,
-either of the following would suffice:
+Our general automaton theorem permits exactly this behavior. Either of the
+following additional properties would force a single slope:
 
 * `E(h,n)` is nondecreasing in `n`; or
 * there is a constant `C_h` with `E(h,n+1) >= E(h,n)-C_h` for all large `n`.
@@ -202,14 +203,13 @@ slopes: if the gains are not all equal, cycling through adjacent residues
 includes a strict decrease in gain. At that adjacent residue pair the drop
 grows without bound as `k` increases, contradicting either condition. A
 two-sided bound on adjacent differences would suffice as well, but is stronger
-than needed. These are sufficient conditions, not currently proved lemmas for
-this project.
+than needed.
 
-A concrete next structural target is therefore a bounded-loss extension
-lemma: starting with an extremal minimal set on `h x n`, construct a minimal
-set on `h x (n+1)` losing at most `C_h` seeds. Such a construction would finish
-the common-slope theorem. Simply adding infected cells in the new column does
-not prove this: they can invalidate old seed witnesses.
+For bootstrap percolation the first condition is already Morris's Lemma 7
+(2009). Stage 3 gives its boundary construction and completes the common-slope
+argument in `fixed_width_common_growth.md`. The previous version of this note
+mistakenly treated dimension monotonicity as unresolved. No separate
+bounded-loss extension conjecture is needed.
 
 The height-four vector certificate already gives `E(4,n+3)=E(4,n)+2` for
 all `n >= 19`; the checked finite prefix gives the formula from `n=5`.
@@ -257,6 +257,7 @@ Focused searches on 2026-10-14 for fixed-width minimal percolating sets,
 eventual periodicity, and automata did not locate this bootstrap-specific
 statement. That is insufficient to establish novelty; bounded-width logical
 and automata methods may imply it elsewhere. The strongest concrete candidate
-contribution remains the exact height-four formula with a fully audited
-semantic reduction. Stage 3 should prioritize that audit and a concise paper
-draft, while the single-slope question remains a separate research target.
+contribution remains the exact height-four formula once its semantic graph is
+fully audited. Stage 3 subsequently resolved the single-slope question using
+Morris's known monotonicity lemma. The remaining priorities are that graph
+audit, a concise paper draft, and a more complete novelty review.

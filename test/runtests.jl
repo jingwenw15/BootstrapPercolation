@@ -18,6 +18,7 @@ include("../experiments/width4_eventual_periodicity.jl")
 include("../experiments/width4_boundary_recurrence.jl")
 include("../experiments/width4_formula_constructions.jl")
 include("../experiments/check_width4_boundary_certificate.jl")
+include("minimal_extension.jl")
 
 @testset "Generic Fixed-Width State Model" begin
     @testset "Every small word matches direct bootstrap closure" begin

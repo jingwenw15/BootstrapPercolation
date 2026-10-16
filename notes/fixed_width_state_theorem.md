@@ -204,7 +204,9 @@ residue class. A single recurrence
 E(h, n + p_h) = E(h, n) + q_h
 ```
 
-and the existence of one overall limit `E(h,n)/n` require an additional
-bootstrap-specific argument showing that all relevant residue classes access
-critical components with the same cycle mean. The width-four certificate does
-verify that stronger property for `p_4 = 3` and `q_4 = 2`.
+and the existence of one overall limit `E(h,n)/n` follow by also using the
+known dimension-monotonicity theorem, Morris (2009), Lemma 7. Stage 3 in
+`fixed_width_common_growth.md` gives the complete deduction. Thus the common
+gain is now established for every fixed height, although its value need not
+be known explicitly. The width-four certificate determines `p_4 = 3` and
+`q_4 = 2`.
