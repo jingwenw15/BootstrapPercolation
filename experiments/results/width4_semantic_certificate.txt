@@ -1,0 +1,12 @@
+verified = true
+states = 26009
+edges = 114602
+column_choices_checked = 416144
+rejected_column_choices = 301542
+warmup_states = 496
+accepting_states = 8924
+boundary_core_states = 15150
+boundary_core_edges = 46618
+E_4_4 = 5
+score_vector_recurrence = v_22 = v_19 + 2
+formula_verified_for_n = 5..22, and all n >= 5 by recurrence

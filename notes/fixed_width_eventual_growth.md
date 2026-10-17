@@ -259,5 +259,6 @@ statement. That is insufficient to establish novelty; bounded-width logical
 and automata methods may imply it elsewhere. The strongest concrete candidate
 contribution remains the exact height-four formula once its semantic graph is
 fully audited. Stage 3 subsequently resolved the single-slope question using
-Morris's known monotonicity lemma. The remaining priorities are that graph
-audit, a concise paper draft, and a more complete novelty review.
+Morris's known monotonicity lemma. Stage 4 subsequently completed the graph
+audit in `width4_semantic_audit.md`. The remaining priorities are external
+proof review, a concise paper draft, and a more complete novelty review.

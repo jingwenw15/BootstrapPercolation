@@ -11,14 +11,19 @@ E(4,4) = 5,
 E(4,n) = floor((2n + 10) / 3) for n >= 5.
 ```
 
-This is currently a computer-assisted result. Its mathematical reduction is
-exact, but the implementation should be independently checked before treating
-the statement as publication-ready.
+This is a computer-assisted result. The mathematical state reduction is
+written in `notes/fixed_width_state_theorem.md`, and an independent semantic
+checker now verifies the complete exported graph. Details and scope are in
+`notes/width4_semantic_audit.md`. External review and a broader novelty review
+remain before a publication claim.
 
 The max-plus portion now has a standalone checker. It reads only integer vertex
 and edge tables, recomputes forward and reverse reachability, reconstructs every
 score vector from column 3 through column 22, and checks the recurrence. It does
-not import the simulator or any finite-state generation code.
+not import the simulator or any finite-state generation code. The independent
+semantic checker additionally verifies all 416,144 state/column choices,
+including rejected transitions, exact starting scores, accepting states, and
+the connection between semantic and arithmetic table IDs.
 
 The related-work audit in `notes/width4_literature_check.md` found that
 Gottschau's 2020 dissertation already reports the values through `n = 11` and
@@ -141,11 +146,16 @@ julia experiments/width4_boundary_certificate_export.jl
 julia experiments/check_width4_boundary_certificate.jl
 ```
 
-The standalone checker verifies the graph calculation independently, but it
-still trusts that the exporter generated every semantic state and transition
-correctly. Removing that final trust boundary requires either a second
-independent implementation of the stable-set automaton or a human upper-bound
-argument replacing the 15,150-state computation.
+To check the model-to-graph translation independently as well, run:
+
+```text
+julia experiments/check_width4_semantic_certificate.jl \
+  experiments/results/width4_semantic_certificate.txt
+```
+
+This checks the entire reachable semantic graph against a separate Base Julia
+implementation using ordinary sets, then invokes the arithmetic checker. It
+does not trust the original exporter to have included every successor.
 
 Generate the finite sequence through column 40 with:
 

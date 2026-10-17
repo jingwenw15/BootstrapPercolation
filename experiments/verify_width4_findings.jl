@@ -3,6 +3,7 @@ include("width4_cycle_certificate.jl")
 include("width4_boundary_recurrence.jl")
 include("width4_formula_constructions.jl")
 include("check_width4_boundary_certificate.jl")
+include("check_width4_semantic_certificate.jl")
 
 function require_equal(label, actual, expected)
     if actual != expected
@@ -180,6 +181,13 @@ function verify_independent_boundary_certificate()
     require_equal("independent certificate core transitions", certificate.core_edges, 46618)
 end
 
+function verify_independent_semantic_certificate()
+    certificate = Width4SemanticCertificate.check_width4_semantic_certificate()
+    require_equal("independent semantic certificate", certificate.verified, true)
+    require_equal("independent semantic column choices", certificate.column_choices_checked, 416144)
+    require_equal("independent semantic warm-up states", certificate.warmup_states, 496)
+end
+
 function verify_width4_findings()
     verify_4x9_certificate_files()
     verify_4x10_construction()
@@ -192,6 +200,7 @@ function verify_width4_findings()
     verify_width4_boundary_recurrence()
     verify_width4_formula_constructions()
     verify_independent_boundary_certificate()
+    verify_independent_semantic_certificate()
     verify_witness_pruned_layers()
     println("width-4 findings verified")
 end
