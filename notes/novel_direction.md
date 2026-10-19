@@ -36,6 +36,16 @@ the height-four formula. The standalone audit in
 and the binding to the arithmetic certificate. It also runs the existing
 recurrence checker. Details are in `notes/width4_semantic_audit.md`.
 
+Stage 5 assembles the results into `paper/manuscript.md`, a self-contained
+review draft. It gives a shorter regular-language proof of fixed-height
+regularity using single-seed deletion, then proves semilinearity and common
+growth, and describes the complete height-four computational certificate.
+`experiments/prepare_paper.jl` independently verifies the explicit construction
+loops and generates the finite-prefix tables and certificate digests in
+`paper/verified_results.md`. `paper/README.md` lists the specific mathematical,
+computational, and priority questions for an external reviewer. No novelty
+claim has been established or manuscript submitted.
+
 ## Current Main Result
 
 The boundary-aware finite-state calculation now supports the exact formula

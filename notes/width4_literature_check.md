@@ -2,6 +2,8 @@
 
 Checked on 2026-10-10.
 
+Follow-up review: 2026-10-18, while preparing `paper/manuscript.md`.
+
 ## Question
 
 Has the exact formula
@@ -79,3 +81,32 @@ The defensible current wording is:
 We found no prior exact formula for E(4,n). The closest source found gives a
 weaker all-n upper bound and exact values only through n=11.
 ```
+
+## Follow-up for the Review Draft
+
+Morris's Lemma 7 already proves that `E(m,n)` is nondecreasing in either
+dimension. That known lemma supplies the common-slope step of our fixed-height
+argument and must be explicitly credited. Theorem 9 supplies the known exact
+thin-grid results. Dimension monotonicity is not a new contribution.
+
+The indexed primary text of Gottschau's Section 3.1.3 again confirms Lemma 55,
+the accompanying table through length eleven, and the reference to Remark 56.
+It did not reveal an all-length height-four formula. Direct live retrieval of
+the full PDF intermittently returned HTTP 429; this follow-up therefore does
+not constitute a fresh cover-to-cover review of the dissertation.
+
+Additional searches included the exact height-four notation, minimal
+percolating sets together with "periodic", "eventual", "ultimately",
+"fixed-width", "finite automaton", "semilinear", and "rational", and the
+related phrase "upper target set selection". These searches did not locate
+the asserted all-height recurrence, but absence from these results is not
+evidence that no such result exists. In particular the regular-language and
+semilinear ingredients are standard, so a general bounded-width theorem may
+already imply it.
+
+The draft in `paper/` keeps both principal claims subject to priority review.
+Its explicit computational contribution is an independently checkable
+all-length height-four formula and certificate. Its structural theorem is
+the fixed-height eventual common recurrence obtained using classical tools
+and Morris's known monotonicity. A researcher should review both claims before
+any novelty or first-result wording is added.

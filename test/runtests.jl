@@ -20,6 +20,7 @@ include("../experiments/width4_formula_constructions.jl")
 include("../experiments/check_width4_boundary_certificate.jl")
 include("minimal_extension.jl")
 include("width4_semantic_certificate.jl")
+include("paper_constructions.jl")
 
 @testset "Generic Fixed-Width State Model" begin
     @testset "Every small word matches direct bootstrap closure" begin
