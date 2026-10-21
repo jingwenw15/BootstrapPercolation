@@ -5,6 +5,16 @@ the fixed-height eventual recurrence, proves it using regular languages,
 semilinearity, and Morris's monotonicity lemma, and gives the independently
 checked height-four formula and construction.
 
+The counting supplement also gives certified recurrences for the number of
+height-four maximizing seed sets in each width class modulo three. Its proof,
+scope, and common degree-14 polynomial are explained in
+[width4_maximizer_counts.md](../notes/width4_maximizer_counts.md). Regenerate
+the exact-integer recurrence artifact with:
+
+```text
+julia experiments/certify_width4_counts.jl
+```
+
 [verified_results.md](verified_results.md) is computed from the complete
 semantic and arithmetic certificate. It contains the finite prefix, graph
 counts, independent construction-loop checks, and SHA-256 digests of the four
@@ -35,10 +45,13 @@ julia test/runtests.jl
    witness removal, and merging of equal future obligations?
 5. Is the combination of the semantic audit and arithmetic certificate an
    adequate reproducible computational proof for the intended venue?
+6. Are the exact maximizer-count recurrences known, and is there a geometric
+   explanation of their common polynomial and residue-dependent powers?
 
 The manuscript is a working draft for mathematical and priority review.
 Dimension monotonicity belongs to Morris, and the automata/semilinear tools
 are classical. Values through length eleven were already reported by
 Gottschau. The possible contributions are the exact all-length height-four
 formula with its certificate and the explicit fixed-height structural result;
-their novelty has not been established by the searches so far.
+the counting supplement is a further candidate contribution. None of these
+novelty claims has been established by the searches so far.

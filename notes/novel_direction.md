@@ -46,6 +46,17 @@ loops and generates the finite-prefix tables and certificate digests in
 computational, and priority questions for an external reviewer. No novelty
 claim has been established or manuscript submitted.
 
+Stage 6 counts every height-four maximizing seed set. The independently
+audited optimal-path language has 14,651 states; an exact counting quotient
+reduces this to 847. `experiments/certify_width4_counts.jl` certifies an
+all-width counting recurrence in each residue class, with orders 30, 58, and
+44 starting at widths 19, 20, and 21. All three recurrence polynomials are
+`(t-2)^2 Q(t)^j` for the same degree-14 polynomial, with `j=2,4,3`, respectively.
+The proof uses 847 exact zero residuals and Cayley-Hamilton, not prefix fitting
+alone. See `notes/width4_maximizer_counts.md` and the generated exact-integer
+TOML artifact. These are counting results, not yet a geometric classification
+or a priority-confirmed novelty claim.
+
 ## Current Main Result
 
 The boundary-aware finite-state calculation now supports the exact formula
