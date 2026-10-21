@@ -1,5 +1,29 @@
 # Width-Four Literature Check
 
+## Crowded-Column Follow-up, 2026-10-20
+
+The new claim checked in this follow-up is different from the formula: every
+height-four minimal percolating set has at most four columns with at least
+two seeds, with no maximum-size assumption. The search terms included
+`"minimal percolating" "four columns"`, multiple-seed columns, and variants
+with height four and at least two seeds. No matching statement was located.
+This is a limited negative search result, not a novelty determination.
+
+The search located another primary source not previously recorded here:
+Ruoxin Zhao, *Extremal Problems about Bootstrap Percolation on Graphs*,
+University of Manitoba MSc thesis, 2020:
+
+https://mspace.lib.umanitoba.ca/bitstreams/bb0a17ca-04f4-4ea9-b027-6161333954db/download
+
+Section 5.3 surveys largest minimal percolating sets. Theorem 5.24 attributes
+the exact height-at-most-three formulas to Morris. The inspected section
+does not state the four-crowded-column claim. Morris's own thin-grid arguments
+were also rechecked. Review of Gottschau and later citation chains specifically
+for this structural statement remains incomplete. The proof certificate and
+precise scope are in `notes/width4_crowded_columns.md`.
+
+## Earlier Formula Review
+
 Checked on 2026-10-10.
 
 Follow-up review: 2026-10-18, while preparing `paper/manuscript.md`.

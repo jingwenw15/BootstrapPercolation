@@ -1,6 +1,6 @@
 # Largest Minimal Percolating Sets on Fixed-Height Grids
 
-Working draft for mathematical and priority review, 2026-10-18.
+Working draft for mathematical and priority review, 2026-10-20.
 
 ## Abstract
 
@@ -14,6 +14,8 @@ we give a computer-assisted proof of `E(4,4)=5` and
 `E(4,n)=floor((2n+10)/3)` for every `n >= 5`. Separate implementations verify
 the complete semantic state graph and its maximum-weight recurrence. An
 explicit family attaining the bound adds two seeds per three columns.
+We also certify a sharp structural bound for every height-four minimal
+percolating set: at most four columns contain two or more initial seeds.
 
 ## 1. Model, Results, and Attribution
 
@@ -57,6 +59,11 @@ E(4,4) = 5,
 E(4,n) = floor((2n+10)/3)  for every n >= 5.
 ```
 
+**Theorem C (crowded columns; computer-assisted).** Every inclusion-minimal
+percolating set on `G(4,n)`, for every `n>=1`, has at most four columns
+containing at least two seeds. The bound is attained for infinitely many
+widths. Maximum cardinality is not assumed.
+
 Morris [M] introduced the extremal parameter and determined the exact values
 for heights at most three. His Lemma 7 establishes monotonicity in both
 dimensions; that is an essential existing ingredient in Theorem A. Gottschau
@@ -66,7 +73,7 @@ therefore confirm prior values. The regular-language and semilinear tools
 used below are classical, as in [GS].
 
 The purpose of this draft is to expose the mathematical and computational
-arguments for review. It makes no priority claim for Theorem A or B; the
+arguments for review. It makes no priority claim for Theorems A, B, or C; the
 literature checks so far have not established novelty.
 
 ## 2. Stable Sets and Deletion Witnesses
@@ -393,7 +400,38 @@ full proof of the counting reduction are recorded in
 not claim minimum recurrence orders, asymptotics, a geometric classification,
 or confirmed priority.
 
-## 10. Reproduction and Computational Scope
+## 10. A Sharp Crowded-Column Bound
+
+For Theorem C, use the full boundary-coaccessible semantic graph, without
+restricting to optimal paths. It has 15,150 states and 46,618 labeled edges.
+Weight an edge by one when its seed column contains at least two seeds and
+zero otherwise. Recompute each three-column warm-up state's maximum crowded
+column count over all prefixes, not just largest prefixes.
+
+The certificate assigns every state an integer rank between zero and four.
+It checks that each initial rank bounds that warm-up count, and that every
+edge increases rank by at least its weight. Induction along any accepted word
+proves the crowded-column count is at most four. Widths one and two are
+trivial. Strongly connected components and a longest path on the condensation
+graph discover the ranks, but a separate pass checks every rank inequality
+directly. No max-plus recurrence or formula for `E(4,n)` is needed.
+
+The word `[3,0,4,0,6,0,1,0,8,0,2,0,6,0,12]` is a minimal percolating
+height-four configuration with four crowded columns. Direct simulation
+verifies percolation and failure after each individual seed deletion. The
+words `L B^k R` for `k>=1`, where
+
+```text
+L=[3,0,4], B=[0,2,2], R=[0,6,0,1,0,8,0,2,0,6,0,12],
+```
+
+give an infinite sharpness family. The independent semantic checker verifies
+that another `B` returns the state after `LB` to itself and that `R` accepts.
+These witnesses need not maximize total seed count. The complete argument,
+rank histogram, and priority limitations are in
+`../notes/width4_crowded_columns.md`.
+
+## 11. Reproduction and Computational Scope
 
 The four certificate tables in `experiments/results/` are:
 
@@ -409,6 +447,7 @@ From the repository root run:
 ```text
 julia experiments/prepare_paper.jl
 julia experiments/certify_width4_counts.jl
+julia experiments/width4_crowded_columns.jl
 ```
 
 This runs `check_width4_semantic_certificate.jl` and its separate arithmetic

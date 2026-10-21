@@ -57,6 +57,17 @@ alone. See `notes/width4_maximizer_counts.md` and the generated exact-integer
 TOML artifact. These are counting results, not yet a geometric classification
 or a priority-confirmed novelty claim.
 
+Stage 7 gives a geometric statement for a broader class: every minimal
+percolating set on `4 x n`, not only a largest one, has at most four columns
+with two or more seeds. The bound is sharp at width 15 and along an infinite
+family of widths. The certificate in `experiments/width4_crowded_columns.jl`
+uses all boundary-coaccessible semantic states and a rank in `{0,1,2,3,4}`;
+every crowded-column edge increases rank. All 46,618 edge inequalities are
+checked directly after the full semantic audit. This does not depend on the
+formula for `E(4,n)`. Details, the sharp witness, the pumping family, and a
+limited priority check are in `notes/width4_crowded_columns.md`. Novelty and
+a direct geometric interpretation of the rank remain unresolved.
+
 ## Current Main Result
 
 The boundary-aware finite-state calculation now supports the exact formula

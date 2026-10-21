@@ -2,55 +2,8 @@ if !@isdefined(width4_interior_transition_graph)
     include("width4_transition_export.jl")
 end
 
-function strongly_connected_components(num_vertices, edges)
-    adjacency = [Int[] for _ in 1:num_vertices]
-
-    for edge in edges
-        push!(adjacency[edge.from], edge.to)
-    end
-
-    index = 0
-    stack = Int[]
-    on_stack = falses(num_vertices)
-    indices = fill(0, num_vertices)
-    lowlink = fill(0, num_vertices)
-    components = Vector{Int}[]
-
-    function strongconnect(v)
-        index += 1
-        indices[v] = index
-        lowlink[v] = index
-        push!(stack, v)
-        on_stack[v] = true
-
-        for w in adjacency[v]
-            if indices[w] == 0
-                strongconnect(w)
-                lowlink[v] = min(lowlink[v], lowlink[w])
-            elseif on_stack[w]
-                lowlink[v] = min(lowlink[v], indices[w])
-            end
-        end
-
-        if lowlink[v] == indices[v]
-            component = Int[]
-
-            while true
-                w = pop!(stack)
-                on_stack[w] = false
-                push!(component, w)
-                w == v && break
-            end
-
-            push!(components, component)
-        end
-    end
-
-    for v in 1:num_vertices
-        indices[v] == 0 && strongconnect(v)
-    end
-
-    return components
+if !@isdefined(strongly_connected_components)
+    include("graph_components.jl")
 end
 
 function max_weight_walk_profile(num_vertices, edges, steps)

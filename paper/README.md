@@ -15,6 +15,15 @@ the exact-integer recurrence artifact with:
 julia experiments/certify_width4_counts.jl
 ```
 
+The structural supplement proves that every height-four minimal percolating
+set has at most four multiple-seed columns, with no maximum-size assumption.
+See [width4_crowded_columns.md](../notes/width4_crowded_columns.md). Reproduce
+its rank certificate and sharp witnesses with:
+
+```text
+julia experiments/width4_crowded_columns.jl
+```
+
 [verified_results.md](verified_results.md) is computed from the complete
 semantic and arithmetic certificate. It contains the finite prefix, graph
 counts, independent construction-loop checks, and SHA-256 digests of the four
@@ -24,10 +33,10 @@ certificate inputs. Regenerate it from the repository root with:
 julia experiments/prepare_paper.jl
 ```
 
-The checker and paper-data generator require only Julia's Base and standard
-library. They do not execute the original search or optimized state generator.
-The full simulator regression suite additionally uses the project's existing
-`DataStructures` dependency:
+The semantic/arithmetic checker and `prepare_paper.jl` require only Julia's
+Base and standard library. They do not execute the original search or
+optimized state generator. The crowded-column generator and full simulator
+regression suite also use the project's existing `DataStructures` dependency:
 
 ```text
 julia test/runtests.jl
@@ -47,11 +56,14 @@ julia test/runtests.jl
    adequate reproducible computational proof for the intended venue?
 6. Are the exact maximizer-count recurrences known, and is there a geometric
    explanation of their common polynomial and residue-dependent powers?
+7. Is the sharp four-crowded-column bound for all height-four minimal sets
+   already known, and can the certified rank be interpreted geometrically?
 
 The manuscript is a working draft for mathematical and priority review.
 Dimension monotonicity belongs to Morris, and the automata/semilinear tools
 are classical. Values through length eleven were already reported by
 Gottschau. The possible contributions are the exact all-length height-four
 formula with its certificate and the explicit fixed-height structural result;
-the counting supplement is a further candidate contribution. None of these
-novelty claims has been established by the searches so far.
+the counting and crowded-column supplements are further candidate
+contributions. None of these novelty claims has been established by the
+searches so far.

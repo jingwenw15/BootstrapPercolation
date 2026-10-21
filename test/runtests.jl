@@ -22,6 +22,7 @@ include("minimal_extension.jl")
 include("width4_semantic_certificate.jl")
 include("paper_constructions.jl")
 include("width4_optimal_counts.jl")
+include("width4_crowded_columns.jl")
 
 @testset "Generic Fixed-Width State Model" begin
     @testset "Every small word matches direct bootstrap closure" begin
