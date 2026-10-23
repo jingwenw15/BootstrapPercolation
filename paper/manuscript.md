@@ -1,6 +1,6 @@
 # Largest Minimal Percolating Sets on Fixed-Height Grids
 
-Working draft for mathematical and priority review, 2026-10-20.
+Working draft for mathematical and priority review, 2026-10-22.
 
 ## Abstract
 
@@ -14,8 +14,9 @@ we give a computer-assisted proof of `E(4,4)=5` and
 `E(4,n)=floor((2n+10)/3)` for every `n >= 5`. Separate implementations verify
 the complete semantic state graph and its maximum-weight recurrence. An
 explicit family attaining the bound adds two seeds per three columns.
-We also certify a sharp structural bound for every height-four minimal
-percolating set: at most four columns contain two or more initial seeds.
+We also give a direct geometric proof of a sharp structural bound for every
+height-four minimal percolating set: at most four columns contain two or more
+initial seeds. An independent state-graph certificate confirms that bound.
 
 ## 1. Model, Results, and Attribution
 
@@ -59,7 +60,7 @@ E(4,4) = 5,
 E(4,n) = floor((2n+10)/3)  for every n >= 5.
 ```
 
-**Theorem C (crowded columns; computer-assisted).** Every inclusion-minimal
+**Theorem C (crowded columns; direct upper bound).** Every inclusion-minimal
 percolating set on `G(4,n)`, for every `n>=1`, has at most four columns
 containing at least two seeds. The bound is attained for infinitely many
 widths. Maximum cardinality is not assumed.
@@ -402,19 +403,62 @@ or confirmed priority.
 
 ## 10. A Sharp Crowded-Column Bound
 
-For Theorem C, use the full boundary-coaccessible semantic graph, without
-restricting to optimal paths. It has 15,150 states and 46,618 labeled edges.
-Weight an edge by one when its seed column contains at least two seeds and
-zero otherwise. Recompute each three-column warm-up state's maximum crowded
-column count over all prefixes, not just largest prefixes.
+Here is a direct proof of the upper bound in Theorem C. Write `c(A)` for the
+number of columns with at least two seeds. If `A` is minimal percolating,
+no seed belongs to the closure of a subset of the other seeds; otherwise
+deleting it would not prevent percolation. Thus if a rectangle `S` is
+internally spanned by `B` contained in `A`, then `B=A intersect S` and `B`
+is minimal percolating on `S`.
 
-The certificate assigns every state an integer rank between zero and four.
-It checks that each initial rank bounds that warm-up count, and that every
-edge increases rank by at least its weight. Induction along any accepted word
-proves the crowded-column count is at most four. Widths one and two are
-trivial. Strongly connected components and a longest path on the condensation
-graph discover the ranks, but a separate pass checks every rank inequality
-directly. No max-plus recurrence or formula for `E(4,n)` is needed.
+Two useful consequences follow. First, if such an `S` has full grid height,
+every crowded column lies in its column interval. Indeed, a percolating set
+has seeds in both end columns and no two consecutive empty columns. Once
+`S` fills, one seed per outside occupied column suffices: a seed one column
+away propagates vertically, and one two columns away first infects the
+intervening site using its two horizontal neighbors. Repeating fills both
+ends. Minimality forbids additional outside seeds in the same column.
+
+Second, within `S`'s column interval, there is at most one seed in the two
+rows immediately above `S`, and likewise below. A seed one or two rows away
+fills the rectangle between its row and `S`. Two such seeds on the same side
+would make one recoverable by choosing the farther seed. This contradicts
+minimality.
+
+Run the classical rectangles process [AL], with disjoint seed ownership,
+and take the first rectangle `R` of full height. Its two children `S,T` have
+strictly smaller heights and disjoint owning seed sets `B,C`. Their bounding
+rectangle is internally spanned by `B union C`; minimality gives
+`A intersect R=B union C`. The full-height consequence confines every crowded
+column to `R`. Call a column mixed when both `B` and `C` have a seed in it.
+With no mixed column, `c(A)<=c(B)+c(C)`.
+
+At height two any crowded column is already a filled full-height strip,
+so the bound is one. At height three, the no-mixed case gives at most two.
+If a mixed column and a height-two child occur, the other child's seed in
+that column lies outside the height-two child and fills the missing row.
+The resulting full-height strip contains only that child's seeds plus one
+extra seed, and excludes outside crowded columns: again at most two. If
+both children have height one, a mixed column has seeds in the top and bottom
+rows, infecting its middle site; only that column can then be crowded.
+
+At height four, no mixed column gives at most `2+2=4`. If a mixed column
+and a height-three child occur, the other child's seed in that column fills
+the missing row. As before, at most `2+1=3` crowded columns remain. Otherwise
+both children have height at most two. At least one has height two, since
+single-row children spanning four rows have distance at least three and
+cannot merge. That height-two child must be the top or bottom two rows.
+Seeds of the other child cannot lie inside it. The one-sided outside-seed
+consequence therefore permits at most one seed of the other child within
+its column interval, and hence at most one mixed column. The bound is then
+`1+1+1=3`. This proves four in every case, for every width.
+
+Equality requires two height-three children with two crowded columns each
+and no mixed column. Their column intervals are disjoint: any seed of one
+child within the other's column interval would fill its missing row and
+force at most three crowded columns. Each internally spanned child's end
+columns have seeds; overlapping intervals would place an endpoint seed in
+the other's interval, a contradiction. Their row intervals are the top
+three and bottom three rows. This is a necessary condition, not a converse.
 
 The word `[3,0,4,0,6,0,1,0,8,0,2,0,6,0,12]` is a minimal percolating
 height-four configuration with four crowded columns. Direct simulation
@@ -427,9 +471,17 @@ L=[3,0,4], B=[0,2,2], R=[0,6,0,1,0,8,0,2,0,6,0,12],
 
 give an infinite sharpness family. The independent semantic checker verifies
 that another `B` returns the state after `LB` to itself and that `R` accepts.
-These witnesses need not maximize total seed count. The complete argument,
-rank histogram, and priority limitations are in
-`../notes/width4_crowded_columns.md`.
+These witnesses need not maximize total seed count. The direct proof, the
+explicit percolation sequence for the finite example, and twelve stable
+deletion forts proving its minimality without simulation are in
+`../notes/width4_crowded_hand_proof.md`. The infinite family's pumping
+certificate remains computer-assisted.
+
+An independent computational check is retained in
+`../notes/width4_crowded_columns.md`. It assigns ranks in `{0,1,2,3,4}` to all
+15,150 boundary-coaccessible semantic states and checks all 46,618 labeled
+edge inequalities. A crowded column increases rank. This confirms the upper
+bound independently but is not an ingredient of the geometric proof.
 
 ## 11. Reproduction and Computational Scope
 
@@ -465,13 +517,19 @@ deletion required for minimality. Mutation tests reject incorrect transitions,
 weights, starting scores, accepting labels, and malformed frontier encodings.
 The simulator preserves the input grid and records synchronous history.
 
-These tests corroborate the implementations. The correctness argument for
-all lengths is the state invariant, universal finite graph checks, and vector
-recurrence. No formula or density for height five is claimed here. Mathematical
+These tests corroborate the implementations. For Theorem B, the all-length
+argument is the state invariant, universal finite graph checks, and vector
+recurrence; Theorem C's upper bound has the separate geometric proof above.
+No formula or density for height five is claimed here. Mathematical
 review of the reduction, computational review of the checkers, and priority
-review of both principal results remain appropriate before submission.
+review of all stated results remain appropriate before submission.
 
 ## References
+
+[AL] Michael Aizenman and Joel L. Lebowitz. Metastability effects in bootstrap
+percolation. Journal of Physics A: Mathematical and General 21 (1988),
+3801-3813. Section 2 and Lemma 1.
+<https://doi.org/10.1088/0305-4470/21/19/017>.
 
 [M] Robert Morris. Minimal Percolating Sets in Bootstrap Percolation.
 Electronic Journal of Combinatorics 16 (2009), #R2.

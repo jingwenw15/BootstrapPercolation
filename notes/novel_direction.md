@@ -68,6 +68,18 @@ formula for `E(4,n)`. Details, the sharp witness, the pumping family, and a
 limited priority check are in `notes/width4_crowded_columns.md`. Novelty and
 a direct geometric interpretation of the rank remain unresolved.
 
+Stage 8 supplies a direct geometric proof of the crowded-column upper bound,
+independent of the state graph. The key lemmas are seed nonredundancy,
+propagation from a full-height strip, and a one-sided outside-seed cap. The
+classical Aizenman-Lebowitz rectangles process reduces height four to heights
+two and three. Equality forces the first full-height merge to have two
+three-row children with disjoint column intervals and two crowded columns
+each. This is necessary, not sufficient; an explicit gluing counterexample
+is recorded. The finite sharpness example now has twelve explicit deletion
+forts that can be checked without simulation. See
+`notes/width4_crowded_hand_proof.md`. External proof review and priority
+confirmation remain outstanding; this is not a Lean formalization.
+
 ## Current Main Result
 
 The boundary-aware finite-state calculation now supports the exact formula

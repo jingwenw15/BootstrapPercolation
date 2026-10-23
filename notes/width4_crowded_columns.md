@@ -2,11 +2,18 @@
 
 Computed and checked on 2026-10-20.
 
+Update, 2026-10-22: a direct geometric upper-bound proof and an explicit
+finite sharpness certificate are now in
+[width4_crowded_hand_proof.md](width4_crowded_hand_proof.md). That proof does
+not rely on the state graph. The rank certificate below is retained as an
+independent computational check; the infinite pumping family remains
+separately computer-assisted.
+
 ## Statement
 
 Call a column crowded if it contains at least two initially infected cells.
 
-**Computer-assisted theorem.** For every positive integer `n`, every
+**Theorem.** For every positive integer `n`, every
 inclusion-minimal percolating set on the open `4 x n` grid has at most four
 crowded columns. The constant four is sharp, even along an infinite sequence
 of widths.
@@ -140,10 +147,11 @@ sets on `4 x 1` through `4 x 4` are checked by direct bootstrap closure; their
 maximum crowded-column counts agree with the transfer calculation where it
 applies. The sharp witness is checked seed by seed and without input mutation.
 
-This is a computer-assisted proof, not a hand proof, Lean formalization, or
-externally reviewed theorem. We have not yet identified a direct geometric
-meaning for the five rank levels, nor explained the shared counting
-polynomial from the preceding stage.
+The rank argument in this note is a computer-assisted proof. The separate
+geometric proof now removes that computational dependence for the upper
+bound and finite sharpness example, but neither proof is Lean-formalized or
+externally reviewed. The five numerical rank levels and the shared counting
+polynomial still lack direct geometric interpretations.
 
 ## Priority Check
 

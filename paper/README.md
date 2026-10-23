@@ -24,6 +24,13 @@ its rank certificate and sharp witnesses with:
 julia experiments/width4_crowded_columns.jl
 ```
 
+The upper bound also has a direct geometric proof, independent of that
+certificate, in [width4_crowded_hand_proof.md](../notes/width4_crowded_hand_proof.md).
+It gives a necessary two-three-row-rectangle structure for equality. The
+sharp finite example has explicit stable deletion forts, checked locally
+without simulation. The infinite family still uses its separate pumping
+certificate.
+
 [verified_results.md](verified_results.md) is computed from the complete
 semantic and arithmetic certificate. It contains the finite prefix, graph
 counts, independent construction-loop checks, and SHA-256 digests of the four
@@ -57,7 +64,8 @@ julia test/runtests.jl
 6. Are the exact maximizer-count recurrences known, and is there a geometric
    explanation of their common polynomial and residue-dependent powers?
 7. Is the sharp four-crowded-column bound for all height-four minimal sets
-   already known, and can the certified rank be interpreted geometrically?
+   already known, and are the strip lemma, mixed-column cases, and equality
+   argument in the new geometric proof correct?
 
 The manuscript is a working draft for mathematical and priority review.
 Dimension monotonicity belongs to Morris, and the automata/semilinear tools
