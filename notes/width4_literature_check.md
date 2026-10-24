@@ -1,5 +1,24 @@
 # Width-Four Literature Check
 
+## Height-Five Crowding Follow-up, 2026-10-23
+
+The next-stage question is the least height allowing an unbounded number of
+multiple-seed columns in minimal percolating sets. Our height-five proof and
+sharp eight-crowded-column example are in `notes/height5_crowding.md`.
+
+Morris's Theorem 9(b) already uses the two-row anchor fact employed in the
+new bridge lemma; it is not a new ingredient. His Lemma 3 supplies the
+height-eight family. The explicit positions, when oriented with height
+eight, give `k+2` crowded columns on width `3k+2`. Thus the upper endpoint
+eight for the threshold comes from existing work, not a new construction.
+
+Searches for minimal percolating sets, bounded/multiple-seed columns,
+five-row strips, and at most eight columns did not locate the precise new
+bound or threshold statement. Indexed primary passages of Gottschau's
+Lemmas 50--52 were inspected for related constructions; full-PDF retrieval
+again returned HTTP 429. This review remains incomplete and does not
+establish novelty of the height-five theorem or the threshold question.
+
 ## Crowded-Column Follow-up, 2026-10-20
 
 The new claim checked in this follow-up is different from the formula: every

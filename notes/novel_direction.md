@@ -80,6 +80,17 @@ forts that can be checked without simulation. See
 `notes/width4_crowded_hand_proof.md`. External proof review and priority
 confirmation remain outstanding; this is not a Lean formalization.
 
+Stage 9 starts the smallest-unbounded-height program and rules out height
+five. `notes/height5_crowding.md` proves that every minimal percolating set
+on `5 x n` has at most eight crowded columns, uniformly in width. A new
+`5 x 35` witness with 26 seeds attains eight, with an explicit stable fort
+for every deletion. The new bridge lemma handles two height-two children
+separated by one row; the two-row anchor ingredient is already in Morris.
+Morris's existing height-eight construction has unbounded crowded columns.
+Thus the smallest unbounded height is now in `{6,7,8}`, not `{5,6,7,8}`.
+This does not determine `E(5,n)` or establish novelty. Height six is the next
+unresolved case; no unsuccessful finite search is used as a boundedness proof.
+
 ## Current Main Result
 
 The boundary-aware finite-state calculation now supports the exact formula

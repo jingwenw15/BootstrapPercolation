@@ -1,6 +1,6 @@
 # Largest Minimal Percolating Sets on Fixed-Height Grids
 
-Working draft for mathematical and priority review, 2026-10-22.
+Working draft for mathematical and priority review, 2026-10-23.
 
 ## Abstract
 
@@ -17,6 +17,9 @@ explicit family attaining the bound adds two seeds per three columns.
 We also give a direct geometric proof of a sharp structural bound for every
 height-four minimal percolating set: at most four columns contain two or more
 initial seeds. An independent state-graph certificate confirms that bound.
+The height-five crowded-column bound is eight and is sharp. Consequently,
+the smallest height permitting unbounded crowding lies between six and
+eight, the latter endpoint supplied by Morris's existing construction.
 
 ## 1. Model, Results, and Attribution
 
@@ -65,6 +68,11 @@ percolating set on `G(4,n)`, for every `n>=1`, has at most four columns
 containing at least two seeds. The bound is attained for infinitely many
 widths. Maximum cardinality is not assumed.
 
+**Theorem D (height-five crowding).** Every inclusion-minimal percolating set
+on `G(5,n)`, for every `n>=1`, has at most eight crowded columns. The bound is
+attained by a `5 x 35` example with 26 seeds. No claim that 26 is `E(5,35)`
+is made.
+
 Morris [M] introduced the extremal parameter and determined the exact values
 for heights at most three. His Lemma 7 establishes monotonicity in both
 dimensions; that is an essential existing ingredient in Theorem A. Gottschau
@@ -74,7 +82,7 @@ therefore confirm prior values. The regular-language and semilinear tools
 used below are classical, as in [GS].
 
 The purpose of this draft is to expose the mathematical and computational
-arguments for review. It makes no priority claim for Theorems A, B, or C; the
+arguments for review. It makes no priority claim for Theorems A--D; the
 literature checks so far have not established novelty.
 
 ## 2. Stable Sets and Deletion Witnesses
@@ -483,7 +491,58 @@ An independent computational check is retained in
 edge inequalities. A crowded column increases rank. This confirms the upper
 bound independently but is not an ingredient of the geometric proof.
 
-## 11. Reproduction and Computational Scope
+## 11. Height Five and the Smallest Unbounded Height
+
+For Theorem D, take the first five-row rectangle in the rectangles process.
+Its children have heights at most four. Without a mixed column, the
+height-four bound gives `4+4=8`. With a mixed column and a height-four child,
+an outside seed fills its missing row, confining all crowded columns to that
+child plus one seed: at most five. If the maximum child height is three,
+such a child must be the top or bottom three rows. The two outside rows are
+on one side; the outside-seed cap permits at most one mixed column. The
+bound is `2+2+1=5`.
+
+The remaining case has two height-two children, occupying rows `1..2` and
+`4..5`. Their column intervals overlap, since their vertical distance is
+already two. Each child has at most one crowded column. We show that there
+are at most two mixed columns.
+
+The first child contains a two-seed anchor in opposite rows at columns
+differing by at most one, as observed in [M, Theorem 9(b)]. It fills a
+two-row rectangle with column interval `I` of width at most two. Let `J`
+be the other child's column interval. If `I` intersects `J`, the anchor and
+the filled second child merge into a five-row rectangle containing `J`.
+Any first-child seed in `J` other than the two anchor seeds is recoverable,
+contradicting minimality. Hence there are at most two mixed columns.
+
+If `I` is disjoint from `J`, all mixed columns are on the same side of the
+anchor. Were there two, delete a first-child seed in the farther one. The
+anchor and first-child seeds as far as the nearer mixed column still fill
+that two-row interval: an internally spanned rectangle has no double empty
+column gap. This interval meets `J`, and merges with the unchanged second
+child into a five-row rectangle containing `J`. It recovers the deleted
+seed in the farther mixed column. This contradicts minimality, and bounds
+mixing by one in this subcase. Thus the two-height-two case has at most
+`1+1+2=4` crowded columns. No smaller children can merge to span five rows.
+This proves the all-width upper bound eight.
+
+For sharpness, append `[0,1]` to the four-row witness of Section 10, place
+it in the top four rows, leave one empty column, and place its 180-degree
+rotation in the bottom four rows. The resulting `5 x 35` grid has 26 seeds
+and eight crowded columns. Its two filled four-row arms merge across the
+empty middle column. The 26 explicit deletion forts in
+`../experiments/results/height5_crowding.toml` prove minimality by local
+constraints. The complete proof and construction are in
+`../notes/height5_crowding.md`.
+
+Let `M(h)` be the supremum crowded-column count over all widths at height
+`h`. The bounded-height results rule out `h<=5` as the first height with
+`M(h)=infinity`. Morris [M, Lemma 3] gives a minimal family on
+`8 x (3k+2)` with crowded columns `1,3,6,...,3k,3k+2`, hence `k+2` crowded
+columns. Thus the smallest unbounded height is in `{6,7,8}`. The height-eight
+construction is known, and the exact threshold is not determined here.
+
+## 12. Reproduction and Computational Scope
 
 The four certificate tables in `experiments/results/` are:
 
@@ -500,6 +559,7 @@ From the repository root run:
 julia experiments/prepare_paper.jl
 julia experiments/certify_width4_counts.jl
 julia experiments/width4_crowded_columns.jl
+julia experiments/height5_crowding.jl
 ```
 
 This runs `check_width4_semantic_certificate.jl` and its separate arithmetic
@@ -519,8 +579,9 @@ The simulator preserves the input grid and records synchronous history.
 
 These tests corroborate the implementations. For Theorem B, the all-length
 argument is the state invariant, universal finite graph checks, and vector
-recurrence; Theorem C's upper bound has the separate geometric proof above.
-No formula or density for height five is claimed here. Mathematical
+recurrence; Theorems C and D have the separate geometric upper-bound proofs
+above and finite local sharpness certificates. No formula or limiting seed
+density for height five is claimed here. Mathematical
 review of the reduction, computational review of the checkers, and priority
 review of all stated results remain appropriate before submission.
 

@@ -31,6 +31,16 @@ sharp finite example has explicit stable deletion forts, checked locally
 without simulation. The infinite family still uses its separate pumping
 certificate.
 
+The height-five extension is [height5_crowding.md](../notes/height5_crowding.md):
+the crowded-column bound is eight and is attained at width 35. Together with
+Morris's known height-eight construction this puts the smallest unbounded
+crowding height in `{6,7,8}`. Regenerate the sharp witness's local deletion
+certificates with:
+
+```text
+julia experiments/height5_crowding.jl
+```
+
 [verified_results.md](verified_results.md) is computed from the complete
 semantic and arithmetic certificate. It contains the finite prefix, graph
 counts, independent construction-loop checks, and SHA-256 digests of the four
@@ -66,6 +76,9 @@ julia test/runtests.jl
 7. Is the sharp four-crowded-column bound for all height-four minimal sets
    already known, and are the strip lemma, mixed-column cases, and equality
    argument in the new geometric proof correct?
+8. Is the sharp height-five bound of eight known, and is the new separated
+   two-row bridge lemma sound? Has the smallest-unbounded-height question
+   already been resolved under different terminology?
 
 The manuscript is a working draft for mathematical and priority review.
 Dimension monotonicity belongs to Morris, and the automata/semilinear tools
