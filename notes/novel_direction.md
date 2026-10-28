@@ -91,6 +91,17 @@ Thus the smallest unbounded height is now in `{6,7,8}`, not `{5,6,7,8}`.
 This does not determine `E(5,n)` or establish novelty. Height six is the next
 unresolved case; no unsuccessful finite search is used as a boundedness proof.
 
+Stage 10 resolves height six with a direct bound of sixteen crowded columns
+and a `6 x 75` sharp witness. The new adjacent-three-row overlap lemma bounds
+the number of one child's seeds in the other's column interval by four.
+The proof is in `notes/height6_crowding.md`, with 54 local deletion forts and
+constructive redundancy tests. Retrieval and visual review of Gottschau's
+Lemma 51 and Figure 3.5 also confirms an existing unbounded height-seven
+family. Thus the first unbounded crowding height is seven in the current
+proof draft. The known height-seven construction is not a new contribution;
+the bounded-height argument and threshold statement still need external
+proof review and priority confirmation. No exact `E(6,n)` formula is claimed.
+
 ## Current Main Result
 
 The boundary-aware finite-state calculation now supports the exact formula

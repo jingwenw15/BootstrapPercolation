@@ -32,13 +32,22 @@ without simulation. The infinite family still uses its separate pumping
 certificate.
 
 The height-five extension is [height5_crowding.md](../notes/height5_crowding.md):
-the crowded-column bound is eight and is attained at width 35. Together with
-Morris's known height-eight construction this puts the smallest unbounded
-crowding height in `{6,7,8}`. Regenerate the sharp witness's local deletion
+the crowded-column bound is eight and is attained at width 35. Regenerate
+the sharp witness's local deletion
 certificates with:
 
 ```text
 julia experiments/height5_crowding.jl
+```
+
+The next extension, [height6_crowding.md](../notes/height6_crowding.md), proves
+the sharp height-six bound sixteen and identifies the first unbounded
+crowding height as seven. The upper endpoint uses Gottschau's existing
+height-seven construction, now checked against the original PDF. Reproduce
+the `6 x 75` sharp witness and its 54 local deletion certificates with:
+
+```text
+julia experiments/height6_crowding.jl
 ```
 
 [verified_results.md](verified_results.md) is computed from the complete
@@ -79,6 +88,9 @@ julia test/runtests.jl
 8. Is the sharp height-five bound of eight known, and is the new separated
    two-row bridge lemma sound? Has the smallest-unbounded-height question
    already been resolved under different terminology?
+9. Are the height-six three-row overlap argument and the sharp bound of
+   sixteen correct, and is the resulting threshold of seven already known?
+   The height-seven construction itself must be credited to Gottschau.
 
 The manuscript is a working draft for mathematical and priority review.
 Dimension monotonicity belongs to Morris, and the automata/semilinear tools

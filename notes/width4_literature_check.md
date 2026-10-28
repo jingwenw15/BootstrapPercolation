@@ -1,5 +1,29 @@
 # Width-Four Literature Check
 
+## Height-Six Crowding and Source Correction, 2026-10-25
+
+The direct proof draft in `notes/height6_crowding.md` bounds the crowded-column
+count at height six by sixteen, sharply. Combining this with an existing
+height-seven construction identifies seven as the first unbounded height.
+The proof and priority of the bounded-height and threshold statements still
+require outside review; this log does not establish novelty.
+
+The original Gottschau dissertation PDF was successfully downloaded and its
+printed pages 67--68 were inspected visually, superseding the earlier
+HTTP-429-limited review. Lemmas 50--51 and Figure 3.5 describe the relevant
+construction. Lemma 51's short dimension `5*2^t-3` is seven at `t=1`.
+The two outer two-row arms of Figure 3.5 yield the explicit seven-row family
+reproduced in `experiments/height6_crowding.jl`, with `2k` crowded columns
+on width `3k+2`. Its uniform minimality argument is recorded in the proof
+note. This construction is known, not a new discovery here.
+
+Source: Gottschau, *Cuts, Paths, and Processes in Graphs* (2020),
+[original dissertation](https://mediatum.ub.tum.de/doc/1548760/4ipl7t3ed3kdnhqurb99vwm21.Dissertation_upload.pdf).
+
+The earlier threshold range `{6,7,8}` was valid but missed the stronger
+height-seven upper endpoint in this source. No full citation-chain or
+cover-to-cover literature review is asserted by this correction.
+
 ## Height-Five Crowding Follow-up, 2026-10-23
 
 The next-stage question is the least height allowing an unbounded number of

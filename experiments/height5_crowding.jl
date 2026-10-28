@@ -28,6 +28,15 @@ function separated_two_row_redundant_seed(split)
         throw(ArgumentError("both children must have height two"))
     rectangle_height(rectangle_hull(left.bounds, right.bounds)) == 5 ||
         throw(ArgumentError("the two strips must span five rows"))
+    return anchored_strip_redundant_seed(split)
+end
+
+"""The same anchor argument with a two-row child and any strip two rows away."""
+function anchored_strip_redundant_seed(split)
+    left, right = split.left, split.right
+    rectangle_height(left.bounds) == 2 || throw(ArgumentError("the first strip must have height two"))
+    vertical = max(right.bounds[1] - left.bounds[2], left.bounds[1] - right.bounds[2])
+    vertical == 2 || throw(ArgumentError("there must be exactly one intervening row"))
     rectangle_l1_distance(left.bounds, right.bounds) <= 2 ||
         throw(ArgumentError("the two strips cannot merge"))
     anchor = two_row_seed_anchor(left)

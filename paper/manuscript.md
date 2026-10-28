@@ -1,6 +1,6 @@
 # Largest Minimal Percolating Sets on Fixed-Height Grids
 
-Working draft for mathematical and priority review, 2026-10-23.
+Working draft for mathematical and priority review, 2026-10-25.
 
 ## Abstract
 
@@ -17,9 +17,10 @@ explicit family attaining the bound adds two seeds per three columns.
 We also give a direct geometric proof of a sharp structural bound for every
 height-four minimal percolating set: at most four columns contain two or more
 initial seeds. An independent state-graph certificate confirms that bound.
-The height-five crowded-column bound is eight and is sharp. Consequently,
-the smallest height permitting unbounded crowding lies between six and
-eight, the latter endpoint supplied by Morris's existing construction.
+The height-five and height-six crowded-column bounds are eight and sixteen,
+respectively, and both are sharp. Together with Gottschau's existing
+height-seven construction, these bounds identify seven as the smallest
+height permitting unbounded crowding.
 
 ## 1. Model, Results, and Attribution
 
@@ -73,6 +74,13 @@ on `G(5,n)`, for every `n>=1`, has at most eight crowded columns. The bound is
 attained by a `5 x 35` example with 26 seeds. No claim that 26 is `E(5,35)`
 is made.
 
+**Theorem E (height-six crowding and threshold).** Every inclusion-minimal
+percolating set on `G(6,n)`, for every `n>=1`, has at most sixteen crowded
+columns. A `6 x 75` example with 54 seeds attains the bound. Seven is the
+smallest height admitting arbitrarily many crowded columns, using the known
+height-seven family of Gottschau [G, Lemmas 50--51 and Figure 3.5] for the
+unbounded direction. No claim that 54 is `E(6,75)` is made.
+
 Morris [M] introduced the extremal parameter and determined the exact values
 for heights at most three. His Lemma 7 establishes monotonicity in both
 dimensions; that is an essential existing ingredient in Theorem A. Gottschau
@@ -82,7 +90,7 @@ therefore confirm prior values. The regular-language and semilinear tools
 used below are classical, as in [GS].
 
 The purpose of this draft is to expose the mathematical and computational
-arguments for review. It makes no priority claim for Theorems A--D; the
+arguments for review. It makes no priority claim for Theorems A--E; the
 literature checks so far have not established novelty.
 
 ## 2. Stable Sets and Deletion Witnesses
@@ -536,11 +544,71 @@ constraints. The complete proof and construction are in
 `../notes/height5_crowding.md`.
 
 Let `M(h)` be the supremum crowded-column count over all widths at height
-`h`. The bounded-height results rule out `h<=5` as the first height with
-`M(h)=infinity`. Morris [M, Lemma 3] gives a minimal family on
-`8 x (3k+2)` with crowded columns `1,3,6,...,3k,3k+2`, hence `k+2` crowded
-columns. Thus the smallest unbounded height is in `{6,7,8}`. The height-eight
-construction is known, and the exact threshold is not determined here.
+`h`. We next prove `M(6)=16`. The key additional case concerns adjacent
+three-row children. Write their owning seed sets as `B,C`, and let `J` be
+the second child's column interval. We show that at most four seeds of `B`
+lie in `J`.
+
+First, a projection-recovery observation: if `D` contained in `B` spans a
+three-row subrectangle `U` whose column interval intersects `J`, then
+`U` and the filled second child merge into a six-row rectangle containing
+`J`. Every seed of `B` in `J` must therefore belong to `D`, by minimality.
+If `U`'s interval is disjoint from `J`, there is at most one seed of `B`
+in `J`: grow `U` toward `J` using seeds outside `J` and one nearest seed
+inside it. The no-double-empty-column property permits this growth. The
+result meets the other child and recovers every further seed in `J`.
+
+Take the first three-row merge within `B`, orienting the other child below
+it. If a child of this merge occupies the far two rows, its seeds in `J`
+number at most two by the two-row anchor argument above, which also applies
+against a larger filled strip. The other child lies in the near two rows;
+the one-sided seed cap bounds its seeds in `J` by one. These children give
+`U` with at most three owning seeds in `J`. If only the near two-row child
+occurs, add one initial seed from the far one-row child at distance at most
+two. Such a seed exists because an internally spanned one-row interval has
+occupied endpoints and no double gap. This gives `U` with at most two
+owning seeds in `J`. Finally, if both children have height one, they occupy
+the first and third rows with overlapping column intervals. At a shared
+column each one-row site is either initially infected or between two
+initially infected neighbors. At most four seeds thus span a three-row
+`U`. Projection recovery proves the four-seed bound in all cases, and hence
+at most four mixed columns. The complete argument, including reflections,
+is in `../notes/height6_crowding.md`.
+
+Now take the first six-row merge. With no mixed columns, its children
+contribute at most `8+8=16`. A mixed column and a height-five child give a
+full-height strip with at most `8+1=9` crowded columns. When the maximum
+child height is four, that child must occupy the top or bottom four rows;
+the one-sided cap gives at most one mixed column and a bound `4+4+1=9`.
+Otherwise the children are either adjacent three-row strips, giving
+`2+2+4=8`, or a two-row and a three-row strip separated by one row, giving
+`1+2+2=5` by the two-row anchor argument. No shorter pair can merge to
+span six rows. Thus `M(6)<=16`.
+
+Append `[0,1]` to the five-row sharpness word, place it in the top five
+rows, leave one empty column, and place its 180-degree rotation in the
+bottom five rows. The resulting `6 x 75` configuration has 54 seeds and
+sixteen crowded columns. Its two filled arms merge, proving percolation;
+all 54 explicit deletion forts in
+`../experiments/results/height6_crowding.toml` prove minimality. Thus
+`M(6)=16`.
+
+For unboundedness, use Gottschau's existing construction [G, Lemmas 50--51
+and Figure 3.5]. An explicit specialization on seven rows and `N=3k+2`
+columns seeds rows one and seven at columns
+`{3i+2,3i+4 : 0<=i<k}` and adds `(2,2),(6,N-1),(3,N),(5,1)`.
+It is minimal percolating and has `2k` crowded columns. A uniform closure
+and deletion argument is given in `../notes/height6_crowding.md`; tests of
+individual values of `k` are corroboration, not its proof. Consequently
+
+```text
+h       1  2  3  4  5   6    7
+M(h)    0  1  2  4  8  16  infinity.
+```
+
+This proves Theorem E. The known height-seven construction is not claimed
+as a new contribution. Morris's earlier height-eight family [M, Lemma 3]
+also proves unboundedness but gives a weaker threshold endpoint.
 
 ## 12. Reproduction and Computational Scope
 
@@ -560,6 +628,7 @@ julia experiments/prepare_paper.jl
 julia experiments/certify_width4_counts.jl
 julia experiments/width4_crowded_columns.jl
 julia experiments/height5_crowding.jl
+julia experiments/height6_crowding.jl
 ```
 
 This runs `check_width4_semantic_certificate.jl` and its separate arithmetic
@@ -579,9 +648,9 @@ The simulator preserves the input grid and records synchronous history.
 
 These tests corroborate the implementations. For Theorem B, the all-length
 argument is the state invariant, universal finite graph checks, and vector
-recurrence; Theorems C and D have the separate geometric upper-bound proofs
+recurrence; Theorems C--E have the separate geometric upper-bound proofs
 above and finite local sharpness certificates. No formula or limiting seed
-density for height five is claimed here. Mathematical
+density for heights five or six is claimed here. Mathematical
 review of the reduction, computational review of the checkers, and priority
 review of all stated results remain appropriate before submission.
 
@@ -598,8 +667,9 @@ Electronic Journal of Combinatorics 16 (2009), #R2.
 
 [G] Marinus Christopher Johannes Gottschau. Cuts, Paths, and Processes in
 Graphs. Doctoral dissertation, Technical University of Munich, 2020.
-Section 3.1.3, Lemma 55 and Remark 56.
+Section 3.1.3, Lemmas 50--51, Figure 3.5, Lemma 55 and Remark 56.
 <https://d-nb.info/1220423823>.
+Original PDF: <https://mediatum.ub.tum.de/doc/1548760/4ipl7t3ed3kdnhqurb99vwm21.Dissertation_upload.pdf>.
 
 [GS] Seymour Ginsburg and Edwin H. Spanier. Semigroups, Presburger formulas,
 and languages. Pacific Journal of Mathematics 16 (1966), 285-296.

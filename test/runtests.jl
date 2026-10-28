@@ -25,6 +25,7 @@ include("width4_optimal_counts.jl")
 include("width4_crowded_columns.jl")
 include("rectangle_merge_proof.jl")
 include("height5_crowding.jl")
+include("height6_crowding.jl")
 
 @testset "Generic Fixed-Width State Model" begin
     @testset "Every small word matches direct bootstrap closure" begin

@@ -2,6 +2,11 @@
 
 Proof draft, 2026-10-23. No novelty or external-review claim is made.
 
+Update, 2026-10-25: the next stage proves `M(6)=16` and reproduces Gottschau's
+known unbounded height-seven family, identifying the threshold as seven.
+See `notes/height6_crowding.md`. The range below records the earlier stage;
+it is no longer the sharpest conclusion.
+
 ## Result and Research Target
 
 A crowded column contains at least two initial seeds. Let `M(h)` be the
@@ -188,8 +193,9 @@ Thus `M(8)` is infinite. This known construction is reproduced, with clear
 attribution, by `morris_height8_columns(k)`; it is not a new result here.
 
 The new height-five bound rules out the previous candidate height five.
-The remaining question is whether the smallest unbounded height is six,
-seven, or eight. No claim is made about which of those is correct.
+At this stage the remaining question was whether the smallest unbounded
+height was six, seven, or eight. The subsequent height-six proof resolves
+this as seven; the height-seven upper endpoint comes from existing work.
 
 ## Reproduction, Tests, and Priority
 
